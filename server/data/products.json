@@ -1,0 +1,162 @@
+[
+  {
+    "name": "BTS Core Controller Hub — 6CH Smart Home Board",
+    "category": "BTS Products",
+    "price": 6500,
+    "description": "Flagship 6-channel home automation board built for standard industrial deployments. Features optocoupled relay channel outputs, zero-crossing protection, and integration with Alexa, Google Home, and the BTS Smart App.",
+    "imageUrl": "images/core-controller.png",
+    "stock": 15
+  },
+  {
+    "name": "BTS Edge Node Sensor — LoRa Industrial",
+    "category": "BTS Products",
+    "price": 2100,
+    "description": "Long-range remote telemetry node for industrial crop monitoring, agriculture, and water level reporting. Built with ultra-low sleep current logic for years of battery deployment.",
+    "imageUrl": "images/lora-node.png",
+    "stock": 25
+  },
+  {
+    "name": "BTS Smart Relay Module 4-Channel Cloud",
+    "category": "BTS Products",
+    "price": 1800,
+    "description": "Compact smart switch node designed to fit inside modular home wall boxes. Seamlessly automates existing switches while maintaining manual physical control buttons.",
+    "imageUrl": "images/relay-module.png",
+    "stock": 30
+  },
+  {
+    "name": "BTS Solar Efficiency Monitor Board",
+    "category": "BTS Products",
+    "price": 3200,
+    "description": "Advanced solar analytics controller. Measures panel temperature, current degradation, voltage outputs, and uses a specialized optical sensor array to detect dust and alert when cleaning is due.",
+    "imageUrl": "images/solar-monitor.png",
+    "stock": 10
+  },
+  {
+    "name": "BTS GSM Power Failure Alert Node",
+    "category": "BTS Products",
+    "price": 1750,
+    "description": "Real-time telemetry monitor for critical systems (fish tanks, server rooms, medical storage). Immediately sends SMS texts and phone call alerts to registered numbers when main power grid shuts down.",
+    "imageUrl": "images/gsm-alert.png",
+    "stock": 8
+  },
+  {
+    "name": "BTS Kinetic Art Mirror 64-Servo Driver",
+    "category": "BTS Products",
+    "price": 8500,
+    "description": "High-density servo motor controller array designed specifically for interactive silhouette sculptures, kinetic mirrors, and grid matrix control displays.",
+    "imageUrl": "images/servo-driver.png",
+    "stock": 0
+  },
+  {
+    "name": "DHT22 Temperature & Humidity Sensor Module",
+    "category": "Sensors",
+    "price": 350,
+    "description": "High-precision digital temperature and relative humidity sensor. Fully calibrated digital output ensures reliability and stability.",
+    "imageUrl": "images/dht22.png",
+    "stock": 100
+  },
+  {
+    "name": "Ultrasonic HC-SR04 Distance Sensor",
+    "category": "Sensors",
+    "price": 120,
+    "description": "Classic ultrasonic rangefinder providing non-contact distance readings. Perfect for level tracking and obstacle mapping.",
+    "imageUrl": "images/hc-sr04.png",
+    "stock": 150
+  },
+  {
+    "name": "MPU6050 Accelerometer Gyroscope MEMS",
+    "category": "Sensors",
+    "price": 280,
+    "description": "6-axis MotionTracking chip combining a 3-axis gyroscope and a 3-axis accelerometer on a single board, featuring an I2C connection.",
+    "imageUrl": "images/mpu6050.png",
+    "stock": 50
+  },
+  {
+    "name": "IR Infrared Obstacle Avoidance Sensor",
+    "category": "Sensors",
+    "price": 85,
+    "description": "Simple proximity sensing module using reflected infrared light beams. Detection sensitivity can be adjusted via onboard trimmer pot.",
+    "imageUrl": "images/ir-sensor.png",
+    "stock": 200
+  },
+  {
+    "name": "ESP32 DevKit V1 WiFi+BLE Dual-Mode Board",
+    "category": "Modules",
+    "price": 450,
+    "description": "Extremely popular low-cost system-on-chip microcontroller development board. Highly integrated with internal antennas and RF balance units.",
+    "imageUrl": "images/esp32.png",
+    "stock": 120
+  },
+  {
+    "name": "STM32F103C8T6 Blue Pill Development Board",
+    "category": "Modules",
+    "price": 320,
+    "description": "High-performance ARM Cortex-M3 microcontroller board offering a massive upgrade over traditional 8-bit chips in speed and pin availability.",
+    "imageUrl": "images/stm32.png",
+    "stock": 40
+  },
+  {
+    "name": "Arduino Nano V3 ATmega328P CH340",
+    "category": "Modules",
+    "price": 380,
+    "description": "Compact development board based on the classic ATmega328P. Simple, rugged, and highly supported by library codes.",
+    "imageUrl": "images/arduino-nano.png",
+    "stock": 300
+  },
+  {
+    "name": "NodeMCU ESP8266 WiFi IoT Board",
+    "category": "Modules",
+    "price": 290,
+    "description": "Open-source firmware and development kit that helps you prototype your IoT products with Lua scripts or Arduino IDE codes.",
+    "imageUrl": "images/nodemcu.png",
+    "stock": 85
+  },
+  {
+    "name": "LM2596 DC-DC Step Down Buck Converter",
+    "category": "Components",
+    "price": 120,
+    "description": "Switch-mode step-down voltage regulator board. Features high-efficiency buck transformation and adjustable multi-turn potentiometer.",
+    "imageUrl": "images/lm2596.png",
+    "stock": 90
+  },
+  {
+    "name": "5V 4-Channel Relay Module with Optocoupler",
+    "category": "Components",
+    "price": 220,
+    "description": "4-channel active-low relay board. Features galvanic isolation via onboard optocoupler chips to shield microcontrollers from high AC voltage spikes.",
+    "imageUrl": "images/relay-4ch.png",
+    "stock": 70
+  },
+  {
+    "name": "Breadboard 830 Points MB-102 Solderless",
+    "category": "Components",
+    "price": 95,
+    "description": "Full-size solderless prototyping board. Includes standard double-strip power rails on both sides for clean layout structures.",
+    "imageUrl": "images/breadboard.png",
+    "stock": 110
+  },
+  {
+    "name": "Jumper Wires 120pcs Male-Female Pack",
+    "category": "Components",
+    "price": 140,
+    "description": "Essential connection wire assortment for breadboards and development modules. Flexible multi-color ribbon strip wire assemblies.",
+    "imageUrl": "images/jumper-wires.png",
+    "stock": 180
+  },
+  {
+    "name": "Digital Multimeter DT-830D Professional",
+    "category": "Tools",
+    "price": 450,
+    "description": "Handheld digital multimeter for troubleshooting voltage thresholds, current draws, resistance values, and testing diode/continuity lines.",
+    "imageUrl": "images/multimeter.png",
+    "stock": 35
+  },
+  {
+    "name": "Soldering Iron Kit 60W with 5 Tips",
+    "category": "Tools",
+    "price": 650,
+    "description": "Temperature adjustable soldering iron set. Fast heating ceramic element cores, stand assembly, and interchangeable tips included.",
+    "imageUrl": "images/soldering-kit.png",
+    "stock": 45
+  }
+]
