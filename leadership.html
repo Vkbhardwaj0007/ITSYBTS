@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Leadership | ITSYBTS TECHNOLOGY</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Page Specific Styles */
+
+        /* Page Specific Styles */
+
+        /* Hero Section */
+        .leadership-hero {
+            position: relative;
+            height: 320px;
+            background: linear-gradient(rgba(10, 15, 28, 0.5), rgba(10, 15, 28, 0.5)), url('images/leadership_hero.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .leadership-hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            opacity: 0.9;
+        }
+
+        /* Welcome Section */
+        .welcome-section {
+            text-align: center;
+            padding: 100px 0;
+            background: transparent;
+        }
+
+        .welcome-section h2 {
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+
+        .welcome-section h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
+
+        .welcome-section p {
+            max-width: 900px;
+            margin: 0 auto;
+            color: #64748b;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .welcome-section h2 {
+            font-size: 42px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .welcome-section p {
+            max-width: 950px;
+            margin: 0 auto;
+            color: var(--text-muted);
+            font-size: 16px;
+        }
+
+        /* Founder Section */
+        .founder-section {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(10px);
+            padding: 100px 0;
+            border-top: 1px solid var(--glass-border);
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .founder-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .founder-img-box {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .founder-img-box img {
+            width: 100%;
+            display: block;
+            filter: grayscale(20%);
+            transition: 0.5s;
+        }
+
+        .founder-img-box:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        .founder-info h3 {
+            font-size: 36px;
+            color: #fff;
+            font-weight: 800;
+            margin-bottom: 5px;
+        }
+
+        .founder-info .role {
+            color: #0ea5e9;
+            font-weight: 700;
+            font-size: 18px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .founder-info p {
+            margin-bottom: 20px;
+            font-size: 17px;
+            color: var(--text-muted);
+        }
+
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #0077b5;
+            color: #fff;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .linkedin-btn:hover {
+            background: #005582;
+            transform: translateY(-3px);
+        }
+
+        /* Expertise List */
+        .expertise-section {
+            padding: 80px 0;
+        }
+
+        .expertise-section h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 60px;
+            color: #fff;
+            font-weight: 500;
+        }
+
+        .expertise-list {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .expertise-item {
+            display: flex;
+            gap: 15px;
+            background: transparent;
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+
+        .expertise-item .num {
+            font-weight: 800;
+            color: #94a3b8;
+        }
+
+        .expertise-item .text b {
+            color: #fff;
+            font-weight: 700;
+        }
+
+        .expertise-item .text {
+            font-size: 15px;
+            color: var(--text-muted);
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 100px 0;
+            background: transparent;
+        }
+
+        .team-section h2 {
+            text-align: center;
+            font-size: 32px;
+            color: #fff;
+            margin-bottom: 60px;
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .team-card {
+            text-align: center;
+        }
+
+        .team-img-box {
+            margin-bottom: 20px;
+            overflow: hidden;
+            height: 350px;
+        }
+
+        .team-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border: 1px solid #e2e8f0;
+        }
+
+        .team-card h4 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .team-card .title {
+            color: var(--primary);
+            font-weight: 800;
+            font-size: 14px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .team-card .desc {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 20px;
+            min-height: 80px;
+        }
+
+        .team-linkedin {
+            font-size: 36px;
+            color: #0077b5;
+            margin-top: 10px;
+            display: inline-block;
+        }
+
+        .admin-link {
+            opacity: 0.2;
+            cursor: pointer;
+        }
+
+        @media (max-width: 900px) {
+            .footer-top {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-nav {
+                order: 3;
+            }
+
+            .footer-social {
+                order: 2;
+            }
+
+            .footer-bottom .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .founder-grid,
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .leadership-hero h1 {
+                font-size: 40px;
+            }
+
+            .container {
+                padding: 0 20px;
+            }
+        }
+    </style>
+</head>
+
+<body style="background: transparent;">
+    <!-- Backdrop Overlay for Mobile Drawer -->
+    <div class="drawer-overlay" onclick="closeMobileMenu()"></div>
+
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">EXPERTISE <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">OUR WORK <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)" style="color: #06d6a0; font-weight: 800;"><i
+                                class="fas fa-helicopter"></i> Drone 2030</a></li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <style>
+        .nav-item-dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background: rgba(14, 165, 233, 0.1);
+            color: #0ea5e9 !important;
+        }
+    </style>
+
+    <div class="leadership-hero">
+        <div class="hero-content">
+            <h1>Our Leadership</h1>
+        </div>
+    </div>
+
+    <div class="welcome-section">
+        <div class="container">
+            <h2>Our Leadership</h2>
+            <p> ITSYBTS TECHNOLOGY, founded by Mr. Vivek Kumar Bhardwaj, is fueled by a group of young,
+                dedicated designers
+                and specialists in diverse technologies, programming languages, and methods with the goal of creating
+                the highest caliber goods and services for customers globally.</p>
+        </div>
+    </div>
+
+    <div class="founder-section">
+        <div class="container">
+            <div class="founder-grid">
+                <div class="founder-img-box">
+                    <img src="images/ceo_vivek_bg_pro.png" alt="Mr. Vivek Kumar Bhardwaj">
+                </div>
+                <div class="founder-info">
+                    <h3>Mr. Vivek Kumar Bhardwaj</h3>
+                    <span class="role">Founder & CEO</span>
+                    <p>"Mr. Vivek Kumar Bhardwaj, Founder & CEO, is the driving force behind ITSYBTS TECHNOLOGY. With
+                        expertise in Embedded and IoT Product Development, he leads our team in creating groundbreaking
+                        hardware and software solutions for the IoT ecosystem. His visionary leadership and commitment
+                        to excellence have propelled us into the forefront of the industry."</p>
+                    <p>Under his guidance, the business has grown into a hub for technical innovation, consistently
+                        pushing boundaries in automation and smart connectivity to create a seamless digital future.</p>
+                    <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        class="linkedin-btn" target="_blank"
+                        style="padding: 12px; border-radius: 12px; font-size: 24px;">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="expertise-section">
+        <div class="container">
+            <h2>Our Management team has expertise in various fields in Embedded System Design.</h2>
+            <div class="expertise-list">
+                <div class="expertise-item">
+                    <span class="num">1.</span>
+                    <span class="text"><b>Hardware Design:</b> Managing and Engineers and developers in the physical
+                        components of IoT devices. This includes selecting and configuring microcontrollers or
+                        microprocessors, sensors, communication modules (e.g., Wi-Fi, Bluetooth, LoRa), and power
+                        management circuits.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">2.</span>
+                    <span class="text"><b>Firmware Development:</b> Handling and Developing the embedded software, or
+                        firmware, that runs on IoT devices is a crucial aspect of the job. This involves writing code to
+                        control and manage hardware components, handle data acquisition from sensors, and establish
+                        communication with other devices or the cloud.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">3.</span>
+                    <span class="text"><b>IoT Protocols:</b> Proficiency in various IoT communication protocols, such as
+                        MQTT, CoAP, and HTTP, is essential for enabling devices to send and receive data over the
+                        internet or local networks.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">4.</span>
+                    <span class="text"><b>Sensor Integration:</b> IoT devices often rely on a variety of sensors (e.g.,
+                        temperature, humidity, motion) to collect data. Integration of these sensors into the hardware
+                        and calibration is a common task.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">5.</span>
+                    <span class="text"><b>Connectivity:</b> Ensuring reliable connectivity is a key challenge in IoT
+                        product development. Professionals in this profile work on implementing secure and efficient
+                        communication methods between devices and cloud platforms.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">6.</span>
+                    <span class="text"><b>Cloud Integration:</b> IoT devices typically send data to cloud platforms for
+                        storage, analysis, and control. Understanding cloud services (e.g., AWS IoT, Azure IoT, Google
+                        Cloud IoT) and integrating devices with these platforms is crucial.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">7.</span>
+                    <span class="text"><b>Security:</b> IoT security is paramount due to the potential vulnerabilities
+                        of connected devices. Experts in this profile focus on implementing encryption, authentication,
+                        and access control mechanisms to protect data and devices.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">8.</span>
+                    <span class="text"><b>Power Efficiency:</b> IoT devices are often battery-powered or have limited
+                        power sources. Optimizing power consumption is essential to prolong device lifespan. This may
+                        involve low-power hardware and software design.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">9.</span>
+                    <span class="text"><b>Data Analytics:</b> Handle professionals in this field work on data analysis
+                        and visualization to derive insights from the vast amount of data generated by IoT
+                        devices.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">10.</span>
+                    <span class="text"><b>Regulatory Compliance:</b> Depending on the industry and geographic location,
+                        IoT products may need to adhere to specific regulatory standards, such as FCC or CE
+                        certifications.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">11.</span>
+                    <span class="text"><b>Project Management:</b> Managing IoT product development projects involves
+                        coordinating multidisciplinary teams, setting milestones, and ensuring timely delivery.</span>
+                </div>
+                <div class="expertise-item">
+                    <span class="num">12.</span>
+                    <span class="text"><b>Industry Verticals:</b> IoT is applied in various sectors, including
+                        healthcare, agriculture, smart cities, industrial automation, and consumer electronics. Mr.
+                        Vivek Kumar Bhardwaj is Professional in this field and specialize in a particular industry
+                        vertical.</span>
+                </div>
+            </div>
+            <p style="margin-top: 40px; color: #475569; font-size: 15px;">In summary, Mr. Vivek Kumar Bhardwaj involves
+                in Embedded and IoT Product Development with wide range of skills and responsibilities, from designing
+                hardware and firmware to managing data, security, and connectivity aspects in IoT devices and systems.
+                It's a multidisciplinary field that requires continuous learning and adaptability due to the dynamic
+                nature of IoT technology.</p>
+        </div>
+    </div>
+
+    <div class="team-section">
+        <div class="container">
+            <h3 style="text-align: center; color: #64748b; font-size: 24px; font-weight: 300; margin-bottom: 5px;">The
+                Minds</h3>
+            <h2>Behind Our Vision</h2>
+            <div class="team-grid">
+                <div class="team-card">
+                    <div class="team-img-box">
+                        <img src="images/vishal_pro.png" alt="Mr. Vishal Kharwar">
+                    </div>
+                    <h4>Mr. Vishal Kharwar</h4>
+                    <span class="title">Vice President</span>
+                    <p class="desc">Vishal Kharwar has over 2 years of experience in Marketing of Industry 4.0.</p>
+                    <a href="#"><i class="fab fa-linkedin team-linkedin"></i></a>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-box">
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=500&q=80"
+                            alt="Mr. Navdeep Singh">
+                    </div>
+                    <h4>Mr. Navdeep Singh</h4>
+                    <span class="title">R&D Head</span>
+                    <p class="desc">Navdeep Singh has 14+ Year Experience in Embedded Product Design and Manufacturing.
+                    </p>
+                    <a href="#"><i class="fab fa-linkedin team-linkedin"></i></a>
+                </div>
+                <div class="team-card">
+                    <div class="team-img-box">
+                        <img src="images/arvind_pro_v2.png"
+                            alt="Mr. Arvind Kumar">
+                    </div>
+                    <h4>Mr. Arvind Kumar</h4>
+                    <span class="title">Purchase Head</span>
+                    <p class="desc">Arvind Kumar has more than 10 year experience in Sales and Purchase of
+                        Electronics Products and Components.</p>
+                    <a href="#"><i class="fab fa-linkedin team-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Standard Site Footer -->
+    <!-- Standard Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#expertise">In News</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="index.html#contact">Contact Us</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener"
+                        title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank"
+                        rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>How can I help you?</span>
+                </a>
+                <div class="copyright-text">
+                    Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link"
+                        onclick="window.location.href='login.html'">•</span>
+                </div>
+                <a href="index.html#contact" class="chat-widget">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Leave a message</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu(btn) {
+            const parent = btn ? btn.closest('nav') : document.getElementById('header');
+            const nav = parent.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const nav = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+        }
+
+        
+    </script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+

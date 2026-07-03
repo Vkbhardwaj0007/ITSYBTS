@@ -1,0 +1,1809 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Careers | ITSYBTS TECHNOLOGY - Join Our Innovation Journey</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <script>
+        // Inline script to prevent flash of main content when opening via hash
+        if (window.location.hash && ['#app-dev', '#hardware', '#firmware', '#hr', '#marketing', '#pcb'].includes(window.location.hash)) {
+            document.documentElement.classList.add('hide-main-content');
+        }
+    </script>
+    <style>
+        /* Flicker prevention - correctly targeting through html class */
+        html.hide-main-content body > section,
+        html.hide-main-content body > div:not(.modal-overlay),
+        html.hide-main-content body > footer {
+            display: none !important;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Page Specific Styles */
+
+        /* Careers Hero */
+
+
+        /* Careers Hero */
+        .careers-hero {
+            position: relative;
+            height: 320px;
+            background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.70)), url('images/careers_hero.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            border-bottom: 1px solid var(--glass-border);
+            text-align: left;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .careers-hero h1 {
+            font-size: 36px;
+            font-weight: 800;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+            background: none;
+            -webkit-text-fill-color: initial;
+        }
+
+        .careers-hero p {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0;
+        }
+
+        /* Filter Section */
+        .job-filters {
+            margin-bottom: 60px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            color: #fff;
+            padding: 10px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: 600;
+        }
+
+        .filter-btn.active,
+        .filter-btn:hover {
+            background: var(--primary);
+            border-color: var(--primary);
+            box-shadow: 0 0 20px rgba(109, 40, 217, 0.3);
+        }
+
+        /* Job Grid */
+        .job-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            padding-bottom: 100px;
+        }
+
+        .job-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            border-radius: 24px;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .job-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            opacity: 0;
+            transition: 0.3s;
+        }
+
+        .job-card:hover {
+            transform: translateY(-10px);
+            border-color: rgba(109, 40, 217, 0.4);
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .job-card:hover::before {
+            opacity: 1;
+        }
+
+        .job-tag {
+            background: rgba(14, 165, 233, 0.1);
+            color: var(--accent);
+            font-size: 12px;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .job-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .job-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 25px;
+            flex-grow: 1;
+        }
+
+        .job-meta {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .job-meta span i {
+            margin-right: 6px;
+            color: var(--primary);
+        }
+
+        .job-details {
+            margin-top: 10px;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .job-details h4 {
+            font-size: 14px;
+            color: #fff;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .job-details ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-details ul li {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .job-details ul li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: 800;
+        }
+
+        .apply-btn {
+            background: var(--primary);
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            transition: 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .apply-btn:hover {
+            background: #5b21b6;
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(109, 40, 217, 0.3);
+        }
+
+        .view-btn {
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            padding: 11px 24px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 700;
+            transition: 0.3s;
+            border: 1px solid var(--glass-border);
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .view-btn:hover {
+            border-color: var(--primary);
+            background: rgba(109, 40, 217, 0.05);
+        }
+
+        /* Row Layout */
+        .job-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding-bottom: 100px;
+        }
+
+        .job-row {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 24px 32px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: 0.3s;
+        }
+
+        .job-row:hover {
+            border-color: rgba(109, 40, 217, 0.3);
+            background: rgba(255, 255, 255, 0.05);
+            transform: scale(1.01);
+        }
+
+        .job-main-info {
+            flex: 1;
+        }
+
+        .job-main-info h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 5px;
+        }
+
+        .job-main-info .job-tag {
+            margin-bottom: 0;
+            font-size: 11px;
+        }
+
+        .job-meta-center {
+            flex: 1;
+            padding: 0 40px;
+            font-size: 13px;
+            color: var(--text-muted);
+            border-left: 1px solid var(--glass-border);
+            margin: 0 40px;
+        }
+
+        .job-meta-center div {
+            margin: 5px 0;
+        }
+
+        .job-meta-center b {
+            color: #fff;
+            opacity: 0.7;
+            font-weight: 500;
+        }
+
+        .job-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        /* Full Details Modal - Full Screen Version */
+        #details-modal .modal-box {
+            max-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+            border-radius: 0;
+            overflow-y: auto;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+        }
+
+         .details-nav {
+             position: sticky;
+             top: 0;
+             left: 0;
+             width: 100%;
+             z-index: 1010;
+             background: #0a111e;
+             border-bottom: 1px solid var(--primary);
+             padding: 10px 0; /* Match main header padding */
+             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+         }
+
+         .details-nav .container {
+             width: 100%;
+             max-width: 1400px;
+             margin: 0 auto;
+             padding: 0 24px;
+         }
+
+         .details-nav nav {
+             display: flex;
+             justify-content: space-between;
+             align-items: center;
+             width: 100%;
+         }
+
+         .details-nav .nav-links {
+             display: flex;
+             gap: 30px;
+             align-items: center;
+             list-style: none;
+         }
+         .details-nav .nav-item:hover .dropdown {
+             display: block !important;
+             opacity: 1;
+             visibility: visible;
+             transform: translateX(-50%) translateY(0);
+         }
+
+        .details-nav .logo-subtext {
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.6);
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-top: -2px;
+            letter-spacing: 0.5px;
+        }
+
+        .modal-details-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.55)), url('images/careers_details_hero.png') center/cover;
+            padding: 160px 0 120px;
+            border-bottom: 1px solid var(--glass-border);
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        #details-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.2;
+        }
+
+        .modal-details-header div {
+            position: relative;
+            z-index: 2;
+        }
+
+        .modal-details-header h2 {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 0;
+            font-weight: 800;
+        }
+
+        .modal-details-body {
+            padding: 50px;
+            background: #fff;
+            color: #334155;
+            flex-grow: 1;
+        }
+
+        .modal-details-body ul.meta-list {
+            list-style: disc;
+            margin-bottom: 40px;
+            padding-left: 20px;
+            color: #475569;
+            font-size: 16px;
+        }
+
+        .modal-details-body ul.meta-list li {
+            margin-bottom: 10px;
+        }
+
+        .modal-details-body ul.meta-list b {
+            color: #0f172a;
+        }
+
+        .modal-details-body {
+            padding: 50px;
+            background: #fff;
+            color: #334155;
+        }
+
+        .detail-section {
+            margin-bottom: 40px;
+        }
+
+        .detail-section h4 {
+            font-size: 22px;
+            color: #0f172a;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .detail-section p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #475569;
+            margin-bottom: 15px;
+        }
+
+        .detail-section ul,
+        .detail-section ol {
+            padding-left: 20px;
+        }
+
+        .detail-section ul li,
+        .detail-section ol li {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 12px;
+            line-height: 1.6;
+        }
+
+        .detail-section b {
+            color: #0f172a;
+        }
+
+        .modal-details-footer {
+            padding: 40px 50px;
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .job-row {
+                flex-direction: column;
+                text-align: center;
+                gap: 20px;
+            }
+
+            .job-meta-center {
+                border-left: none;
+                border-top: 1px solid var(--glass-border);
+                padding: 20px 0;
+                margin: 0;
+                width: 100%;
+            }
+        }
+
+        /* Modal Styling */
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.95);
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            z-index: 2000;
+        }
+
+        .modal-overlay.active {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-box {
+            background: #0f172a;
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            width: 100%;
+            max-width: 550px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+            transform: translateY(20px);
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: translateY(0);
+        }
+
+        /* Full Details & Job Modal Box overrides */
+        #details-modal .modal-box,
+        #job-modal .modal-box {
+            max-width: 100vw;
+            width: 100vw;
+            height: 100vh;
+            max-height: 100vh;
+            border-radius: 0;
+            overflow-y: auto;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            background: #fff;
+            transform: none !important;
+        }
+
+        .modal-header h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .modal-header p {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--glass-border);
+            padding: 12px 16px;
+            border-radius: 12px;
+            color: #fff;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .form-group input:focus {
+            border-color: var(--primary);
+            background: rgba(255, 255, 255, 0.08);
+        }
+
+        .file-upload-box {
+            border: 2px dashed var(--glass-border);
+            padding: 30px;
+            text-align: center;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .file-upload-box:hover {
+            border-color: var(--primary);
+            background: rgba(109, 40, 217, 0.05);
+        }
+
+        .file-upload-box i {
+            font-size: 32px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .btn-submit {
+            width: 100%;
+            background: var(--primary);
+            color: #fff;
+            padding: 16px;
+            border-radius: 14px;
+            border: none;
+            font-weight: 800;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(109, 40, 217, 0.3);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            color: var(--text-muted);
+            font-size: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .close-modal:hover {
+            color: #fff;
+        }
+
+ 
+        .hidden-input {
+            display: none;
+        }
+
+        .flex-row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .flex-1 {
+            flex: 1;
+        }
+
+        .cursor-pointer {
+            cursor: pointer;
+        }
+
+        .pos-rel {
+            position: relative;
+        }
+
+        .d-ib {
+            display: inline-block;
+        }
+
+        .text-primary {
+            color: var(--primary) !important;
+        }
+
+        .fs-10 {
+            font-size: 10px;
+        }
+
+        .fs-13 {
+            font-size: 13px !important;
+        }
+
+        .p-12-16 {
+            padding: 12px 16px !important;
+        }
+
+        .white {
+            color: #fff !important;
+        }
+    </style>
+</head>
+
+<body style="background: transparent;">
+    <!-- Backdrop Overlay for Mobile Drawer -->
+    <div class="drawer-overlay" onclick="closeMobileMenu(this)"></div>
+
+    
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">EXPERTISE <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">OUR WORK <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)" style="color: #06d6a0; font-weight: 800;"><i
+                                class="fas fa-helicopter"></i> Drone 2030</a></li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="careers-hero">
+        <canvas id="hero-canvas"></canvas>
+        <div class="hero-content">
+            <h1>Shape the Future with itsybts</h1>
+            <p>Join a team of visionaries, engineers, and creators building the next generation of Smart Electronic
+                Solutions.</p>
+        </div>
+    </section>
+
+    <div class="job-filters">
+        <button class="filter-btn active" onclick="window.location.href='careers.html'">All Departments</button>
+        <button class="filter-btn" onclick="window.location.href='engineering.html'">Engineering</button>
+        <button class="filter-btn" onclick="window.location.href='app-dev.html'">App Dev</button>
+        <button class="filter-btn" onclick="window.location.href='hr-mgmt.html'">HR & Mgmt</button>
+        <button class="filter-btn" onclick="window.location.href='marketing.html'">Marketing</button>
+    </div>
+
+    <div class="job-list">
+        <!-- Mobile App Developer -->
+        <div class="job-row">
+            <div class="job-main-info">
+                <span class="job-tag">App Development</span>
+                <h3>Mobile App Developer</h3>
+            </div>
+            <div class="job-meta-center">
+                <div><b>Job type:</b> Full-Time</div>
+                <div><b>Location:</b> Faridabad / Remote</div>
+            </div>
+            <div class="job-actions">
+                <button class="view-btn" onclick="openDetails('app-dev')">View Details</button>
+                <button class="apply-btn" onclick="openJobModal('Mobile App Developer')">Apply Now</button>
+            </div>
+        </div>
+
+        <!-- Embedded Hardware -->
+        <div class="job-row">
+            <div class="job-main-info">
+                <span class="job-tag">Engineering</span>
+                <h3>Embedded Hardware Engineer</h3>
+            </div>
+            <div class="job-meta-center">
+                <div><b>Job type:</b> Full-Time</div>
+                <div><b>Location:</b> Faridabad</div>
+            </div>
+            <div class="job-actions">
+                <button class="view-btn" onclick="openDetails('hardware')">View Details</button>
+                <button class="apply-btn" onclick="openJobModal('Embedded Hardware Engineer')">Apply Now</button>
+            </div>
+        </div>
+
+        <!-- Firmware -->
+        <div class="job-row">
+            <div class="job-main-info">
+                <span class="job-tag">Engineering</span>
+                <h3>Firmware Engineer</h3>
+            </div>
+            <div class="job-meta-center">
+                <div><b>Job type:</b> Full-Time</div>
+                <div><b>Location:</b> Faridabad / Remote</div>
+            </div>
+            <div class="job-actions">
+                <button class="view-btn" onclick="openDetails('firmware')">View Details</button>
+                <button class="apply-btn" onclick="openJobModal('Firmware Engineer')">Apply Now</button>
+            </div>
+        </div>
+
+        <!-- HR -->
+        <div class="job-row">
+            <div class="job-main-info">
+                <span class="job-tag">HR & Mgmt</span>
+                <h3>HR Executive</h3>
+            </div>
+            <div class="job-meta-center">
+                <div><b>Job type:</b> Full-Time</div>
+                <div><b>Location:</b> Faridabad</div>
+            </div>
+            <div class="job-actions">
+                <button class="view-btn" onclick="openDetails('hr')">View Details</button>
+                <button class="apply-btn" onclick="openJobModal('HR Executive')">Apply Now</button>
+            </div>
+        </div>
+
+        <!-- Marketing -->
+        <div class="job-row">
+            <div class="job-main-info">
+                <span class="job-tag">Marketing</span>
+                <h3>Technical Marketing Specialist</h3>
+            </div>
+            <div class="job-meta-center">
+                <div><b>Job type:</b> Full-Time</div>
+                <div><b>Location:</b> Remote</div>
+            </div>
+            <div class="job-actions">
+                <button class="view-btn" onclick="openDetails('marketing')">View Details</button>
+                <button class="apply-btn" onclick="openJobModal('Technical Marketing Specialist')">Apply Now</button>
+            </div>
+        </div>
+
+        <!-- PCB Design -->
+        <div class="job-row">
+            <div class="job-main-info">
+                <span class="job-tag">Engineering</span>
+                <h3>PCB Design Specialist</h3>
+            </div>
+            <div class="job-meta-center">
+                <div><b>Job type:</b> Full-Time</div>
+                <div><b>Location:</b> Faridabad</div>
+            </div>
+            <div class="job-actions">
+                <button class="view-btn" onclick="openDetails('pcb')">View Details</button>
+                <button class="apply-btn" onclick="openJobModal('PCB Design Specialist')">Apply Now</button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </section>
+
+    <!-- Standard Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#expertise">In News</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="index.html#contact">Contact Us</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener"
+                        title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank"
+                        rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>How can I help you?</span>
+                </a>
+                <div class="copyright-text">
+                    Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link"
+                        onclick="window.location.href='login.html'">•</span>
+                </div>
+                <a href="index.html#contact" class="chat-widget">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Leave a message</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Job Details Modal -->
+    <div id="details-modal" class="modal-overlay">
+        <div id="details-content" class="modal-box">
+            <!-- Dynamic Content -->
+        </div>
+    </div>
+
+    <!-- Job Application Modal -->
+    <div id="job-modal" class="modal-overlay">
+        <div class="modal-box">
+             <!-- This content is now dynamically generated in openJobModal() to include Header, Hero, and Footer -->
+        </div>
+    </div>
+
+    <script>
+        // Particle Net Background for Hero
+        const canvas = document.getElementById('hero-canvas');
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+
+        function resize() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+
+        window.onresize = resize;
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.vx = (Math.random() - 0.5) * 0.5;
+                this.vy = (Math.random() - 0.5) * 0.5;
+                this.size = 2;
+            }
+
+            update() {
+                this.x += this.vx;
+                this.y += this.vy;
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                ctx.fillStyle = '#0ea5e9';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 100; i++) particles.push(new Particle());
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Draw lines
+            ctx.beginPath();
+            ctx.strokeStyle = 'rgba(14, 165, 233, 0.15)';
+            ctx.lineWidth = 0.5;
+            for (let i = 0; i < particles.length; i++) {
+                for (let j = i + 1; j < particles.length; j++) {
+                    const dx = particles[i].x - particles[j].x;
+                    const dy = particles[i].y - particles[j].y;
+                    const dist = Math.sqrt(dx * dx + dy * dy);
+                    if (dist < 150) {
+                        ctx.moveTo(particles[i].x, particles[i].y);
+                        ctx.lineTo(particles[j].x, particles[j].y);
+                    }
+                }
+            }
+            ctx.stroke();
+
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+
+            requestAnimationFrame(animate);
+        }
+        animate();
+
+        const jobDescriptions = {
+            'app-dev': {
+                title: 'Mobile App Developer',
+                type: 'Full-Time',
+                location: 'Faridabad / Remote',
+                about: 'ITSYBTS TECHNOLOGY is a leader in the electronics products industry, dedicated to delivering innovative solutions and exceptional customer service. We are looking for a skilled App Developer to join our team and ensure the highest level of satisfaction for our valued customers.',
+                overview: 'The App Developer will be responsible for developing and maintaining long-term relationships with customers by understanding their needs and providing tailored solutions. This role requires excellent communication skills, a customer-centric approach, and the ability to resolve issues efficiently.',
+                responsibilities: [
+                    'Develop and maintain strong relationships with key stakeholders.',
+                    'Understand customer needs and provide appropriate technical solutions.',
+                    'Code, test, and debug mobile layouts for smart home ecosystems.',
+                    'Ensure seamless performance across Android and iOS platforms.'
+                ],
+                qualifications: [
+                    'Bachelor\'s degree in Computer Science, IT, or a related field.',
+                    'Minimum of 2 years of experience in Flutter or Native development.',
+                    'Proven track record of managing complex app lifecycles.'
+                ],
+                skills: [
+                    'Excellent communication and interpersonal skills.',
+                    'Strong problem-solving and debugging abilities.',
+                    'Proficiency in Dart, Java, or Kotlin.',
+                    'Ability to analyze data and generate actionable insights.'
+                ],
+                benefits: [
+                    'Competitive salary and performance-based bonuses.',
+                    'Comprehensive health, dental, and vision insurance.',
+                    'Paid time off and flexible work environment.',
+                    'Opportunities for professional development.'
+                ]
+            },
+            'hardware': {
+                title: 'Embedded Hardware Engineer',
+                type: 'Full-Time',
+                location: 'Faridabad',
+                about: 'ITSYBTS TECHNOLOGY leads innovation in industrial grade IoT devices and custom hardware. We seek an Embedded Hardware Specialist to design the next generation of smart controllers.',
+                overview: 'You will lead hardware design cycles from schematic to final PCB production, ensuring maximum efficiency and reliability in high-power automation environments.',
+                responsibilities: [
+                    'Design complex multilayer PCB layouts.',
+                    'Perform component selection and lifecycle management.',
+                    'Prototype hardware using ESP32 and STM32 chips.',
+                    'Conduct thermal analysis and EMC testing.'
+                ],
+                qualifications: [
+                    'B.Tech / Diploma in Electronics and Communication.',
+                    'Minimum 3 years of experience in PCB Designing.',
+                    'Experience with Altium Designer or KiCad.'
+                ],
+                skills: [
+                    'Strong understanding of analog and digital circuit design.',
+                    'Knowledge of high-power electronics and safety standards.',
+                    'Attention to detail in schematic capture.',
+                    'Excellent documentation and reporting skills.'
+                ],
+                benefits: [
+                    'Attractive package with field incentives.',
+                    'Full medical cover for employees.',
+                    'Work on cutting-edge military and industrial projects.',
+                    'Annual career advancement reviews.'
+                ]
+            },
+            'firmware': {
+                title: 'Firmware Engineer',
+                type: 'Full-Time',
+                location: 'Faridabad / Remote',
+                about: 'ITSYBTS TECHNOLOGY focuses on creating robust firmware for real-time operating systems. We are building the backbone of secure IoT communication.',
+                overview: 'As a Firmware Engineer, you will bridge hardware and software by writing efficient C/C++ code that manages sensor data and cloud connectivity.',
+                responsibilities: [
+                    'Develop low-level drivers and communication protocols.',
+                    'Implement secure OTA (Over-the-Air) updates.',
+                    'Optimize firmware for minimal power consumption.',
+                    'Integrate MQTT and WebSocket protocols.'
+                ],
+                qualifications: [
+                    'Bachelor\'s degree in Embedded Systems or CSE.',
+                    'Proven experience in C/C++ programming.',
+                    'Familiarity with FreeRTOS or similar platforms.'
+                ],
+                skills: [
+                    'Proficiency in RTOS and Bare-Metal programming.',
+                    'Strong debugging skills using JTAG or Logic Analyzers.',
+                    'Knowledge of secure booting and encryption.',
+                    'Team collaboration using Git/GitHub.'
+                ],
+                benefits: [
+                    'Remote work flexibility.',
+                    'Performance-linked quarterly bonuses.',
+                    'Learning budget for certifications.',
+                    'Exciting R&D focused work culture.'
+                ]
+            },
+            'hr': {
+                title: 'HR Executive',
+                type: 'Full-Time',
+                location: 'Faridabad',
+                about: 'At ITSYBTS TECHNOLOGY, we believe people are our greatest asset. Our HR team builds the culture of innovation.',
+                overview: 'You will handle end-to-end recruitment, employee engagement, and payroll management for our technical staff.',
+                responsibilities: [
+                    'Identify and onboard top technical talent.',
+                    'Manage employee relations and conflict resolution.',
+                    'Maintain HR policies and compliance standards.',
+                    'Coordinate team building events.'
+                ],
+                qualifications: [
+                    'MBA in Human Resources or similar.',
+                    '2+ years of experience in IT/Tech recruitment.',
+                    'Deep understanding of labor laws.'
+                ],
+                skills: [
+                    'Exceptional interpersonal and negotiation skills.',
+                    'Strong organizational and time management abilities.',
+                    'Proficiency in HRMS and portal management.',
+                    'Ability to maintain high confidentiality.'
+                ],
+                benefits: [
+                    'Premium work-life balance.',
+                    'Family health insurance plans.',
+                    'Subsidized cafeteria and transport.',
+                    'Leadership training programs.'
+                ]
+            },
+            'marketing': {
+                title: 'Technical Marketing Specialist',
+                type: 'Full-Time',
+                location: 'Remote',
+                about: 'ITSYBTS TECHNOLOGY is expanding its global footprint. We need a voice to represent our engineering excellence to the world.',
+                overview: 'You will translate technical features into marketing benefits, driving brand awareness and high-quality lead generation.',
+                responsibilities: [
+                    'Create technical blogs, whitepapers, and case studies.',
+                    'Manage digital marketing and social media presence.',
+                    'Analyze market trends and competitor products.',
+                    'Run targeted ad campaigns for B2B clients.'
+                ],
+                qualifications: [
+                    'Degrees in Marketing or Engineering.',
+                    'Experience in content creation for SaaS/Hardware.',
+                    'Analytical mindset with ROI-driven focus.'
+                ],
+                skills: [
+                    'Strong writing and storytelling abilities.',
+                    'Familiarity with SEO and Google Analytics.',
+                    'Basic design skills (Canva/Photoshop).',
+                    'Strategic planning and execution.'
+                ],
+                benefits: [
+                    'High commission on lead conversion.',
+                    'Flexible remote working hours.',
+                    'Stock options (ESOPs) for high performers.',
+                    'Exposure to international tech markets.'
+                ]
+            },
+            'pcb': {
+                title: 'PCB Design Specialist',
+                type: 'Full-Time',
+                location: 'Faridabad',
+                about: 'ITSYBTS TECHNOLOGY is a specialized hub for high-precision PCB design and hardware engineering.',
+                overview: 'You will be responsible for creating complex, high-reliability circuit boards for automation and industrial grade IoT devices.',
+                responsibilities: [
+                    'Design multilayer PCBs using Altium or KiCad.',
+                    'Ensure design for manufacturing (DFM) compliance.',
+                    'Coordinate with fabrication houses for production.',
+                    'Review and optimize signal integrity.'
+                ],
+                qualifications: [
+                    'B.Tech in Electronics or Instrumentation.',
+                    '3+ years of expertise in High-Speed PCB Layout.',
+                    'Familiarity with IPC standards.'
+                ],
+                skills: [
+                    'Proficiency in EDA tools (Altium preferred).',
+                    'Knowledge of stackup design and impedance control.',
+                    'Excellent spatial reasoning and problem solving.',
+                    'Strong attention to minute design details.'
+                ],
+                benefits: [
+                    'Competitive industry-standard salary.',
+                    'Relocation assistance for candidates.',
+                    'Health and accidental insurance.',
+                    'Access to advanced prototyping lab.'
+                ]
+            }
+        };
+
+        function openDetails(key) {
+            const data = jobDescriptions[key];
+            const content = `
+                <header class="details-nav">
+                    <div class="container">
+                        <nav>
+                            <div class="logo logo-clickable" onclick="window.location.href='index.html'">
+                                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                                <div class="logo-info">
+                                    <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                                    <span class="logo-subtext">Binary Turbo Smart</span>
+                                </div>
+                            </div>
+                            <ul class="nav-links">
+                                <li class="drawer-header">
+                                    <div class="mobile-close" onclick="closeMobileMenu(this)">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </li>
+                                <li><a href="index.html#home">Home</a></li>
+                                <li class="nav-item mobile-dropdown">
+                                    <a href="javascript:void(0)" onclick="if(window.innerWidth < 992) { this.parentElement.classList.toggle('active-dropdown'); event.preventDefault(); event.stopPropagation(); }">ABOUT US <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li><a href="index.html#about">About Us</a></li>
+                                        <li><a href="leadership.html">Our Leadership</a></li>
+                                        <li><a href="index.html#expertise">In News</a></li>
+                                        <li><a href="careers.html" class="active">Careers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="index.html#services">Services</a></li>
+                                <li><a href="technologies.html">Technologies</a></li>
+                                <li><a href="test-lab.html">Test Lab</a></li>
+                                <li><a href="index.html#process">Process</a></li>
+                                <li><a href="index.html#projects">Projects</a></li>
+                                <li><a href="index.html#products">Products</a></li>
+                                <li><a href="index.html#app">App</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                            <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+                <div class="modal-details-header">
+                    <canvas id="details-canvas"></canvas>
+                    <div class="container">
+                        <h2>${data.title}</h2>
+                    </div>
+                </div>
+                <div class="modal-details-body">
+                    <div class="container">
+                        <ul class="meta-list">
+                            <li><b>Location:</b> ${data.location}</li>
+                            <li><b>Job Type:</b> ${data.type}</li>
+                        </ul>
+
+                        <div class="detail-section">
+                            <h4>About Us</h4>
+                            <p>${data.about}</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>Job Description:</h4>
+                            <p><b>Position Overview:</b> ${data.overview}</p>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>Key Responsibilities:</h4>
+                            <ul>
+                                ${data.responsibilities.map(r => `<li>${r}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>Qualifications:</h4>
+                            <ol>
+                                ${data.qualifications.map(q => `<li>${q}</li>`).join('')}
+                            </ol>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>Skill:</h4>
+                            <ul>
+                                ${data.skills.map(s => `<li>${s}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>Benefits:</h4>
+                            <ul>
+                                ${data.benefits.map(b => `<li>${b}</li>`).join('')}
+                            </ul>
+                        </div>
+
+                        <div class="detail-section">
+                            <h4>How to Apply:</h4>
+                            <p>Interested candidates are invited to submit their resume and cover letter to <b>hr@bts_technology_website.com</b> with the subject line "${data.title} Application".</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-action-bar" style="padding: 40px 20px; background: #f8fafc; border-top: 1px solid #e2e8f0; text-align: center; display: flex; justify-content: center; gap: 20px; position: relative; z-index: 20;">
+                    <button class="apply-btn" onclick="closeDetails(); openJobModal('${data.title}')" style="background: var(--primary); color: #fff; padding: 14px 40px; border-radius: 50px; border: none; font-weight: 800; cursor: pointer; box-shadow: 0 4px 15px rgba(14, 165, 233, 0.3);">Apply Now</button>
+                    <button class="view-btn" onclick="closeDetails()" style="background: #e2e8f0; color: #475569; padding: 14px 40px; border-radius: 50px; border: none; font-weight: 800; cursor: pointer;">Close Details</button>
+                </div>
+
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="footer-top">
+                            <div class="footer-logo">
+                                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                                <div class="logo-info">
+                                    <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                                    <span class="logo-subtext">Binary Turbo Smart</span>
+                                </div>
+                            </div>
+                            <div class="footer-nav">
+                                <a href="index.html#about">About Us</a>
+                                <a href="index.html#services">Services</a>
+                                <a href="index.html#expertise">In News</a>
+                                <a href="faq.html">FAQ</a>
+                                <a href="index.html#contact">Contact Us</a>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href="terms-and-conditions.html">Terms & Conditions</a>
+                            </div>
+                            <div class="footer-social">
+                                <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="container">
+                            <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>How can I help you?</span>
+                            </a>
+                            <div class="copyright-text">
+                                Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link" onclick="window.location.href='login.html'">•</span>
+                            </div>
+                            <a href="index.html#contact" class="chat-widget">
+                                <i class="fas fa-comment-dots"></i>
+                                <span>Leave a message</span>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            `;
+            document.getElementById('details-content').innerHTML = content;
+            document.body.style.overflow = 'hidden'; // Lock main page scroll
+            
+            const modal = document.getElementById('details-modal');
+            modal.style.display = 'flex';
+            
+            // Trigger animation and background hide simultaneously
+            requestAnimationFrame(() => {
+                modal.classList.add('active');
+                document.documentElement.classList.add('hide-main-content');
+            });
+
+            // Initialize Canvas for Modal Header
+            initDetailsCanvas();
+        }
+
+        function initDetailsCanvas() {
+            const dCanvas = document.getElementById('details-canvas');
+            const dCtx = dCanvas.getContext('2d');
+            let dParticles = [];
+
+            dCanvas.width = dCanvas.offsetWidth;
+            dCanvas.height = dCanvas.offsetHeight;
+
+            class DParticle {
+                constructor() {
+                    this.x = Math.random() * dCanvas.width;
+                    this.y = Math.random() * dCanvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.4;
+                    this.vy = (Math.random() - 0.5) * 0.4;
+                    this.size = 2;
+                }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < 0 || this.x > dCanvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > dCanvas.height) this.vy *= -1;
+                }
+                draw() {
+                    dCtx.fillStyle = '#0ea5e9';
+                    dCtx.beginPath(); dCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2); dCtx.fill();
+                }
+            }
+
+            for (let i = 0; i < 60; i++) dParticles.push(new DParticle());
+
+            function animateDetails() {
+                if (!document.getElementById('details-modal').classList.contains('active')) return;
+                dCtx.clearRect(0, 0, dCanvas.width, dCanvas.height);
+                dCtx.beginPath();
+                dCtx.strokeStyle = 'rgba(14, 165, 233, 0.1)';
+                for (let i = 0; i < dParticles.length; i++) {
+                    for (let j = i + 1; j < dParticles.length; j++) {
+                        const dist = Math.sqrt(Math.pow(dParticles[i].x - dParticles[j].x, 2) + Math.pow(dParticles[i].y - dParticles[j].y, 2));
+                        if (dist < 120) {
+                            dCtx.moveTo(dParticles[i].x, dParticles[i].y);
+                            dCtx.lineTo(dParticles[j].x, dParticles[j].y);
+                        }
+                    }
+                }
+                dCtx.stroke();
+                dParticles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animateDetails);
+            }
+            animateDetails();
+        }
+
+        function closeDetails() {
+            document.getElementById('details-modal').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore body scroll
+            document.documentElement.classList.remove('hide-main-content');
+        }
+
+        function openJobModal(title) {
+            const modalBox = document.querySelector('#job-modal .modal-box');
+            modalBox.innerHTML = `
+                <header class="details-nav">
+                    <div class="container">
+                        <nav>
+                            <div class="logo logo-clickable" onclick="window.location.href='index.html'">
+                                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                                <div class="logo-info">
+                                    <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                                    <span class="logo-subtext">Binary Turbo Smart</span>
+                                </div>
+                            </div>
+                            <ul class="nav-links">
+                                <li class="drawer-header">
+                                    <div class="mobile-close" onclick="closeMobileMenu(this)">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </li>
+                                <li><a href="index.html#home">Home</a></li>
+                                <li class="nav-item mobile-dropdown">
+                                    <a href="javascript:void(0)" onclick="if(window.innerWidth < 992) { this.parentElement.classList.toggle('active-dropdown'); event.preventDefault(); event.stopPropagation(); }">ABOUT US <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li><a href="index.html#about">About Us</a></li>
+                                        <li><a href="leadership.html">Our Leadership</a></li>
+                                        <li><a href="index.html#expertise">In News</a></li>
+                                        <li><a href="careers.html" class="active">Careers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="index.html#services">Services</a></li>
+                                <li><a href="technologies.html">Technologies</a></li>
+                                <li><a href="test-lab.html">Test Lab</a></li>
+                                <li><a href="index.html#process">Process</a></li>
+                                <li><a href="index.html#projects">Projects</a></li>
+                                <li><a href="index.html#products">Products</a></li>
+                                <li><a href="index.html#app">App</a></li>
+                                <li><a href="index.html#contact">Contact</a></li>
+                            </ul>
+                            <div class="menu-toggle" onclick="toggleMobileMenu()">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+
+                <div class="modal-details-header">
+                    <canvas id="apply-canvas"></canvas>
+                    <div class="container">
+                        <h2>Application Form</h2>
+                        <p style="color: #fff; opacity: 0.9; font-size: 18px; font-weight: 500;">Apply for: <b style="color: var(--primary);">${title}</b> — Start your journey with itsybts</p>
+                    </div>
+                </div>
+
+                <div class="modal-details-body" style="background: #f8fafc; padding: 80px 20px;">
+                    <div class="container" style="max-width: 800px; margin: 0 auto;">
+                        <form id="application-form" onsubmit="submitApplication(event)" style="background: #fff; padding: 50px; border-radius: 30px; border: 1px solid #e2e8f0; box-shadow: 0 20px 50px rgba(0,0,0,0.05); color: #334155;">
+                            <input type="hidden" id="job-role-input" value="${title}">
+                            
+                            <div style="margin-bottom: 30px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px;">
+                                <h3 style="font-size: 22px; color: #0f172a; margin-bottom: 8px;">Personal Information</h3>
+                                <p style="font-size: 14px; color: #64748b;">Please provide your contact details so we can reach you.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color: #475569;">Full Name</label>
+                                <input type="text" id="app-name" placeholder="Enter your full name" required style="background: #fff; border: 1px solid #cbd5e1; color: #0f172a;">
+                            </div>
+                            
+                            <div class="flex-row" style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                <div class="form-group" style="flex: 1; min-width: 250px;">
+                                    <label style="color: #475569;">Email Address</label>
+                                    <input type="email" id="app-email" placeholder="email@example.com" required style="background: #fff; border: 1px solid #cbd5e1; color: #0f172a;">
+                                </div>
+                                <div class="form-group" style="flex: 1; min-width: 250px;">
+                                    <label style="color: #475569;">Phone Number</label>
+                                    <input type="tel" id="app-phone" placeholder="9876543210" maxlength="10" required style="background: #fff; border: 1px solid #cbd5e1; color: #0f172a;">
+                                </div>
+                            </div>
+
+                            <div style="margin: 40px 0 30px; border-bottom: 1px solid #f1f5f9; padding-bottom: 20px;">
+                                <h3 style="font-size: 22px; color: #0f172a; margin-bottom: 8px;">Experience & Skills</h3>
+                                <p style="font-size: 14px; color: #64748b;">Tell us about your background and qualifications.</p>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color: #475569;">Professional Qualification</label>
+                                <select id="app-edu" required style="background: #fff; border: 1px solid #cbd5e1; color: #0f172a;">
+                                    <option value="" disabled selected>Select Qualification</option>
+                                    <option value="Diploma">Diploma</option>
+                                    <option value="B-Tech">B-Tech</option>
+                                    <option value="Post Graduate">Post Graduate</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label style="color: #475569;">Experience (Years)</label>
+                                <select id="app-exp" style="background: #fff; border: 1px solid #cbd5e1; color: #0f172a;">
+                                    <option value="Fresher">Fresher</option>
+                                    <option value="1-2 Years">1-2 Years</option>
+                                    <option value="3-5 Years">3-5 Years</option>
+                                    <option value="5+ Years">5+ Years</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="color: #475569;">Upload Resume (PDF/DOC)</label>
+                                <div class="file-upload-box" onclick="document.getElementById('app-resume').click()" style="background: #f8fafc; border: 2px dashed #cbd5e1;">
+                                    <i class="fas fa-cloud-upload-alt" style="color: var(--primary);"></i>
+                                    <p id="file-name-display" style="color: #64748b;">Click to select file</p>
+                                    <input type="file" id="app-resume" class="hidden-input" accept=".pdf,.doc,.docx"
+                                        onchange="handleFileSelect(this)" required>
+                                </div>
+                            </div>
+
+                            <div style="margin-top: 50px; display: flex; gap: 20px; justify-content: center;">
+                                <button type="button" onclick="closeJobModal()" style="padding: 16px 40px; border-radius: 50px; border: 1px solid #cbd5e1; background: #fff; color: #64748b; font-weight: 800; cursor: pointer; transition: 0.3s;">Cancel</button>
+                                <button type="submit" class="btn-submit" style="width: auto; padding: 16px 60px; margin: 0; box-shadow: 0 10px 30px rgba(14, 165, 233, 0.4);">Post Application</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="footer-top">
+                            <div class="footer-logo">
+                                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                                <div class="logo-info">
+                                    <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                                    <span class="logo-subtext">Binary Turbo Smart</span>
+                                </div>
+                            </div>
+                            <div class="footer-nav">
+                                <a href="index.html#about">About Us</a>
+                                <a href="index.html#services">Services</a>
+                                <a href="index.html#expertise">In News</a>
+                                <a href="faq.html">FAQ</a>
+                                <a href="index.html#contact">Contact Us</a>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href="terms-and-conditions.html">Terms & Conditions</a>
+                            </div>
+                            <div class="footer-social">
+                                <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="container">
+                            <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>How can I help you?</span>
+                            </a>
+                            <div class="copyright-text">
+                                Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link" onclick="window.location.href='login.html'">•</span>
+                            </div>
+                            <a href="index.html#contact" class="chat-widget">
+                                <i class="fas fa-comment-dots"></i>
+                                <span>Leave a message</span>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            `;
+
+            document.getElementById('job-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // Animation for Application Hero
+            initApplyParticles();
+        }
+
+        function initApplyParticles() {
+            const aCanvas = document.getElementById('apply-canvas');
+            if (!aCanvas) return;
+            const aCtx = aCanvas.getContext('2d');
+            let aParticles = [];
+            
+            aCanvas.width = aCanvas.offsetWidth;
+            aCanvas.height = aCanvas.offsetHeight;
+
+            class AParticle {
+                constructor() {
+                    this.x = Math.random() * aCanvas.width;
+                    this.y = Math.random() * aCanvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.6;
+                    this.vy = (Math.random() - 0.5) * 0.6;
+                    this.size = Math.random() * 2 + 1;
+                }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < 0 || this.x > aCanvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > aCanvas.height) this.vy *= -1;
+                }
+                draw() {
+                    aCtx.fillStyle = 'rgba(14, 165, 233, 0.4)';
+                    aCtx.beginPath(); aCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2); aCtx.fill();
+                }
+            }
+
+            for (let i = 0; i < 60; i++) aParticles.push(new AParticle());
+
+            function animateApply() {
+                if (!document.getElementById('job-modal').classList.contains('active')) return;
+                aCtx.clearRect(0, 0, aCanvas.width, aCanvas.height);
+                aCtx.beginPath();
+                aCtx.strokeStyle = 'rgba(14, 165, 233, 0.1)';
+                for (let i = 0; i < aParticles.length; i++) {
+                    for (let j = i + 1; j < aParticles.length; j++) {
+                        const dist = Math.sqrt(Math.pow(aParticles[i].x - aParticles[j].x, 2) + Math.pow(aParticles[i].y - aParticles[j].y, 2));
+                        if (dist < 120) {
+                            aCtx.moveTo(aParticles[i].x, aParticles[i].y);
+                            aCtx.lineTo(aParticles[j].x, aParticles[j].y);
+                        }
+                    }
+                }
+                aCtx.stroke();
+                aParticles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animateApply);
+            }
+            animateApply();
+        }
+
+        function closeJobModal() {
+            document.getElementById('job-modal').classList.remove('active');
+            document.body.style.overflow = 'auto'; // Restore body scroll
+            document.querySelector('#job-modal .modal-box').innerHTML = ""; // Clear content
+        }
+
+        function handleFileSelect(input) {
+            if (input.files && input.files[0]) {
+                document.getElementById('file-name-display').innerText = input.files[0].name;
+            }
+        }
+
+        function submitApplication(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('app-name').value;
+            const email = document.getElementById('app-email').value;
+            const phone = document.getElementById('app-phone').value;
+            const role = document.getElementById('job-role-input').value;
+            const edu = document.getElementById('app-edu').value;
+            const exp = document.getElementById('app-exp').value;
+            const fileInput = document.getElementById('app-resume');
+
+            const appId = 'APP-' + Date.now();
+
+            // Strict Phone Number Validation (10 digits)
+            const phoneRegex = /^[6-9]\d{9}$/;
+            if (!phoneRegex.test(phone)) {
+                alert("Please enter a valid 10-digit mobile number starting with 6-9.");
+                return;
+            }
+
+            const saveResumeAndSend = (fileBase64 = null, fileName = 'No file') => {
+                const application = {
+                    id: appId,
+                    type: 'Job Application',
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    service: role,
+                    subject: edu,
+                    message: "Experience: " + exp,
+                    resume: fileName,
+                    resumeData: fileBase64,
+                    status: 'New',
+                    date: new Date().toISOString()
+                };
+
+                let allLeads = JSON.parse(localStorage.getItem('bts_leads') || '[]');
+                allLeads.push(application);
+                localStorage.setItem('bts_leads', JSON.stringify(allLeads));
+
+                alert("Thank you! Your application for " + role + " has been submitted successfully.");
+                closeJobModal();
+            };
+
+            if (fileInput.files[0]) {
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    saveResumeAndSend(event.target.result, fileInput.files[0].name);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                saveResumeAndSend();
+            }
+        }
+
+        // Auto-open job details if hash exists (e.g., careers.html#hardware)
+        const checkHashAndOpen = () => {
+            const hash = window.location.hash.substring(1);
+            if (hash && typeof jobDescriptions !== 'undefined' && jobDescriptions[hash]) {
+                openDetails(hash);
+            }
+        };
+
+        // Run as soon as possible (script is already at bottom)
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', checkHashAndOpen);
+        } else {
+            checkHashAndOpen();
+        }
+
+        window.addEventListener('hashchange', checkHashAndOpen);
+
+    </script>
+    <script>
+        
+    </script>
+    <script>
+        function toggleMobileMenu(btn) {
+            const parent = btn ? btn.closest('nav') || btn.closest('header') : document.getElementById('header');
+            const nav = parent.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        }
+
+        function closeMobileMenu(btn) {
+            const nav = btn ? btn.closest('.nav-links') : document.querySelector('.nav-links.active');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.remove('active');
+            setTimeout(() => {
+                if (!document.querySelector('.nav-links.active')) {
+                    if (overlay) overlay.classList.remove('active');
+                }
+            }, 50);
+            document.querySelectorAll('.mobile-dropdown').forEach(item => {
+                item.classList.remove('active-dropdown');
+            });
+        }
+    </script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itsybts ID Card & Visiting Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .print-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .card-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        /* Business Card Standard Size: 3.5in x 2in */
+        .business-card {
+            width: 3.5in;
+            height: 2in;
+            background: linear-gradient(135deg, #001f3f 0%, #001f3f 85%, #00bfff 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
+            padding: 15px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .card-info {
+            z-index: 2;
+            flex: 1;
+        }
+
+        .card-info h2 {
+            font-size: 18px;
+            margin: 0 0 5px 0;
+            color: #00bfff;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .card-info h3 {
+            font-size: 10px;
+            margin: 0 0 10px 0;
+            font-weight: 400;
+            color: #ddd;
+        }
+
+        .contact-details {
+            font-size: 9px;
+            line-height: 1.4;
+        }
+
+        .contact-details i {
+            width: 12px;
+            color: #00bfff;
+        }
+
+        .qr-section {
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 5px;
+            border-radius: 5px;
+            margin-left: 10px;
+        }
+
+        .qr-section img {
+            width: 70px;
+            height: 70px;
+        }
+
+        .qr-section span {
+            color: #333;
+            font-size: 6px;
+            font-weight: bold;
+            margin-top: 3px;
+            text-align: center;
+        }
+
+        /* Decorative Elements */
+        .circle-1 {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            top: -20px;
+            right: -20px;
+        }
+
+        .circle-2 {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 2px solid rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            top: -45px;
+            right: -45px;
+        }
+
+        @media print {
+            body {
+                background-color: white;
+            }
+
+            .print-btn {
+                display: none;
+            }
+
+            .card-container {
+                gap: 0;
+                display: block;
+            }
+
+            .business-card {
+                page-break-inside: avoid;
+                margin-bottom: 20px;
+                border: 1px solid #ddd;
+                /* Helper border for cutting */
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <button class="print-btn" onclick="window.print()">Print Card</button>
+
+    <div class="card-container">
+        <!-- Front Side -->
+        <div class="business-card">
+            <div class="circle-1"></div>
+            <div class="circle-2"></div>
+
+            <div class="card-info">
+                <h2>ITSYBTS TECHNOLOGY</h2>
+                <h3>Binary Turbo Smart Technology</h3>
+
+                <div class="contact-details">
+                    <p><i class="fas fa-user-tie"></i> Vivek Kumar Bhardwaj</p>
+                    <p><i class="fas fa-phone-alt"></i> +91 7052050656</p>
+                    <p><i class="fas fa-envelope"></i> itsybtstechnology007@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Sharmik Vihar Sec 30, Faridabad, Haryana</p>
+                </div>
+            </div>
+
+            <div class="qr-section">
+                <!-- QR Code points to the website -->
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://69c350425f02764d1c7f1fe7--harmonious-cheesecake-4f3245.netlify.app/"
+                    alt="Scan to Visit Website">
+                <span>SCAN TO WEBSITE</span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+

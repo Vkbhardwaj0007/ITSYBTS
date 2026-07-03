@@ -1,0 +1,35 @@
+<svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="cyberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#0EA5E9;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#22D3EE;stop-opacity:1" />
+        </linearGradient>
+        <filter id="softGlow">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feMerge>
+                <feMergeNode in="blur" />
+                <feMergeNode in="SourceGraphic" />
+            </feMerge>
+        </filter>
+    </defs>
+
+    <!-- Hexagon Shield Base -->
+    <path d="M 200 50 L 330 125 L 330 275 L 200 350 L 70 275 L 70 125 Z" fill="none" stroke="url(#cyberGrad)"
+        stroke-width="4" stroke-opacity="0.3" />
+
+    <!-- Core BTS Symbol -->
+    <g filter="url(#softGlow)">
+        <!-- The 'T' and 'S' Fusion -->
+        <path d="M 120 120 L 280 120 M 200 120 L 200 280 L 280 280" fill="none" stroke="white" stroke-width="20"
+            stroke-linecap="round" stroke-linejoin="round" />
+
+        <!-- The 'B' Curve -->
+        <path d="M 120 180 C 180 180 180 120 120 120 M 120 280 C 180 280 180 220 120 220" fill="none"
+            stroke="url(#cyberGrad)" stroke-width="20" stroke-linecap="round" />
+
+        <!-- Connection Nodes -->
+        <circle cx="280" cy="120" r="8" fill="#22D3EE" />
+        <circle cx="120" cy="120" r="8" fill="white" />
+        <circle cx="280" cy="280" r="8" fill="#0EA5E9" />
+    </g>
+</svg>

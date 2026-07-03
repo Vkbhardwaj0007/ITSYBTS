@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="ITSYBTS TECHNOLOGY - Professional QR Code Generator. Create custom, high-quality QR codes for your business and personal needs.">
+    <title>QR Code Generator | ITSYBTS TECHNOLOGY</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .qr-hero {
+            padding-top: 150px;
+            padding-bottom: 80px;
+            background: radial-gradient(circle at top right, rgba(14, 165, 233, 0.1), transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(6, 214, 160, 0.05), transparent 40%);
+        }
+
+        .qr-card {
+            background: var(--dark-2);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            max-width: 900px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        @media (max-width: 768px) {
+            .qr-card {
+                grid-template-columns: 1fr;
+                padding: 24px;
+            }
+        }
+
+        .qr-input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .qr-label {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .qr-input {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 16px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .qr-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(14, 165, 233, 0.05);
+            box-shadow: 0 0 15px rgba(14, 165, 233, 0.1);
+        }
+
+        .qr-display {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            padding: 30px;
+            border-radius: 16px;
+            min-height: 300px;
+            position: relative;
+            overflow: hidden;
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+
+        .qr-display img {
+            max-width: 100%;
+            height: auto;
+            transition: transform 0.3s;
+        }
+
+        .qr-display.loading::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            -webkit-backdrop-filter: blur(2px);
+            backdrop-filter: blur(2px);
+        }
+
+        .qr-placeholder {
+            color: #ccc;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .qr-actions {
+            margin-top: 20px;
+            display: flex;
+            gap: 12px;
+        }
+
+        .btn-download {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 700;
+            cursor: pointer;
+            flex: 1;
+            transition: transform 0.2s;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-2px);
+            filter: brightness(1.1);
+        }
+
+        .btn-copy {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid var(--glass-border);
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-copy:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .success-toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--accent);
+            color: var(--dark);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+            transform: translateY(100px);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 2000;
+        }
+
+        .success-toast.active {
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Backdrop Overlay for Mobile Drawer -->
+    <div class="drawer-overlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Circuit Background -->
+    
+
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">EXPERTISE <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">OUR WORK <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)" style="color: #06d6a0; font-weight: 800;"><i
+                                class="fas fa-helicopter"></i> Drone 2030</a></li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="qr-hero">
+        <div class="container">
+            <div class="reveal text-center mb-50">
+                <span class="section-tag section-context-tag">Innovation Tool</span>
+                <h1 class="fs-48 fw-900 text-white mt-30">QR Code <span>Generator</span></h1>
+                <p class="text-muted-alt mx-auto max-w-700" style="margin-top: 15px;">
+                    Generate high-resolution QR codes for URLs, contact information, or plain text. Professional solutions by ITSYBTS TECHNOLOGY.
+                </p>
+            </div>
+
+            <div class="qr-card reveal">
+                <div class="qr-input-group">
+                    <div>
+                        <label class="qr-label">Target URL / Text</label>
+                        <input type="text" id="qr-input" class="qr-input w-full mt-10" placeholder="https://example.com" value="https://69c350425f02764d1c7f1fe7--harmonious-cheesecake-4f3245.netlify.app/">
+                    </div>
+                    <div>
+                        <label class="qr-label">Size (px)</label>
+                        <select id="qr-size" class="qr-input w-full mt-10" title="QR Code Dimensions">
+                            <option value="150">150 x 150 (Small)</option>
+                            <option value="300" selected>300 x 300 (Standard)</option>
+                            <option value="500">500 x 500 (High Res)</option>
+                            <option value="1000">1000 x 1000 (Print Ready)</option>
+                        </select>
+                    </div>
+                    <button class="btn-primary w-full mt-20" onclick="generateQR()">Update QR Code</button>
+                    
+                    <div class="qr-actions">
+                        <button class="btn-download" onclick="downloadQR()">
+                            <i class="fas fa-download mr-10"></i> Download Image
+                        </button>
+                    </div>
+                </div>
+
+                <div class="qr-display-container">
+                    <div id="qr-display" class="qr-display">
+                        <img id="qr-image" src="" alt="Generated QR Code">
+                        <div id="qr-placeholder" class="qr-placeholder">Type something to generate</div>
+                    </div>
+                    <p class="text-center mt-20 fs-14 text-muted">
+                        <i class="fas fa-info-circle mr-5"></i> Right-click the image to save manually
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="success-toast" class="success-toast">
+        <i class="fas fa-check-circle mr-10"></i> QR Code Generated!
+    </div>
+
+    <!-- Scripts -->
+    <script>
+        function generateQR() {
+            const input = document.getElementById('qr-input').value.trim();
+            const size = document.getElementById('qr-size').value;
+            const img = document.getElementById('qr-image');
+            const placeholder = document.getElementById('qr-placeholder');
+            const display = document.getElementById('qr-display');
+            const toast = document.getElementById('success-toast');
+
+            if (!input) {
+                img.style.display = 'none';
+                placeholder.style.display = 'block';
+                return;
+            }
+
+            display.classList.add('loading');
+            img.style.display = 'block';
+            placeholder.style.display = 'none';
+
+            const qrUrl = `https://api.qrserver.com/v1/create-qr-code/?size=${size}x${size}&data=${encodeURIComponent(input)}`;
+            
+            img.onload = () => {
+                display.classList.remove('loading');
+                toast.classList.add('active');
+                setTimeout(() => toast.classList.remove('active'), 3000);
+            };
+            
+            img.src = qrUrl;
+        }
+
+        async function downloadQR() {
+            const img = document.getElementById('qr-image');
+            if (!img.src || img.src.includes('undefined')) return;
+
+            try {
+                const response = await fetch(img.src);
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = 'BTS_QR_Code.png';
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                window.URL.revokeObjectURL(url);
+            } catch (err) {
+                console.error('Download failed', err);
+                // Fallback: Open in new tab
+                window.open(img.src, '_blank');
+            }
+        }
+
+        // Initialize with user's URL
+        window.onload = () => {
+            generateQR();
+            initCircuitBg();
+        };
+
+        // Re-use circuit background logic
+        function initCircuitBg() {
+            const canvas = document.getElementById('circuit-bg');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            let w, h;
+            const nodes = [];
+
+            function resize() {
+                w = canvas.width = window.innerWidth;
+                h = canvas.height = window.innerHeight;
+            }
+
+            window.addEventListener('resize', resize);
+            resize();
+
+            class Node {
+                constructor() {
+                    this.x = Math.random() * w;
+                    this.y = Math.random() * h;
+                    this.vx = (Math.random() - 0.5) * 0.5;
+                    this.vy = (Math.random() - 0.5) * 0.5;
+                    this.size = Math.random() * 2 + 1;
+                }
+                update() {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                    if (this.x < 0 || this.x > w) this.vx *= -1;
+                    if (this.y < 0 || this.y > h) this.vy *= -1;
+                }
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(14, 165, 233, 0.3)';
+                    ctx.fill();
+                }
+            }
+
+            for (let i = 0; i < 50; i++) nodes.push(new Node());
+
+            function animate() {
+                ctx.clearRect(0, 0, w, h);
+                nodes.forEach(node => {
+                    node.update();
+                    node.draw();
+                });
+                
+                // Draw lines
+                ctx.lineWidth = 0.5;
+                for (let i = 0; i < nodes.length; i++) {
+                    for (let j = i + 1; j < nodes.length; j++) {
+                        const dx = nodes[i].x - nodes[j].x;
+                        const dy = nodes[i].y - nodes[j].y;
+                        const dist = Math.sqrt(dx * dx + dy * dy);
+                        if (dist < 150) {
+                            ctx.strokeStyle = `rgba(14, 165, 233, ${0.2 * (1 - dist / 150)})`;
+                            ctx.beginPath();
+                            ctx.moveTo(nodes[i].x, nodes[i].y);
+                            ctx.lineTo(nodes[j].x, nodes[j].y);
+                            ctx.stroke();
+                        }
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+
+        // Scroll Reveal
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+    <!-- Standard Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#expertise">In News</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="index.html#contact">Contact Us</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener"
+                        title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank"
+                        rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>How can I help you?</span>
+                </a>
+                <div class="copyright-text">
+                    Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link"
+                        onclick="window.location.href='login.html'">•</span>
+                </div>
+                <a href="index.html#contact" class="chat-widget">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Leave a message</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMobileMenu(btn) {
+            const parent = btn ? btn.closest('nav') : document.getElementById('header');
+            const nav = parent.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const nav = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+        }
+    </script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+

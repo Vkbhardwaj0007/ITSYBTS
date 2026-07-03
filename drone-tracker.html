@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itsybts Drone - Cinematic 3D Tracking</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body { padding-top: 80px; text-align: center; }
+        .tracker-panel { max-width: 900px; margin: 40px auto; padding: 30px; background: rgba(15, 23, 42, 0.7); backdrop-filter: blur(10px); border-radius: 12px; border: 1px solid rgba(255,255,255,0.1); }
+        .input-group { margin-bottom: 20px; }
+        input { padding: 12px; width: 50%; border-radius: 8px; border: 1px solid #333; background: #0a0f1c; color: #fff; font-size: 16px; margin-right: 10px; }
+        
+        /* 3D Container */
+        #container-3d { width: 100%; height: 500px; background: #000; border-radius: 12px; margin: 20px 0; display: none; overflow: hidden; position: relative; border: 1px solid var(--glass-border); }
+        
+        .status-text { font-size: 22px; font-weight: bold; margin-bottom: 10px; color: #fff; }
+        .otp-panel { display: none; margin-top: 20px; padding: 20px; border: 1px dashed var(--accent); border-radius: 8px; }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">EXPERTISE <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">OUR WORK <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)" style="color: #06d6a0; font-weight: 800;"><i
+                                class="fas fa-helicopter"></i> Drone 2030</a></li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="tracker-panel">
+            <h2>Track Your Delivery</h2>
+            <p class="text-muted mb-20">Enter your Order ID to watch the live simulation</p>
+            
+            <div class="input-group">
+                <input type="text" id="track-order-id" placeholder="Enter Order ID">
+                <button class="btn-primary" onclick="trackOrder()">Connect to Drone Cam</button>
+            </div>
+
+            <div id="tracker-ui" style="display: none;">
+                <div class="status-text" id="status-text">Connecting...</div>
+                <p id="details-text" class="text-muted"></p>
+
+                <!-- 3D Scene Container -->
+                <div id="container-3d"></div>
+
+                <div class="otp-panel" id="otp-panel">
+                    <h4><i class="fas fa-box"></i> Drone has landed!</h4>
+                    <p style="font-size: 14px; margin-bottom: 15px;">Enter your 4-digit Customer OTP to release your package.</p>
+                    <input type="text" id="customer-otp" placeholder="XXXX" style="width: 150px; text-align: center; letter-spacing: 5px;">
+                    <button class="btn-primary" onclick="verifyDelivery()">Verify & Receive</button>
+                    <p id="delivery-msg" style="margin-top: 10px; color: var(--accent); display: none;"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        const API_URL = 'http://localhost:5000/api/drones';
+        let currentOrderId = null;
+        let trackInterval = null;
+
+        // 3D Variables
+        let scene, camera, renderer, drone, payload, grid, props = [];
+        let droneState = 'WAITING'; // WAITING, LOADING, READY, TAKEOFF, FLYING, LANDING, LANDED, DROPPING, ASCENDING
+        let is3DInitialized = false;
+
+        function init3D() {
+            if(is3DInitialized) return;
+            is3DInitialized = true;
+            const container = document.getElementById('container-3d');
+            container.style.display = 'block';
+
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color(0x0a0f1c);
+            scene.fog = new THREE.Fog(0x0a0f1c, 10, 50);
+
+            // Infinite Floor Grid
+            grid = new THREE.GridHelper(100, 100, 0x0ea5e9, 0x222222);
+            scene.add(grid);
+
+            // Landing circle
+            const padGeo = new THREE.RingGeometry(2, 2.5, 32);
+            const padMat = new THREE.MeshBasicMaterial({ color: 0x06d6a0, side: THREE.DoubleSide });
+            const pad = new THREE.Mesh(padGeo, padMat);
+            pad.rotation.x = Math.PI / 2;
+            pad.position.y = 0.01;
+            scene.add(pad);
+
+            camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 100);
+            camera.position.set(-6, 5, 12); // Angled cinematic view
+            camera.lookAt(0, 3, 0);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            container.appendChild(renderer.domElement);
+
+            // Build Drone
+            drone = new THREE.Group();
+            const bodyMat = new THREE.MeshPhongMaterial({ color: 0x111111, specular: 0x0ea5e9 });
+            const body = new THREE.Mesh(new THREE.BoxGeometry(2, 0.6, 2), bodyMat);
+            drone.add(body);
+
+            // Arms & Props
+            const armGeo = new THREE.CylinderGeometry(0.15, 0.15, 3);
+            const armMat = new THREE.MeshPhongMaterial({ color: 0x333333 });
+            const propGeo = new THREE.BoxGeometry(1.5, 0.1, 0.1);
+            const propMat = new THREE.MeshPhongMaterial({ color: 0x06d6a0, emissive: 0x06d6a0, emissiveIntensity: 0.5 });
+
+            const positions = [
+                { x: 1.8, z: 1.8, rotY: Math.PI / 4 },
+                { x: -1.8, z: 1.8, rotY: -Math.PI / 4 },
+                { x: 1.8, z: -1.8, rotY: -Math.PI / 4 },
+                { x: -1.8, z: -1.8, rotY: Math.PI / 4 }
+            ];
+
+            positions.forEach(pos => {
+                const arm = new THREE.Mesh(armGeo, armMat);
+                arm.position.set(pos.x / 2, 0, pos.z / 2);
+                arm.rotation.z = Math.PI / 2;
+                arm.rotation.y = pos.rotY;
+                drone.add(arm);
+
+                const prop = new THREE.Mesh(propGeo, propMat);
+                prop.position.set(pos.x, 0.4, pos.z);
+                drone.add(prop);
+                props.push(prop);
+            });
+
+            // Payload Box (Starts detached for Loading Animation)
+            const payloadGeo = new THREE.BoxGeometry(1.2, 1, 1.2);
+            const payloadMat = new THREE.MeshPhongMaterial({ color: 0xffaa00 });
+            payload = new THREE.Mesh(payloadGeo, payloadMat);
+            payload.position.set(-10, 0.5, 0); // Start off-screen
+            payload.visible = false;
+            scene.add(payload);
+
+            scene.add(drone);
+            drone.position.y = 1.8; // Start on ground
+            drone.visible = false;
+
+            // Lights
+            scene.add(new THREE.AmbientLight(0xffffff, 0.4));
+            const light = new THREE.PointLight(0x0ea5e9, 2, 50);
+            light.position.set(0, 10, 5);
+            scene.add(light);
+
+            animate();
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            // Spin propellers rapidly if not waiting
+            if(droneState !== 'WAITING') {
+                props.forEach((prop, i) => prop.rotation.y += (i % 2 === 0 ? 0.6 : -0.6));
+            }
+
+            if (droneState === 'LOADING') {
+                drone.visible = true;
+                drone.position.y = 1.8;
+                payload.visible = true;
+                payload.position.x += 0.15; // Slide box under drone
+                
+                // Pan camera slightly to follow
+                camera.position.x += (0 - camera.position.x) * 0.05;
+
+                if (payload.position.x >= 0) {
+                    payload.position.x = 0;
+                    drone.add(payload); // Physically attach box to drone
+                    payload.position.set(0, -0.8, 0);
+                    droneState = 'READY';
+                }
+            } else if (droneState === 'READY') {
+                drone.position.y = 1.8; // Awaiting takeoff command
+            } else if (droneState === 'TAKEOFF') {
+                drone.position.y += 0.15; // Ascend quickly
+                if (drone.position.y >= 12) {
+                    droneState = 'FLYING';
+                }
+            } else if (droneState === 'FLYING') {
+                drone.position.y = 12 + Math.sin(Date.now() * 0.002) * 0.5; // Hover
+                drone.rotation.z = -0.15; // Lean forward to simulate thrust
+                
+                // Move grid backwards to simulate forward speed!
+                grid.position.z += 0.8; 
+                if (grid.position.z >= 1) grid.position.z = 0; // Infinite loop
+
+            } else if (droneState === 'LANDING') {
+                drone.rotation.z *= 0.9; // Level out
+                drone.position.y -= 0.1; // Descend
+                if (drone.position.y <= 1.8) {
+                    drone.position.y = 1.8;
+                    droneState = 'LANDED';
+                    // Trigger OTP UI
+                    document.getElementById('otp-panel').style.display = 'block';
+                    document.getElementById('status-text').innerText = "Drone Landed! Enter OTP to receive package.";
+                    clearInterval(trackInterval); // Stop polling
+                }
+            } else if (droneState === 'LANDED') {
+                drone.position.y = 1.8 + Math.sin(Date.now() * 0.005) * 0.05; // Gentle ground hover
+            } else if (droneState === 'DROPPING') {
+                scene.attach(payload); // Detach from drone to world space
+                payload.position.y -= 0.05;
+                if (payload.position.y <= 0.5) {
+                    payload.position.y = 0.5; // Hit the ground
+                    droneState = 'ASCENDING';
+                }
+            } else if (droneState === 'ASCENDING') {
+                drone.position.y += 0.2; // Fly away fast
+                if (drone.position.y > 25) {
+                    drone.visible = false;
+                }
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        async function trackOrder() {
+            const orderId = document.getElementById('track-order-id').value;
+            if(!orderId) return;
+            currentOrderId = orderId;
+            document.getElementById('tracker-ui').style.display = 'block';
+            
+            init3D();
+            checkStatus();
+            if(trackInterval) clearInterval(trackInterval);
+            trackInterval = setInterval(checkStatus, 3000); // Poll API every 3s
+        }
+
+        let hasTakenOff = false;
+
+        async function checkStatus() {
+            const res = await fetch(`${API_URL}/orders`);
+            const orders = await res.json();
+            const order = orders.find(o => o._id === currentOrderId);
+            
+            if(!order) {
+                document.getElementById('status-text').innerText = "Order not found!";
+                return;
+            }
+
+            document.getElementById('details-text').innerText = `Item: ${order.item} | Destination: ${order.address}`;
+            const statusText = document.getElementById('status-text');
+
+            if(order.status === 'PENDING') {
+                statusText.innerText = "Order Received. Awaiting Admin Assignment...";
+                droneState = 'WAITING';
+                drone.visible = false;
+            } else if (order.status === 'ACCEPTED') {
+                if(droneState !== 'READY') {
+                    statusText.innerText = "Drone Assigned! Packaging in progress...";
+                    droneState = 'LOADING'; // Trigger the slide-in animation
+                }
+            } else if (order.status === 'DISPATCHED') {
+                if(!hasTakenOff) {
+                    statusText.innerText = "Drone Dispatched! Taking off...";
+                    droneState = 'TAKEOFF';
+                    hasTakenOff = true;
+                    // Simulate travel time, then trigger landing
+                    setTimeout(() => {
+                        droneState = 'LANDING';
+                        statusText.innerText = "Drone is descending...";
+                    }, 5000);
+                }
+            } else if (order.status === 'DELIVERED') {
+                statusText.innerText = "Package Delivered Successfully! 🎉";
+                statusText.style.color = 'var(--accent)';
+                document.getElementById('otp-panel').style.display = 'none';
+                if(droneState !== 'ASCENDING') droneState = 'DROPPING';
+                clearInterval(trackInterval);
+            }
+        }
+
+        async function verifyDelivery() {
+            const otp = document.getElementById('customer-otp').value;
+            const res = await fetch(`${API_URL}/deliver`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ orderId: currentOrderId, otp })
+            });
+            const data = await res.json();
+            const msg = document.getElementById('delivery-msg');
+            msg.style.display = 'block';
+            if (data.error) {
+                msg.style.color = '#ff4d4d';
+                msg.innerText = data.error;
+            } else {
+                msg.style.color = 'var(--accent)';
+                msg.innerText = "OTP Verified! Releasing Package...";
+                document.getElementById('status-text').innerText = "Package Delivered Successfully! 🎉";
+                document.getElementById('status-text').style.color = 'var(--accent)';
+                document.getElementById('otp-panel').style.display = 'none';
+                droneState = 'DROPPING'; // Trigger drop animation
+            }
+        }
+    </script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

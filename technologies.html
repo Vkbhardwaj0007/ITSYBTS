@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Technologies | ITSYBTS TECHNOLOGY</title>
+    <meta name="description" content="Explore the cutting-edge technologies powering ITSYBTS TECHNOLOGY — IoT, Embedded Systems, Automation, Cloud Integration and more.">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+
+        /* ===== HERO ===== */
+        .tech-hero {
+            position: relative;
+            height: 500px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+        }
+        .tech-hero-bg {
+            position: absolute; inset: 0;
+            background: url('images/technology_hero.png') center/cover no-repeat;
+            filter: brightness(0.35);
+        }
+        .tech-hero-overlay {
+            position: absolute; inset: 0;
+            background: linear-gradient(135deg, rgba(14,165,233,0.25), rgba(6,214,160,0.1)),
+                        linear-gradient(to top, rgba(10,11,21,1) 0%, transparent 60%);
+        }
+        .tech-hero-content {
+            position: relative; z-index: 2;
+            padding: 0 0 70px;
+            width: 100%;
+        }
+        .tech-hero-content .container { padding: 0 24px; }
+        .tech-hero-content h1 {
+            font-size: clamp(36px, 6vw, 64px);
+            font-weight: 900; color: #fff;
+            line-height: 1.05; margin-bottom: 18px;
+        }
+        .tech-hero-content h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .tech-hero-content p {
+            font-size: 16px; color: rgba(255,255,255,0.6);
+            max-width: 600px; line-height: 1.8; margin-bottom: 30px;
+        }
+        .hero-tag {
+            display: inline-block;
+            background: rgba(14,165,233,0.2);
+            border: 1px solid rgba(14,165,233,0.5);
+            color: var(--primary);
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 3px; padding: 5px 16px;
+            border-radius: 20px; margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        /* ===== BREADCRUMB ===== */
+        .breadcrumb {
+            background: rgba(255,255,255,0.02);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 14px 0;
+        }
+        .breadcrumb span, .breadcrumb a {
+            font-size: 13px; color: var(--text-muted); text-decoration: none;
+        }
+        .breadcrumb a:hover { color: var(--primary); }
+        .breadcrumb .sep { margin: 0 8px; opacity: 0.4; }
+        .breadcrumb .current { color: var(--primary); font-weight: 600; }
+
+        /* ===== INTRO ===== */
+        .intro-section {
+            padding: 80px 0;
+            background: var(--dark-2);
+        }
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        .intro-text h2 {
+            font-size: 36px; font-weight: 800;
+            color: #fff; margin-bottom: 20px; line-height: 1.2;
+        }
+        .intro-text p { color: var(--text-muted); line-height: 1.8; margin-bottom: 16px; }
+        .intro-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .stat-box {
+            background: rgba(14,165,233,0.07);
+            border: 1px solid rgba(14,165,233,0.2);
+            border-radius: 14px;
+            padding: 20px;
+            text-align: center;
+        }
+        .stat-box .num {
+            font-size: 32px; font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        .stat-box .label { font-size: 12px; color: var(--text-muted); margin-top: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+        .intro-visual {
+            background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(6,214,160,0.05));
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            justify-content: center;
+        }
+        .tech-chip {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 14px 18px;
+            display: flex; align-items: center; gap: 10px;
+            font-size: 13px; font-weight: 600; color: #fff;
+            transition: 0.3s;
+        }
+        .tech-chip:hover {
+            background: rgba(14,165,233,0.1);
+            border-color: rgba(14,165,233,0.4);
+            transform: translateY(-2px);
+        }
+        .tech-chip i { font-size: 18px; color: var(--primary); }
+
+        /* ===== CORE TECH ===== */
+        .core-section {
+            padding: 90px 0;
+            background: var(--dark);
+        }
+        .section-header { text-align: center; margin-bottom: 60px; }
+        .section-tag {
+            display: inline-block;
+            background: rgba(14,165,233,0.1);
+            border: 1px solid rgba(14,165,233,0.3);
+            color: var(--primary);
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 3px; padding: 5px 16px;
+            border-radius: 20px; margin-bottom: 16px;
+            text-transform: uppercase;
+        }
+        .section-header h2 { font-size: 40px; font-weight: 800; color: #fff; margin-bottom: 16px; }
+        .section-header p { color: var(--text-muted); max-width: 600px; margin: 0 auto; font-size: 15px; }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .tech-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 32px;
+            transition: all 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+        .tech-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 2px;
+            background: var(--gradient);
+            opacity: 0;
+            transition: 0.4s;
+        }
+        .tech-card:hover { transform: translateY(-6px); border-color: rgba(14,165,233,0.3); box-shadow: 0 20px 50px rgba(14,165,233,0.08); }
+        .tech-card:hover::before { opacity: 1; }
+        .tech-icon {
+            width: 56px; height: 56px;
+            border-radius: 14px;
+            background: linear-gradient(135deg, rgba(14,165,233,0.15), rgba(6,214,160,0.08));
+            border: 1px solid rgba(14,165,233,0.2);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        .tech-card h3 { font-size: 18px; font-weight: 700; color: #fff; margin-bottom: 10px; }
+        .tech-card p { color: var(--text-muted); font-size: 14px; line-height: 1.7; margin-bottom: 18px; }
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tech-tag {
+            background: rgba(14,165,233,0.08);
+            color: var(--primary);
+            font-size: 10px; font-weight: 700;
+            padding: 3px 10px;
+            border-radius: 20px;
+            border: 1px solid rgba(14,165,233,0.15);
+            letter-spacing: 0.5px;
+        }
+
+        /* ===== SOFTWARE STACK ===== */
+        .stack-section {
+            padding: 90px 0;
+            background: var(--dark-2);
+        }
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            margin-top: 50px;
+        }
+        .stack-item {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 24px 20px;
+            text-align: center;
+            transition: 0.3s;
+        }
+        .stack-item:hover { border-color: rgba(14,165,233,0.3); background: rgba(14,165,233,0.05); transform: translateY(-4px); }
+        .stack-item i { font-size: 32px; margin-bottom: 12px; }
+        .stack-item h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+        .stack-item p { font-size: 12px; color: var(--text-muted); }
+
+        /* ===== PROCESS ===== */
+        .process-section {
+            padding: 90px 0;
+            background: var(--dark);
+        }
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            position: relative;
+            margin-top: 60px;
+        }
+        .step {
+            display: flex; flex-direction: column; align-items: center;
+            text-align: center; padding: 0 10px;
+            position: relative; z-index: 1;
+        }
+        .step h4 { font-size: 14px; font-weight: 700; color: #fff; margin-bottom: 8px; }
+        .step p { font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+        /* ===== CTA ===== */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--dark-2);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta-section::before {
+            content: '';
+            position: absolute; inset: 0;
+            background: radial-gradient(ellipse at center, rgba(14,165,233,0.08), transparent 70%);
+        }
+        .cta-section h2 { font-size: 42px; font-weight: 900; color: #fff; margin-bottom: 16px; position: relative; }
+        .cta-section p { color: var(--text-muted); font-size: 16px; max-width: 500px; margin: 0 auto 36px; position: relative; }
+        .cta-buttons { display: flex; gap: 16px; justify-content: center; position: relative; flex-wrap: wrap; }
+        .btn-primary {
+            background: var(--gradient);
+            color: #000; font-weight: 800;
+            padding: 16px 36px; border-radius: 12px;
+            text-decoration: none; font-size: 15px;
+            display: inline-flex; align-items: center; gap: 8px;
+            transition: 0.3s; border: none; cursor: pointer;
+        }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(14,165,233,0.4); }
+        .btn-outline {
+            background: transparent;
+            color: #fff; font-weight: 700;
+            padding: 16px 36px; border-radius: 12px;
+            text-decoration: none; font-size: 15px;
+            display: inline-flex; align-items: center; gap: 8px;
+            border: 1px solid var(--glass-border);
+            transition: 0.3s;
+        }
+        .btn-outline:hover { border-color: var(--primary); color: var(--primary); transform: translateY(-2px); }
+
+        @media (max-width: 1100px) {
+            .intro-grid { grid-template-columns: 1fr; }
+            .tech-grid { grid-template-columns: 1fr; }
+            .stack-grid { grid-template-columns: repeat(2, 1fr); }
+            .process-steps { 
+                grid-template-columns: 1fr; 
+                gap: 50px; 
+                margin-top: 40px;
+            }
+            .step {
+                padding: 0 20px;
+            }
+            .process-steps::before { display: none !important; }
+        }
+
+        /* Utility & Footer Classes */
+        .hero-canvas-el { position:absolute; inset:0; width:100%; height:100%; }
+        .stack-icon-python { color: #3776AB !important; }
+        .stack-icon-cpp { color: #A8B9CC !important; }
+        .stack-icon-android { color: #3DDC84 !important; }
+        .stack-icon-aws { color: #FF9900 !important; }
+        .stack-icon-firebase { color: #FFCA28 !important; }
+        .stack-icon-grafana { color: #0ea5e9 !important; }
+        .stack-icon-nodered { color: #06d6a0 !important; }
+        .stack-icon-kicad { color: #CC3534 !important; }
+    </style>
+</head>
+
+<body>
+    <!-- Backdrop Overlay for Mobile Drawer -->
+    <div class="drawer-overlay" onclick="closeMobileMenu()"></div>
+
+    
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">EXPERTISE <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">OUR WORK <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)" style="color: #06d6a0; font-weight: 800;"><i
+                                class="fas fa-helicopter"></i> Drone 2030</a></li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <div class="tech-hero">
+        <div class="tech-hero-bg"></div>
+        <div class="tech-hero-overlay"></div>
+        <canvas id="hero-canvas" class="hero-canvas-el"></canvas>
+        <div class="tech-hero-content">
+            <div class="container">
+                <span class="hero-tag">ITSYBTS TECHNOLOGY Stack</span>
+                <h1>Powering the Future with <span>Smart Technology</span></h1>
+                <p>From Embedded Systems to IoT and Cloud Integration — explore the technology pillars that drive innovation at ITSYBTS TECHNOLOGY.</p>
+                <a href="enquiry.html" class="btn-primary"><i class="fas fa-rocket"></i> Get a Free Consultation</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== BREADCRUMB ===== -->
+    <div class="breadcrumb">
+        <div class="container">
+            <a href="index.html">Home</a>
+            <span class="sep">›</span>
+            <span class="current">Technologies</span>
+        </div>
+    </div>
+
+    <!-- ===== INTRO ===== -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-grid">
+                <div class="intro-text">
+                    <span class="section-tag">Who We Are</span>
+                    <h2>Innovating at the Edge of Technology</h2>
+                    <p>ITSYBTS TECHNOLOGY (Binary Turbo Smart) specializes in end-to-end embedded and IoT product development. Our multidisciplinary team brings expertise across hardware, firmware, connectivity, cloud, and AI — enabling next-generation smart solutions.</p>
+                    <p>We partner with industries like agriculture, smart homes, energy management, and industrial automation to deploy reliable, scalable, and future-proof systems.</p>
+                    <div class="intro-stats">
+                        <div class="stat-box"><div class="num">12+</div><div class="label">Technologies</div></div>
+                        <div class="stat-box"><div class="num">50+</div><div class="label">Projects Delivered</div></div>
+                        <div class="stat-box"><div class="num">5+</div><div class="label">Years Experience</div></div>
+                        <div class="stat-box"><div class="num">100%</div><div class="label">Client Satisfaction</div></div>
+                    </div>
+                </div>
+                <div class="intro-visual">
+                    <div class="tech-chip"><i class="fab fa-raspberry-pi"></i> Raspberry Pi</div>
+                    <div class="tech-chip"><i class="fas fa-microchip"></i> ESP32 / ESP8266</div>
+                    <div class="tech-chip"><i class="fas fa-bolt"></i> Arduino</div>
+                    <div class="tech-chip"><i class="fas fa-wifi"></i> MQTT Protocol</div>
+                    <div class="tech-chip"><i class="fab fa-aws"></i> AWS IoT</div>
+                    <div class="tech-chip"><i class="fas fa-cloud"></i> Azure IoT</div>
+                    <div class="tech-chip"><i class="fas fa-mobile-alt"></i> Flutter / Android</div>
+                    <div class="tech-chip"><i class="fas fa-ethernet"></i> Modbus / RS485</div>
+                    <div class="tech-chip"><i class="fas fa-broadcast-tower"></i> LoRa / LoRaWAN</div>
+                    <div class="tech-chip"><i class="fab fa-bluetooth-b"></i> BLE 5.0</div>
+                    <div class="tech-chip"><i class="fas fa-shield-alt"></i> TLS Encryption</div>
+                    <div class="tech-chip"><i class="fas fa-database"></i> Firebase</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CORE TECHNOLOGIES ===== -->
+    <section class="core-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Core Expertise</span>
+                <h2>Our Technology Domains</h2>
+                <p>We specialize in a broad spectrum of cutting-edge technologies to engineer end-to-end smart products.</p>
+            </div>
+            <div class="tech-grid">
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Embedded Systems</h3>
+                    <p>Design and development of low-level firmware, microcontroller programming, RTOS integration, and hardware bring-up for smart devices.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">C/C++ Firmware</span>
+                        <span class="tech-tag">RTOS</span>
+                        <span class="tech-tag">STM32</span>
+                        <span class="tech-tag">ESP32</span>
+                        <span class="tech-tag">AVR</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>IoT Connectivity</h3>
+                    <p>End-to-end IoT solutions with secure device-to-cloud connectivity using industry-standard protocols for reliable data transfer.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">MQTT</span>
+                        <span class="tech-tag">HTTP/REST</span>
+                        <span class="tech-tag">CoAP</span>
+                        <span class="tech-tag">LoRaWAN</span>
+                        <span class="tech-tag">NBIoT</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-cloud"></i></div>
+                    <h3>Cloud Integration</h3>
+                    <p>Seamless integration with major cloud platforms for data storage, real-time monitoring, analytics, and remote device management.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">AWS IoT</span>
+                        <span class="tech-tag">Azure IoT</span>
+                        <span class="tech-tag">Firebase</span>
+                        <span class="tech-tag">Google Cloud</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-mobile-alt"></i></div>
+                    <h3>Mobile Applications</h3>
+                    <p>Cross-platform mobile apps for real-time device control, monitoring, and analytics. Intuitive UI with seamless Bluetooth and Wi-Fi pairing.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Flutter</span>
+                        <span class="tech-tag">Android Native</span>
+                        <span class="tech-tag">BLE Integration</span>
+                        <span class="tech-tag">Wi-Fi AP Mode</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-robot"></i></div>
+                    <h3>Industrial Automation</h3>
+                    <p>SCADA systems, PLC programming, Modbus/RS485 interfaces, and motor control solutions for Industry 4.0 applications.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Modbus RTU</span>
+                        <span class="tech-tag">RS485</span>
+                        <span class="tech-tag">SCADA</span>
+                        <span class="tech-tag">VFD Control</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3>Security & Encryption</h3>
+                    <p>Robust security implementation including TLS/SSL, AES encryption, secure boot, and OTA update systems to protect connected devices.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">TLS 1.3</span>
+                        <span class="tech-tag">AES-256</span>
+                        <span class="tech-tag">Secure OTA</span>
+                        <span class="tech-tag">PKI</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-solar-panel"></i></div>
+                    <h3>Energy Management</h3>
+                    <p>Smart energy monitoring, solar power integration, power optimization algorithms, and real-time energy analytics dashboards.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">CT Sensors</span>
+                        <span class="tech-tag">MPPT</span>
+                        <span class="tech-tag">Energy Metering</span>
+                        <span class="tech-tag">Battery BMS</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-broadcast-tower"></i></div>
+                    <h3>Wireless Technologies</h3>
+                    <p>Expert in short-range and long-range wireless protocols for diverse deployment environments from smart homes to smart cities.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">Wi-Fi 4/5/6</span>
+                        <span class="tech-tag">BLE 5.0</span>
+                        <span class="tech-tag">Zigbee</span>
+                        <span class="tech-tag">LoRa</span>
+                        <span class="tech-tag">GSM/4G</span>
+                    </div>
+                </div>
+                <div class="tech-card">
+                    <div class="tech-icon"><i class="fas fa-tools"></i></div>
+                    <h3>Hardware Design</h3>
+                    <p>Custom PCB design, schematic entry, BOM management, prototype assembly, and DFM-ready production-grade hardware design.</p>
+                    <div class="tech-tags">
+                        <span class="tech-tag">KiCad</span>
+                        <span class="tech-tag">Altium</span>
+                        <span class="tech-tag">SMD Soldering</span>
+                        <span class="tech-tag">EMI/EMC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== SOFTWARE STACK ===== -->
+    <section class="stack-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Tools & Platforms</span>
+                <h2>Our Software & Development Stack</h2>
+                <p>Industry-leading tools and platforms used by our engineers to build reliable, scalable IoT solutions.</p>
+            </div>
+            <div class="stack-grid">
+                <div class="stack-item">
+                    <i class="fab fa-python stack-icon-python"></i>
+                    <h4>Python</h4>
+                    <p>Data processing & automation scripts</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-code stack-icon-cpp"></i>
+                    <h4>C / C++</h4>
+                    <p>Firmware & embedded development</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fab fa-android stack-icon-android"></i>
+                    <h4>Android / Flutter</h4>
+                    <p>Cross-platform mobile apps</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fab fa-aws stack-icon-aws"></i>
+                    <h4>AWS IoT Core</h4>
+                    <p>Scalable cloud device management</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-database stack-icon-firebase"></i>
+                    <h4>Firebase</h4>
+                    <p>Real-time database & authentication</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-tachometer-alt stack-icon-grafana"></i>
+                    <h4>Grafana</h4>
+                    <p>IoT analytics & visualization</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-project-diagram stack-icon-nodered"></i>
+                    <h4>Node-RED</h4>
+                    <p>Flow-based IoT programming</p>
+                </div>
+                <div class="stack-item">
+                    <i class="fas fa-cube stack-icon-kicad"></i>
+                    <h4>KiCad / Altium</h4>
+                    <p>PCB design & hardware layout</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PROCESS ===== -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">How We Build</span>
+                <h2>Our Development Process</h2>
+                <p>A structured, agile engineering workflow from concept to production-ready deployment.</p>
+            </div>
+            <div class="process-steps">
+                <div class="step">
+
+                    <h4>Discovery</h4>
+                    <p>Requirements gathering, feasibility study, and technology selection</p>
+                </div>
+                <div class="step">
+
+                    <h4>Design</h4>
+                    <p>Hardware schematic, PCB layout, firmware architecture planning</p>
+                </div>
+                <div class="step">
+
+                    <h4>Prototype</h4>
+                    <p>Build breadboard/PCB prototype, firmware development, cloud setup</p>
+                </div>
+                <div class="step">
+
+                    <h4>Testing</h4>
+                    <p>QA testing, field trials, security audit and performance validation</p>
+                </div>
+                <div class="step">
+
+                    <h4>Deploy</h4>
+                    <p>Production rollout, OTA updates, remote monitoring and support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Ready to Build Something Smart?</h2>
+            <p>Let's collaborate on your next IoT or embedded product. Our experts are ready to help.</p>
+            <div class="cta-buttons">
+                <a href="index.html#contact" class="btn-primary"><i class="fas fa-envelope"></i> Contact Us</a>
+                <a href="index.html#products" class="btn-outline"><i class="fas fa-box-open"></i> View Products</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#expertise">In News</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="index.html#contact">Contact Us</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>How can I help you?</span>
+                </a>
+                <div class="copyright-text">
+                    Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link" onclick="window.location.href='login.html'">•</span>
+                </div>
+                <a href="index.html#contact" class="chat-widget">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Leave a message</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Hero canvas particles
+        (function () {
+            const c = document.getElementById('hero-canvas');
+            if (!c) return;
+            c.width = c.offsetWidth; c.height = c.offsetHeight;
+            const ctx = c.getContext('2d');
+            const pts = Array.from({ length: 70 }, () => ({
+                x: Math.random() * c.width, y: Math.random() * c.height,
+                vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+                r: Math.random() * 2 + 0.5
+            }));
+            (function draw() {
+                ctx.clearRect(0, 0, c.width, c.height);
+                pts.forEach(p => {
+                    p.x += p.vx; p.y += p.vy;
+                    if (p.x < 0 || p.x > c.width) p.vx *= -1;
+                    if (p.y < 0 || p.y > c.height) p.vy *= -1;
+                    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(14,165,233,0.7)'; ctx.fill();
+                });
+                pts.forEach((p, i) => pts.forEach((q, j) => {
+                    if (j <= i) return;
+                    const d = Math.hypot(p.x - q.x, p.y - q.y);
+                    if (d < 120) {
+                        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+                        ctx.strokeStyle = `rgba(14,165,233,${(1 - d / 120) * 0.2})`;
+                        ctx.lineWidth = 0.5; ctx.stroke();
+                    }
+                }));
+                requestAnimationFrame(draw);
+            })();
+
+            window.addEventListener('resize', () => { c.width = c.offsetWidth; c.height = c.offsetHeight; });
+        })();
+
+        // Circuit background animation
+        (function () {
+            const canvas = document.getElementById('circuit-bg');
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resize); resize();
+            class Particle {
+                constructor() { this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height; this.vx = (Math.random() - 0.5) * 0.35; this.vy = (Math.random() - 0.5) * 0.35; this.size = Math.random() * 1.5 + 0.5; }
+                update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > canvas.width) this.vx *= -1; if (this.y < 0 || this.y > canvas.height) this.vy *= -1; }
+                draw() { ctx.fillStyle = 'rgba(14,165,233,0.35)'; ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill(); }
+            }
+            for (let i = 0; i < 70; i++) particles.push(new Particle());
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = 'rgba(14,165,233,0.06)'; ctx.lineWidth = 0.5;
+                ctx.beginPath();
+                for (let i = 0; i < particles.length; i++) for (let j = i + 1; j < particles.length; j++) {
+                    const d = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                    if (d < 140) { ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); }
+                }
+                ctx.stroke();
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        })();
+
+        function toggleMobileMenu(btn) {
+            const parent = btn ? btn.closest('nav') || btn.closest('header') : document.getElementById('header');
+            const nav = parent.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        }
+
+        function closeMobileMenu(btn) {
+            const nav = btn ? btn.closest('.nav-links') : document.querySelector('.nav-links.active');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.remove('active');
+            setTimeout(() => {
+                if (!document.querySelector('.nav-links.active')) {
+                    if (overlay) overlay.classList.remove('active');
+                }
+            }, 50);
+            document.querySelectorAll('.mobile-dropdown').forEach(item => {
+                item.classList.remove('active-dropdown');
+            });
+        }
+    </script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+
+

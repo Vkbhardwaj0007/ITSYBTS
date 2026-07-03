@@ -1,0 +1,2557 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ITSYBTS TECHNOLOGY - Innovating Smart Electronic Solutions in IoT, Embedded Systems, Automation, and Custom Hardware-Software Solutions. Based in Faridabad, Haryana.">
+    <meta name="keywords"
+        content="ITSYBTS TECHNOLOGY, ITSYBTS TECHNOLOGY, IoT Solutions, Embedded Systems, Automation, Smart Devices, Electronics Manufacturing, Custom Hardware, Faridabad Electronics">
+    <meta name="author" content="ITSYBTS TECHNOLOGY">
+    <title>ITSYBTS TECHNOLOGY | Smart Electronic Solutions & IoT Innovation</title>
+
+    <!-- JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "ITSYBTS TECHNOLOGY",
+      "alternateName": "ITSYBTS TECHNOLOGY",
+      "description": "Innovating Smart Electronic Solutions in IoT, Embedded Systems, Automation, and Custom Hardware.",
+      "url": "https://btstechnology.com",
+      "telephone": "+917052050656",
+      "email": "btstechnology007@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Sharmik Vihar, Sec 30",
+        "addressLocality": "Faridabad",
+        "addressRegion": "Haryana",
+        "postalCode": "121003",
+        "addressCountry": "IN"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 28.4089,
+        "longitude": 77.3178
+      },
+      "sameAs": [
+        "https://www.facebook.com/share/1DvawbFmJZ/",
+        "https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android",
+        "https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh"
+      ]
+    }
+    </script>
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <style>
+        /* Drone Hero Section */
+        .drone-hero {
+            position: relative;
+            padding: 100px 0 100px;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(circle at center, rgba(14, 165, 233, 0.15) 0%, rgba(10, 11, 21, 1) 70%), url('https://images.unsplash.com/photo-1508614589041-895b88991e3e?q=80&w=2000&auto=format&fit=crop') center/cover no-repeat;
+        }
+
+        .drone-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(10, 11, 21, 0.4), #0a0b15);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto;
+        }
+
+        .badge-2030 {
+            display: inline-block;
+            background: linear-gradient(135deg, rgba(6, 214, 160, 0.15), rgba(14, 165, 233, 0.15));
+            border: 2px solid #06d6a0;
+            color: #06d6a0;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-size: 22px;
+            font-weight: 900;
+            letter-spacing: 4px;
+            margin-bottom: 24px;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(6, 214, 160, 0.4);
+            animation: pulse-glow-badge 2s infinite;
+        }
+
+        @keyframes pulse-glow-badge {
+            0% {
+                box-shadow: 0 0 20px rgba(6, 214, 160, 0.4);
+            }
+
+            50% {
+                box-shadow: 0 0 40px rgba(6, 214, 160, 0.8), 0 0 10px rgba(6, 214, 160, 0.5) inset;
+                transform: scale(1.02);
+            }
+
+            100% {
+                box-shadow: 0 0 20px rgba(6, 214, 160, 0.4);
+            }
+        }
+
+        .drone-hero h1 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 56px;
+            font-weight: 900;
+            margin: 0 0 20px;
+            background: linear-gradient(135deg, #fff, #e2e8f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1.1;
+        }
+
+        .drone-hero h1 span {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .drone-hero p.lead {
+            font-size: 18px;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: -60px;
+        }
+
+        .feature-card {
+            background: rgba(20, 22, 35, 0.8);
+            border: 1px solid var(--glass-border);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            transition: all 0.4s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(14, 165, 233, 0.1);
+        }
+
+        .feature-card i {
+            font-size: 48px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 15px;
+        }
+
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        .vision-section {
+            padding: 100px 0;
+            background: #0a0b15;
+        }
+
+        .vision-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .vision-container {
+                grid-template-columns: 1fr;
+            }
+
+            .drone-hero h1 {
+                font-size: 40px;
+            }
+        }
+
+        .vision-text h2 {
+            font-family: 'Outfit', sans-serif;
+            font-size: 40px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .vision-text p {
+            font-size: 17px;
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .comparison-tags {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .c-tag {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 24px;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 700;
+            font-size: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .c-tag.blinkit {
+            border-left: 4px solid #f8cb46;
+        }
+
+        .c-tag.zomato {
+            border-left: 4px solid #e23744;
+        }
+
+        .c-tag.zepto {
+            border-left: 4px solid #3d007c;
+        }
+
+        @keyframes hover-drone {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .drone-image {
+            width: 100%;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 0 50px rgba(14, 165, 233, 0.2);
+            animation: hover-drone 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Backdrop Overlay for Mobile Drawer -->
+    <div class="drawer-overlay" onclick="closeMobileMenu(this)"></div>
+
+    <!-- Particles -->
+    
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY"
+                        style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;"
+                        class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)" onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)" onclick="toggleDropdown(this, event);">EXPERTISE <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)" onclick="toggleDropdown(this, event);">OUR WORK <i
+                                class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)"
+                            style="color: #06d6a0; font-weight: 800;"><i class="fas fa-helicopter"></i> Drone 2030</a>
+                    </li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <!-- Animated Background Slideshow (ambience only) -->
+        <div class="hero-bg-slideshow">
+            <div class="hero-bg-slide hero-slide-1"></div>
+            <div class="hero-bg-slide hero-slide-2"></div>
+            <div class="hero-bg-slide hero-slide-3"></div>
+            <div class="hero-bg-slide hero-slide-4"></div>
+            <div class="hero-bg-slide hero-slide-5"></div>
+            <div class="hero-bg-slide hero-slide-6"></div>
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-glow-2"></div>
+        <div class="container">
+            <div class="hero-main-centered reveal">
+                <!-- Text Content -->
+                <div class="hero-content">
+                    <div class="hero-badge"><span class="dot"></span> Innovating Since 2026</div>
+                    <h1>Smart <span>Electronic Solutions</span> for Tomorrow</h1>
+                    <p>Specializing in IoT, embedded systems, automation, and custom hardware-software solutions that
+                        drive innovation.</p>
+                    <div class="hero-btns">
+                        <a href="#contact" class="btn-primary">Get a Quote</a>
+                        <a href="#services" class="btn-outline">Our Services</a>
+                    </div>
+                </div>
+            </div>
+            <div class="stats reveal">
+                <div class="stat-card glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h3>50+</h3>
+                    <p>Projects Delivered</p>
+                </div>
+                <div class="stat-card glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h3>25+</h3>
+                    <p>Happy Clients</p>
+                </div>
+                <div class="stat-card glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h3>2+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-card glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h3>24/7</h3>
+                    <p>Support Available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Overview & Story -->
+    <section id="about" class="detailed-about">
+        <div class="container">
+            <div class="about-grid reveal">
+                <!-- Left: Visual Aspect -->
+                <div class="about-visual">
+                    <div class="about-img-wrapper">
+                        <img src="innovation_lab.png" alt="ITSYBTS TECHNOLOGY Infrastructure">
+                    </div>
+                    <div class="clients-badge">
+                        <h4>20+</h4>
+                        <p>Happy<br>Clients</p>
+                    </div>
+                    <div class="experience-badge">
+                        <h4>2+</h4>
+                        <p>Years of<br>Excellence</p>
+                    </div>
+                </div>
+
+                <!-- Right: Content Aspect -->
+                <div class="about-content">
+                    <div class="about-text-block">
+                        <span class="tag">Who We Are</span>
+                        <h2>Pioneering Smart <br><span>Electronic Solutions</span></h2>
+                        <p>ITSYBTS TECHNOLOGY (BTS) is a leading Embedded Hardware and Software Design and
+                            Manufacturing powerhouse. As an ISO 9001:2015 certified company, we have built a reputation
+                            for delivering high-precision IoT products that bridge the gap between imagination and
+                            reality.</p>
+                        <p>Founded with a vision to revolutionize the embedded systems industry, our journey is defined
+                            by a commitment to innovation, quality, and extreme customer satisfaction.</p>
+                    </div>
+
+                    <div class="value-cards-grid">
+                        <div class="value-card stagger-item glass-3d-card" data-tilt data-tilt-max="15"
+                            data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
+                            data-tilt-perspective="1000">
+                            <i class="fas fa-rocket"></i>
+                            <h4>Innovation</h4>
+                            <p>Pushing technical boundaries every single day.</p>
+                        </div>
+                        <div class="value-card stagger-item glass-3d-card" data-tilt data-tilt-max="15"
+                            data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
+                            data-tilt-perspective="1000">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Quality</h4>
+                            <p>Excellence embedded in every chip we design.</p>
+                        </div>
+                        <div class="value-card stagger-item glass-3d-card" data-tilt data-tilt-max="15"
+                            data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2"
+                            data-tilt-perspective="1000">
+                            <i class="fas fa-users"></i>
+                            <h4>Client First</h4>
+                            <p>Your goals are the North Star of our engineering.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Expertise Section -->
+    <section id="expertise" class="expertise-section">
+        <div class="container">
+            <div class="section-header reveal text-center">
+                <p class="text-muted-alt fs-14 ls-2">Our</p>
+                <h2 class="fs-42 fw-800 text-white lh-1">Expertise</h2>
+            </div>
+
+            <div class="expertise-grid reveal">
+                <!-- Software -->
+                <div class="expertise-item stagger-item glass-3d-card" data-tilt data-tilt-max="15"
+                    data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="expertise-icon"><i class="fas fa-code"></i></div>
+                    <h3>Software Expertise</h3>
+                    <p>Firmware, Device driver, and Application software development for various hardware platforms</p>
+                </div>
+
+                <!-- Hardware -->
+                <div class="expertise-item stagger-item glass-3d-card" data-tilt data-tilt-max="15"
+                    data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="expertise-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Hardware Expertise</h3>
+                    <p>Embedded Hardware design, PCB design, manufacturing, and testing</p>
+                </div>
+
+                <!-- Embedded Domain -->
+                <div class="expertise-item stagger-item glass-3d-card" data-tilt data-tilt-max="15"
+                    data-tilt-speed="400" data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="expertise-icon"><i class="fas fa-network-wired"></i></div>
+                    <h3>Embedded Domain Expertise</h3>
+                    <p>Communications (Wireless/Wired), Automation (Medical & Healthcare / Industrial), Electronics
+                        (Consumer, Defense & Automotive)</p>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <section id="services" class="key-services-section">
+        <div class="container">
+            <div class="section-header reveal text-center mb-50">
+                <p class="text-muted-alt fs-14 ls-2">Key</p>
+                <h2 class="fs-42 fw-800 text-white lh-1">Services</h2>
+            </div>
+
+            <div class="accordion-container reveal">
+                <!-- Service 1 -->
+                <div class="accordion-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <i class="fas fa-plus"></i>
+                        <h3>Electronics Solutions</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p>As a leading Electronics Company in Faridabad, we specialize in providing comprehensive
+                            electronics solutions, ensuring innovative and reliable designs that meet your specific
+                            needs.</p>
+                    </div>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="accordion-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <i class="fas fa-plus"></i>
+                        <h3>Research & Development</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Turning concepts into reality through cutting-edge prototyping, feasibility studies, and
+                            advanced engineering research in the field of smart electronics.</p>
+                    </div>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="accordion-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <i class="fas fa-plus"></i>
+                        <h3>Embedded Technology Solutions</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Specialized firmware development, microcontroller integration (ESP32, STM32, Arduino), and
+                            hardware optimization for low-power and high-performance applications.</p>
+                    </div>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="accordion-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <i class="fas fa-plus"></i>
+                        <h3>The Internet of Things (IoT)</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p>End-to-end IoT ecosystems featuring real-time data monitoring, cloud-connected devices, and
+                            intelligent automation dashbaords for seamless connectivity.</p>
+                    </div>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="accordion-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <i class="fas fa-plus"></i>
+                        <h3>Industry 4.0</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Empowering industries with smart manufacturing units, industrial automation sensors, and
+                            data-driven operational control systems.</p>
+                    </div>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="accordion-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="accordion-header" onclick="toggleAccordion(this)">
+                        <i class="fas fa-plus"></i>
+                        <h3>Cloud-Based Web and Mobile Apps</h3>
+                    </div>
+                    <div class="accordion-content">
+                        <p>Custom software solutions including mobile controllers (Android/iOS) and web interfaces
+                            designed for remote hardware management and analytics.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="tech-section">
+        <div class="container">
+            <div class="section-header reveal text-center mb-50">
+                <p class="text-muted-alt fs-14 ls-2" style="text-transform: uppercase; letter-spacing: 2px;">Our</p>
+                <h2 class="fs-42 fw-800 text-white lh-1"
+                    style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 48px;">Technologies</h2>
+            </div>
+            <div class="tech-intro-text reveal">
+                <p>The plethora of connectivity options available on the market is great news for everyone wanting to
+                    launch their first IoT projects or boost the existing deployments. Yet, this abundance doesn't
+                    exactly make the choice of the right solution any easier. Quite the reverse: with so many
+                    possibilities around, finding the one that best suits your project specifics may seem a daunting
+                    challenge.</p>
+            </div>
+
+
+
+            <div class="tech-detailed-container">
+                <!-- WiFi -->
+                <div class="tech-detailed-card reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="tech-icon-box">
+                        <i class="fas fa-wifi"></i>
+                    </div>
+                    <div class="tech-info-box">
+                        <h3>WiFi</h3>
+                        <p>WiFi, or 802.11, is a wireless protocol that was built with the intent of replacing Ethernet
+                            using wireless communication over unlicensed bands. Its goal was to provide off-the-shelf,
+                            easy to implement, easy to use short-range wireless connectivity with cross-vendor
+                            interoperability.</p>
+                    </div>
+                </div>
+
+                <!-- Bluetooth -->
+                <div class="tech-detailed-card reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="tech-icon-box">
+                        <i class="fab fa-bluetooth-b"></i>
+                    </div>
+                    <div class="tech-info-box">
+                        <h3>Bluetooth</h3>
+                        <p>Bluetooth is everywhere: in speakers, wireless headphones, cars, wearables, medical devices,
+                            and even shoes! Since many IoT systems involve small devices and sensors, BLE has become the
+                            more common protocol of the two (versus Bluetooth Classic) in IoT.</p>
+                    </div>
+                </div>
+
+                <!-- RFID -->
+                <div class="tech-detailed-card reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="tech-icon-box">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <div class="tech-info-box">
+                        <h3>RFID</h3>
+                        <p>Radio frequency identification system (RFID) is an automatic technology and aids machines or
+                            computers to identify objects, record metadata or control individual target through radio
+                            waves. Connecting RFID reader to the terminal of Internet, the readers can identify, track
+                            and monitor the objects attached with tags globally, automatically, and in real time, if
+                            needed. This is the so-called Internet of Things (IoT). RFID is often seen as a prerequisite
+                            for the IoT.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hassel Free Solution Process Section -->
+    <section id="process" class="hassel-process-section">
+        <div class="container mb-60">
+            <div class="section-header reveal text-center">
+                <p class="text-muted-alt fs-14 ls-2"
+                    style="color: var(--text-muted); text-transform: uppercase; letter-spacing: 2px;">Process</p>
+                <h2 class="fs-42 fw-800 text-white lh-1"
+                    style="font-family: 'Outfit', sans-serif; font-weight: 900; font-size: 48px;">Our Work Flow</h2>
+                <p
+                    style="color: var(--text-muted); max-width: 800px; margin: 20px auto 0; font-size: 16px; line-height: 1.6;">
+                    Over 2 years of refining our process, ITSYBTS TECHNOLOGY has mastered delivering high-quality,
+                    precision-engineered electronic solutions for both large-scale and specialized projects.</p>
+            </div>
+        </div>
+        <div class="hassel-container reveal">
+            <!-- Top Box Title -->
+            <div class="hassel-header">
+                <button class="hassel-title-box" onclick="openOrderModal('General Inquiry')">Hassle Free
+                    Solution</button>
+            </div>
+
+            <div class="hassel-timeline">
+                <!-- Step 1 (Odd: Right) -->
+                <div class="hassel-item reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="hassel-dot"></div>
+                    <div class="hassel-content">
+                        <h3>Project Evaluation:</h3>
+                        <p>Receive and assess the project overview to understand scope and requirements.</p>
+                    </div>
+                </div>
+
+                <!-- Step 2 (Even: Left) -->
+                <div class="hassel-item reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="hassel-dot"></div>
+                    <div class="hassel-content">
+                        <h3>In-depth Research</h3>
+                        <p>Conduct thorough research to tailor solutions precisely to your needs.</p>
+                    </div>
+                </div>
+
+                <!-- Step 3 (Odd: Right) -->
+                <div class="hassel-item reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="hassel-dot"></div>
+                    <div class="hassel-content">
+                        <h3>Meticulous Planning</h3>
+                        <p>Detailed planning to ensure timelines, resources, and milestones defined clearly.</p>
+                    </div>
+                </div>
+
+                <!-- Step 4 (Even: Left) -->
+                <div class="hassel-item reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="hassel-dot"></div>
+                    <div class="hassel-content">
+                        <h3>Quality Deployment</h3>
+                        <p>Implement advanced electronic solutions, focusing on quality and precision.</p>
+                    </div>
+                </div>
+
+                <!-- Step 5 (Odd: Right) -->
+                <div class="hassel-item reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="hassel-dot"></div>
+                    <div class="hassel-content">
+                        <h3>Project Completion:</h3>
+                        <p>Rigorous testing and adjustments to guarantee superior performance.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 (Even: Left) -->
+                <div class="hassel-item reveal glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <div class="hassel-dot"></div>
+                    <div class="hassel-content">
+                        <h3>Evaluation & Handover</h3>
+                        <p>Final evaluation followed by a structured project handover, ensuring timely delivery and
+                            client satisfaction.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">Our Portfolio</span>
+                <h2>Innovative Projects</h2>
+                <p>Developing hardware and software solutions for global applications</p>
+            </div>
+            <div class="projects-grid">
+                <!-- Flagship Home Control -->
+                <div class="project-card reveal">
+                    <span
+                        class="project-badge p-abs pos-top-15 pos-left-15 bg-accent p-5-12 br-20 fs-11 fw-800 z-10 shadow-badge">NEW
+                        FLAGSHIP</span>
+                    <div class="project-img project-img-homecontrol">
+                    </div>
+                    <div class="content">
+                        <h3>Home Control itsybts System</h3>
+                        <p>Complete 6-channel smart automation board designed for maximum reliability and smooth
+                            performance.</p>
+                        <div class="d-flex gap-10 mt-15">
+                            <button class="btn-primary p-8-15 fs-13 flex-1"
+                                onclick="openProjectDetail('homecontrol')">View Details</button>
+                            <a href="BTS_User_Guide.html" target="_blank" rel="noopener"
+                                class="btn-outline p-8-10 fs-13 d-flex ai-center jc-center br-12"
+                                title="User Setup Guide">
+                                <i class="fas fa-book"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Solar Efficiency Node -->
+                <div class="project-card reveal">
+                    <div class="project-img project-img-solar">
+                    </div>
+                    <div class="content">
+                        <h3>Solar Efficiency Hub</h3>
+                        <p>Smart IoT node for panel voltage tracking and autonomous dust detection to optimize solar
+                            harvest.</p>
+                        <button class="btn-primary p-8-20 fs-14 mt-15" onclick="openProjectDetail('solar')">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-img project-img-kinetic">
+                    </div>
+                    <div class="content">
+                        <h3>Kinetic Mirror System</h3>
+                        <p>High-performance kinetic sculpture using silhouette tracking to drive an 8x8 matrix of servo
+                            motors.</p>
+                        <button class="btn-primary p-8-20 fs-14 mt-15" onclick="openProjectDetail('kinetic')">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-img project-img-water">
+                    </div>
+                    <div class="content">
+                        <h3>Smart Water Controller</h3>
+                        <p>IoT-enabled device for monitoring and controlling water levels in tanks with real-time app
+                            alerts.</p>
+                        <button class="btn-primary p-8-20 fs-14 mt-15" onclick="openProjectDetail('water')">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-img project-img-motor">
+                    </div>
+                    <div class="content">
+                        <h3>Automation & Motor Control</h3>
+                        <p>Industrial & residential motor automation with phase protection and remote smartphone
+                            control.</p>
+                        <button class="btn-primary p-8-20 fs-14 mt-15" onclick="openProjectDetail('motor')">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-img project-img-energy">
+                    </div>
+                    <div class="content">
+                        <h3>Smart Energy Monitor</h3>
+                        <p>Real-time energy monitoring system with IoT dashboard for homes and industrial units.</p>
+                        <button class="btn-primary p-8-20 fs-14 mt-15" onclick="openProjectDetail('energy')">View
+                            Details</button>
+                    </div>
+                </div>
+
+                <!-- Security and Safety Alarm -->
+                <div class="project-card reveal">
+                    <div class="project-img project-img-security">
+                    </div>
+                    <div class="content">
+                        <h3>Security & Safety Alarm</h3>
+                        <p>Advanced smart security alarm with holographic interface and real-time threat detection.</p>
+                        <button class="btn-primary p-8-20 fs-14 mt-15" onclick="openProjectDetail('security')">View
+                            Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="products-section">
+        <div class="branded-header reveal">
+            <h2>Our Products</h2>
+            <p style="color: rgba(255,255,255,0.6); margin-top: 10px; font-size: 14px;">Innovative Hardware for a
+                Connected World</p>
+        </div>
+        <div class="container">
+            <div class="products-grid reveal" id="products-grid-container">
+                <!-- Product 1: Water Pump -->
+                <div class="product-card stagger-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000"
+                    style="background: linear-gradient(rgba(10, 16, 29, 0.5), rgba(10, 16, 29, 0.8)), url('images/smart_pump.jpg') center/cover; background-blend-mode: overlay;">
+                    <h4>Smart Water Pump Controller</h4>
+                    <div class="product-overlay">
+                        <button class="product-read-more" onclick="openProductModal('water-pump')">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Product 2: Solar Cleaner -->
+                <div class="product-card stagger-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h4>Smart Solar Cleaner</h4>
+                    <div class="product-overlay">
+                        <button class="product-read-more" onclick="openProductModal('solar-cleaner')">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Product 3: Home Controller -->
+                <div class="product-card stagger-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h4>Smart Home Controller</h4>
+                    <div class="product-overlay">
+                        <button class="product-read-more" onclick="openProductModal('home-controller')">Read
+                            More</button>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="product-card stagger-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000"
+                    style="background: linear-gradient(rgba(10, 16, 29, 0.5), rgba(10, 16, 29, 0.8)), url('images/security_alarm.jpg') center/cover; background-blend-mode: overlay;">
+                    <h4>Security & Safety Alarm</h4>
+                    <div class="product-overlay">
+                        <button class="product-read-more" onclick="openProductModal('security-alarm')">Read
+                            More</button>
+                    </div>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="product-card stagger-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h4>Smart Street Light Controller</h4>
+                    <div class="product-overlay">
+                        <button class="product-read-more" onclick="openProductModal('street-light')">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Product 6: LED Bulb Manufacturing -->
+                <div class="product-card stagger-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h4>LED Bulb Manufacturing</h4>
+                    <div class="product-overlay">
+                        <button class="product-read-more" onclick="openProductModal('led-bulb')">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="product-card stagger-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h4>GSM Power Failure Alert</h4>
+                    <div class="product-overlay">
+                        <button class="product-read-more" onclick="openProductModal('power-alert')">Read More</button>
+                    </div>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="product-card stagger-item glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                    data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                    <h4>Kinetic Art Mirror</h4>
+                    <div class="product-overlay">
+                        <button class="product-read-more" onclick="openProductModal('kinetic-mirror')">Read
+                            More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- App -->
+    <section id="app" style="background: var(--dark-2);">
+        <div class="container">
+            <div class="about-grid">
+                <div class="reveal">
+                    <span class="section-tag">Mobile Experience</span>
+                    <h2 style="font-size:36px;font-weight:800;margin-bottom:16px;">itsybts SMART HOME Controller</h2>
+                    <p style="color:var(--text-muted);margin-bottom:24px;">Experience the new <b>Smart Switch UI</b>.
+                        Direct toggle, precise dimming presets, and uniform fan controls for the ultimate smart home
+                        experience.</p>
+                    <div class="about-features" style="margin-bottom: 32px;">
+                        <div class="about-feature">
+                            <div class="icon"><i class="fas fa-toggle-on"></i></div>
+                            <div>
+                                <h4>Smart Switch UI</h4>
+                                <p>Directly toggle lights at 100% with one tap, or use precise dimmer presets.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature">
+                            <div class="icon"><i class="fas fa-gauge-high"></i></div>
+                            <div>
+                                <h4>Unified Control</h4>
+                                <p>Standardized speed buttons for fans and intensity steps for all light channels.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="app/BTS_OFFICIAL_v1.6.3.apk" class="btn-primary pulsating-glow d-flex ai-center" download>
+                        <i class="fab fa-android mr-10 fs-20"></i> Download itsybts
+                        Controller App (v1.6.3)
+                    </a>
+                </div>
+                <div class="about-visual reveal about-visual-bg p-40 p-rel">
+                    <!-- Additional Glow Effect -->
+                    <div class="glow-overlay">
+                    </div>
+
+                    <div class="phone-mockup-wrap">
+
+                        <!-- Phone Status Bar -->
+                        <div class="phone-status-bar">
+                            <span>itsybts Cellular</span>
+                            <div class="d-flex gap-4">
+                                <i class="fas fa-wifi"></i>
+                                <i class="fas fa-battery-full"></i>
+                            </div>
+                        </div>
+
+                        <!-- High-Tech Internal Background Layer -->
+                        <div class="mockup-bg-layer" style="opacity: 0.5; filter: brightness(0.5);"></div>
+
+                        <!-- Simulated Interaction Cursor -->
+                        <div class="mockup-cursor"></div>
+
+                        <!-- Walkthrough Viewport -->
+                        <div class="mockup-viewport">
+
+                            <!-- Screen 1: Splash -->
+                            <div class="mockup-screen"
+                                style="justify-content: center; align-items: center; background: transparent;">
+                                <div
+                                    style="width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; margin-bottom: 15px;">
+                                    <i class="fas fa-house" style="color: var(--primary); font-size: 40px;"></i>
+                                </div>
+                                <div style="color: white; font-weight: 900; letter-spacing: 4px; font-size: 20px;">
+                                    itsybts
+                                </div>
+                                <div style="color: rgba(255,255,255,0.3); font-size: 7px; letter-spacing: 2px;">SMART
+                                    ECOSYSTEM</div>
+                            </div>
+
+                            <!-- Screen 2: Scanning -->
+                            <div class="mockup-screen"
+                                style="justify-content: center; align-items: center; background: transparent;">
+                                <div class="scan-circle"></div>
+                                <div class="scan-circle" style="animation-delay: 1s;"></div>
+                                <div
+                                    style="color: var(--primary); font-weight: bold; font-size: 12px; margin-top: 120px;">
+                                    Scanning for Devices...</div>
+                                <div style="color: var(--text-muted); font-size: 9px;">Bluetooth & WiFi enabled</div>
+                            </div>
+
+                            <!-- Screen 3: Device List -->
+                            <div class="mockup-screen" style="background: transparent;">
+                                <div
+                                    style="font-weight: bold; font-size: 14px; color: white; margin-top: 20px; margin-bottom: 20px;">
+                                    Select Device</div>
+                                <div class="room-card-mini"
+                                    style="border-color: var(--primary); background: rgba(14, 165, 233, 0.1);">
+                                    <i class="fas fa-business-time" style="color: var(--primary);"></i>
+                                    <div>
+                                        <div style="font-weight: bold; color: white;">itsybts Main Office</div>
+                                        <div style="color: var(--accent); font-size: 8px;">Connected â€¢ 10.142.12.185
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-circle-check" style="margin-left: auto; color: var(--accent);"></i>
+                                </div>
+                                <div class="room-card-mini">
+                                    <i class="fas fa-couch"></i>
+                                    <div>
+                                        <div style="font-weight: bold; color: white;">Bedroom Unit 1</div>
+                                        <div style="color: var(--text-muted); font-size: 8px;">Saved â€¢ Offline</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Screen 4: Real Dashboard Simulation -->
+                            <div class="mockup-screen" style="background: transparent;">
+                                <div class="mockup-indicator">LIVE</div>
+                                <div style="margin-top: 20px; margin-bottom: 20px;">
+                                    <div
+                                        style="color: var(--primary); font-weight: bold; font-size: 9px; letter-spacing: 1px;">
+                                        DASHBOARD</div>
+                                    <div style="color: white; font-weight: 800; font-size: 16px;">itsybts Office</div>
+                                </div>
+
+                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                                    <!-- Interactive Light Button -->
+                                    <div class="btn-light-sim"
+                                        style="border-radius: 16px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; height: 90px; border: 1px solid var(--primary); background: rgba(14, 165, 233, 0.1); transition: all 0.3s;">
+                                        <i class="fas fa-lightbulb icon-light-sim"
+                                            style="font-size: 16px; color: var(--primary);"></i>
+                                        <div style="font-size: 10px; font-weight: bold; color: white;">Smart Switch
+                                        </div>
+                                    </div>
+                                    <!-- Interactive Fan Button -->
+                                    <div
+                                        style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); border-radius: 16px; padding: 15px; display: flex; flex-direction: column; justify-content: space-between; height: 90px;">
+                                        <i class="fas fa-fan icon-fan-sim"
+                                            style="font-size: 16px; color: var(--accent);"></i>
+                                        <div style="font-size: 10px; font-weight: bold; color: white;">Fan Speed (0-4)
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div
+                                    style="margin-top: 15px; height: 50px; background: rgba(14, 165, 233, 0.1); border-radius: 12px; border: 1px solid rgba(14, 165, 233, 0.2); display: flex; align-items: center; padding: 0 12px; gap: 12px;">
+                                    <i class="fas fa-temperature-half"
+                                        style="color: var(--primary); font-size: 12px;"></i>
+                                    <div>
+                                        <div class="temp-sim" style="color: white; font-size: 11px; font-weight: bold;">
+                                            24.8Â°C</div>
+                                        <div style="color: var(--text-muted); font-size: 7px;">Temp Reading</div>
+                                    </div>
+                                    <div style="margin-left: auto; text-align: right;">
+                                        <div style="color: var(--accent); font-size: 11px; font-weight: bold;">
+                                            1.2 kW</div>
+                                        <div style="color: var(--text-muted); font-size: 7px;">Energy Usage</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Navigation Bar Mockup -->
+                        <div class="phone-nav-bar">
+                            <i class="fas fa-house fs-14 text-primary"></i>
+                            <div class="phone-nav-plus">
+                                <i class="fas fa-plus fs-12"></i>
+                            </div>
+                            <i class="fas fa-gear fs-14 text-muted"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Drone Delivery 2030 -->
+    <section id="drone-2030" class="drone-hero">
+        <div class="container">
+            <div class="hero-content reveal">
+                <div class="badge-2030"><i class="fas fa-rocket"></i> MISSION 2030: Target Launch</div>
+                <h1>The Future of Delivery is <span>Vertical</span></h1>
+                <p class="lead">ITSYBTS TECHNOLOGY is pioneering India's first fully autonomous drone delivery network
+                    for
+                    electronic components and essentials. Imagine ordering a sensor or microcontroller and receiving it
+                    in 10 minutes, directly from the sky.</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="container" style="margin-bottom: 50px;">
+        <div class="features-grid reveal">
+            <div class="feature-card glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                <i class="fas fa-stopwatch"></i>
+                <h3>10-Minute Delivery</h3>
+                <p>No more waiting days for crucial hardware components. Our drone fleet bypasses city traffic to
+                    deliver your electronics in under 10 minutes, right to your balcony or rooftop.</p>
+            </div>
+            <div class="feature-card glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                <i class="fas fa-microchip"></i>
+                <h3>AI Navigation</h3>
+                <p>Powered by our proprietary computer vision and LiDAR arrays, itsybts drones autonomously navigate
+                    complex
+                    urban environments, avoiding obstacles and maintaining high-speed flight.</p>
+            </div>
+            <div class="feature-card glass-3d-card" data-tilt data-tilt-max="15" data-tilt-speed="400"
+                data-tilt-glare="true" data-tilt-max-glare="0.2" data-tilt-perspective="1000">
+                <i class="fas fa-weight-hanging"></i>
+                <h3>5 KG Payload</h3>
+                <p>From tiny Arduino boards to heavy stepper motors and batteries, our robust octocopter design can
+                    securely transport up to 5kg of payload through varying weather conditions.</p>
+            </div>
+        </div>
+    </div>
+
+    <section class="vision-section">
+        <div class="container vision-container reveal">
+            <div class="vision-text">
+                <h2>The Blinkit & Zomato of Hardware</h2>
+                <p>The quick-commerce revolution transformed how we buy groceries and food. Companies like Blinkit,
+                    Zepto, and Zomato established the 10-minute delivery standard.</p>
+                <p><b>ITSYBTS TECHNOLOGY is bringing this exact standard to the electronics and deep-tech sector, but
+                        taking
+                        it to the skies.</b> By 2030, our drone delivery fleet will be fully operational across major
+                    tech hubs in India. Engineers, hobbyists, and factories won't have to halt operations for a missing
+                    component.</p>
+                <div class="comparison-tags">
+                    <div class="c-tag blinkit"><i class="fas fa-bolt" style="color:#f8cb46"></i> Blinkit Speed</div>
+                    <div class="c-tag zepto"><i class="fas fa-stopwatch" style="color:#3d007c"></i> Zepto Efficiency
+                    </div>
+                    <div class="c-tag zomato"><i class="fas fa-utensils" style="color:#e23744"></i> Zomato Reliability
+                    </div>
+                </div>
+            </div>
+            <div id="drone-3d-container" class="drone-image"
+                style="height: 450px; background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(6,214,160,0.05)); cursor: move; display: flex; align-items: center; justify-content: center; position: relative;">
+                <!-- 3D Drone Rendered Here -->
+                <div
+                    style="position: absolute; bottom: 15px; left: 15px; font-size: 12px; color: var(--text-muted); background: rgba(0,0,0,0.5); padding: 5px 10px; border-radius: 20px; z-index: 10;">
+                    <i class="fas fa-hand-pointer"></i> Interact
+                </div>
+            </div>
+        </div>
+
+        <div class="container mt-100 reveal">
+            <div class="glass-3d-card p-40 br-32 border-glass"
+                style="background: rgba(15, 23, 42, 0.6); position: relative; overflow: hidden;">
+                <!-- Decorative background elements -->
+                <div
+                    style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: var(--primary); filter: blur(100px); opacity: 0.2;">
+                </div>
+                <div
+                    style="position: absolute; bottom: -50px; left: -50px; width: 200px; height: 200px; background: #06d6a0; filter: blur(100px); opacity: 0.1;">
+                </div>
+
+                <div
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; position: relative; z-index: 2;">
+                    <div>
+                        <span class="badge-v2 mb-15"
+                            style="background: rgba(6, 214, 160, 0.1); color: #06d6a0; border-color: #06d6a0;">LIVE
+                            TRACKING</span>
+                        <h3 class="fs-36 fw-800 text-white mb-20">Connected Drone Telemetry</h3>
+                        <p class="text-muted-alt fs-16 mb-20 lh-1-8">
+                            Every drone in our fleet is a fully connected IoT node. Using secure cellular and satellite
+                            links, our drones stream real-time telemetry—including altitude, ground speed, battery
+                            health, and payload status—directly to the itsybts Command Center.
+                        </p>
+                        <p class="text-muted-alt fs-16 mb-30 lh-1-8">
+                            <b>Secure Drop-off:</b> Upon reaching the destination, the drone hovers safely while the
+                            customer enters a Cryptographic OTP via our app to authorize the payload release. Experience
+                            our live simulation to see how we track and manage autonomous deliveries.
+                        </p>
+                        <a href="drone-simulation.html" target="_blank" class="btn-primary pulsating-glow"
+                            style="display: inline-flex; align-items: center; gap: 10px;">
+                            <i class="fas fa-satellite-dish"></i> Launch Command Center
+                        </a>
+                    </div>
+                    <div style="text-align: center;">
+                        <div class="p-rel"
+                            style="border: 1px solid rgba(14, 165, 233, 0.3); border-radius: 20px; padding: 40px; background: #02040a; box-shadow: 0 0 30px rgba(14, 165, 233, 0.1) inset;">
+                            <i class="fas fa-crosshairs text-primary fs-48 mb-20"
+                                style="animation: pulse-glow-badge 2s infinite;"></i>
+                            <h4 class="text-white fs-20 fw-700 mb-15" style="letter-spacing: 2px;">DRONE ID: SLX-4190
+                            </h4>
+                            <div style="display: flex; justify-content: center; gap: 30px; color: var(--text-muted);">
+                                <div style="text-align: center;">
+                                    <div
+                                        style="font-size: 24px; font-weight: 800; color: #fff; font-family: monospace;">
+                                        65 <span style="font-size: 12px; color: #64748b;">km/h</span></div>
+                                    <div style="font-size: 11px; text-transform: uppercase; margin-top: 5px;">Speed
+                                    </div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div
+                                        style="font-size: 24px; font-weight: 800; color: #fff; font-family: monospace;">
+                                        120 <span style="font-size: 12px; color: #64748b;">m</span></div>
+                                    <div style="font-size: 11px; text-transform: uppercase; margin-top: 5px;">Altitude
+                                    </div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div
+                                        style="font-size: 24px; font-weight: 800; color: #06d6a0; font-family: monospace;">
+                                        95 <span style="font-size: 12px; color: #64748b;">%</span></div>
+                                    <div style="font-size: 11px; text-transform: uppercase; margin-top: 5px;">Battery
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+
+                <h2>Contact Us</h2>
+                <p>Ready to bring your ideas to life? Let's talk!</p>
+            </div>
+            <div class="contact-grid">
+                <div class="reveal">
+                    <div class="contact-info-cards">
+                        <div class="contact-info-card">
+                            <div class="icon"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email</h4>
+                                <p>btstechnology007@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="icon"><i class="fas fa-phone"></i></div>
+                            <div>
+                                <h4>Phone</h4>
+                                <p>+91 7052050656</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="icon"><i class="fas fa-location-dot"></i></div>
+                            <div>
+                                <h4>Address</h4>
+                                <p>Sharmik Vihar, Sec 30, Faridabad, Haryana</p>
+                            </div>
+                        </div>
+                        <div class="contact-info-card">
+                            <div class="icon"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Working Hours</h4>
+                                <p>Mon - Sat: 9:00 AM - 7:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-wrap reveal">
+                    <h3>Send a Message</h3>
+                    <form id="homeContactForm" onsubmit="handleHomeSubmit(event, this); return false;">
+                        <input type="hidden" name="_subject" value="New Website Enquiry - ITSYBTS TECHNOLOGY">
+                        <input type="hidden" name="_captcha" value="false">
+                        <input type="hidden" name="_template" value="table">
+                        <input type="hidden" name="_next" value="https://btstechnology.com">
+                        <div class="form-row">
+                            <div class="form-group"><input type="text" id="name" name="Name" placeholder="Your Name"
+                                    required></div>
+                            <div class="form-group"><input type="email" id="email" name="Email" placeholder="Your Email"
+                                    required></div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><input type="tel" id="contactPhone" name="Phone"
+                                    placeholder="Your Phone Number" required></div>
+                            <div class="form-group"><input type="text" name="Company Name" placeholder="Company Name">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group"><input type="number" name="Number Of Units Required"
+                                    placeholder="Number Of Units Required"></div>
+                            <div class="form-group"><input type="text" name="State" placeholder="State"></div>
+                        </div>
+                        <div class="form-group"><textarea id="projectDetails" name="Project Details & Requirement"
+                                placeholder="Project Details & Requirement *" rows="5" required></textarea></div>
+                        <div class="btn-row">
+                            <button type="submit" class="btn-email"><i class="fas fa-paper-plane"></i> Submit
+                                Inquiry</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="map-wrap reveal">
+                <iframe
+                    src="https://maps.google.com/maps?q=Sharmik+Vihar+Sec+30+Faridabad+Haryana&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="300" style="border:0;display:block;" allowfullscreen="" loading="lazy"
+                    title="ITSYBTS TECHNOLOGY Location Map"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY"
+                        style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;"
+                        class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#expertise">In News</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="index.html#contact">Contact Us</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener"
+                        title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank"
+                        rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>How can I help you?</span>
+                </a>
+                <div class="copyright-text">
+                    Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link"
+                        onclick="window.location.href='login.html'">•</span>
+                </div>
+                <a href="index.html#contact" class="chat-widget">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Leave a message</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <!-- Product Detail Modal (Full Page) -->
+    <div id="product-detail-modal">
+        <div id="product-modal-content">
+            <!-- Content injected by JS -->
+        </div>
+    </div>
+
+    <script>
+        const projectData = {
+            'homecontrol': {
+                title: 'Home Control itsybts System',
+                tag: 'Smart Automation',
+                image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800',
+                desc: 'Complete 6-channel smart automation board designed for maximum reliability and smooth performance. It allows you to control up to 6 devices independently via the itsybts Smart App.',
+                specs: [
+                    { label: 'Capacity', val: '6 Independent Channels' },
+                    { label: 'Load', val: 'Up to 10A Per Channel' },
+                    { label: 'Protocols', val: 'WiFi / MQTT / Bluetooth' }
+                ],
+                features: ['Instant Toggle', 'Global Access', 'Voice Ready'],
+                visual: `<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:15px;width:240px;margin:0 auto;">${Array(6).fill('<div style="width:60px;height:80px;background:rgba(255,255,255,0.05);border:1px solid rgba(14,165,233,0.3);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;"><div style="width:12px;height:12px;border-radius:50%;background:#06d6a0;box-shadow:0 0 10px #06d6a0;"></div><div style="width:24px;height:4px;background:rgba(255,255,255,0.2);border-radius:2px;"></div></div>').join('')}</div>`
+            },
+            'solar': {
+                title: 'Solar Efficiency Hub',
+                tag: 'Renewable IoT',
+                image: 'https://images.unsplash.com/photo-1513672530140-69a008320140?w=800',
+                desc: 'The Solar Efficiency Hub monitors panel performance and uses advanced dust detection to notify you when cleaning is required to maintain peak energy output.',
+                specs: [
+                    { label: 'Tracking', val: 'Voltage & Current' },
+                    { label: 'Sensors', val: 'Dust Detection' },
+                    { label: 'System', val: 'ESP32 Based IoT' }
+                ],
+                working: 'The Solar Efficiency Hub uses ESP32 IoT technology to monitor Voltage and Current in real-time. It features specialized dust sensors that detect accumulation on panel surfaces. When efficiency drops below a set threshold or dust levels increase, the system sends an automated notification to your smartphone, ensuring your renewable energy system always performs at its peak.',
+                features: ['Voltage Tracking', 'Dust Alert', 'Efficiency Reports'],
+                visual: `<div style="text-align:center;"><i class="fas fa-sun" style="font-size:80px;color:#fbbf24;filter:drop-shadow(0 0 20px rgba(251,191,36,0.5));"></i><div style="margin-top:20px;color:#06d6a0;font-weight:bold;">EFFICIENCY: 98.4%</div><div style="width:200px;height:10px;background:rgba(255,255,255,0.1);border-radius:5px;margin:15px auto 0;overflow:hidden;"><div style="width:80%;height:100%;background:#06d6a0;animation:powerPulse 2s infinite;"></div></div></div>`
+            },
+            'kinetic': {
+                title: 'Kinetic Mirror System',
+                tag: 'Interactive Art',
+                image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800',
+                video: 'images/kinetic_mirror.mp4', // USER: Add your video file path here
+                desc: 'The itsybts Kinetic Mirror is a fusion of mechanical engineering and computer vision. It creates a physical reflection of anyone standing in front of it using motorized panels.',
+                specs: [
+                    { label: 'Motors', val: '64 High-Torque Servos' },
+                    { label: 'Camera', val: '3D Depth Vision' },
+                    { label: 'Grid', val: '8x8 Interactive Array' }
+                ],
+                working: 'The Kinetic Mirror System employs high-speed computer vision to track human movement in front of the installation. This data is processed in real-time to control 64 high-torque servo motors, each independently tilting a mirror panel. This creates a mesmerizing physical animation that creates a literal reflection of the viewer\'s silhouette.',
+                features: ['Silhouette Tracking', 'Real-time Response', 'Mechanical Art']
+            },
+            'water': {
+                title: 'Smart Water Controller',
+                tag: 'IoT Solution',
+                image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800',
+                desc: 'Eliminate water overflow and pump burnouts with our intelligent water management system. It\'s not just a switch; it\'s a smart assistant for your home\'s water supply.',
+                specs: [
+                    { label: 'Sensor', val: 'Ultrasonic (Non-contact)' },
+                    { label: 'Mobile App', val: 'itsybts Smart Ecosystem' },
+                    { label: 'Safety', val: 'Dry-Run Protection' }
+                ],
+                working: 'This smart controller uses non-contact ultrasonic sensors to measure tank levels with millimeter precision. The data is transmitted via WiFi to the itsybts Cloud, allowing for real-time monitoring on the mobile app. Integrated dry-run protection automatically shuts down the pump if water is unavailable, preventing expensive motor damage.',
+                features: ['Precision Sensing', 'App Integration', 'Pump Life Saver'],
+                visual: `<div class="tank-anim"><div class="water-layer"></div><div class="tank-label">ULTRASONIC</div></div>`
+            },
+            'energy': {
+                title: 'Smart Energy Monitor',
+                tag: 'Sustainability IoT',
+                image: 'https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=800',
+                desc: 'Take control of your utility bills with the itsybts Smart Energy Monitor. This device provides granular data on electricity consumption, helping you identify energy-hungry appliances.',
+                specs: [
+                    { label: 'Method', val: 'Non-Invasive CT Sensing' },
+                    { label: 'Data', val: 'Real-time & Historical' },
+                    { label: 'Alerts', val: 'Overload Safety Threshold' }
+                ],
+                working: 'The monitor clips onto your main power lines using non-invasive Current Transformer (CT) sensors. It measures voltage and current phases to calculate real-time power consumption. This data is sent to an ESP32-based hub which pushes updates to your smartphone dashboard, allowing you to track usage and set overload safety alerts.',
+                features: ['CT Sensor Tech', 'Mobile Dashboard', 'Waste Reduction'],
+                visual: `<div class="energy-chart"><svg viewBox="0 0 100 100" class="h-full w-full"><circle cx="50" cy="50" r="45" class="energy-ring-bg"></circle><circle cx="50" cy="50" r="45" class="energy-ring"></circle></svg><div class="p-abs text-center"><div class="fs-20 fw-800 text-white">2.4 <span class="fs-10 text-primary">kW</span></div></div></div>`
+            },
+            'motor': {
+                title: 'Motor Automation System',
+                tag: 'Industrial Automation',
+                image: 'https://images.unsplash.com/photo-1540304453526-bb2165f99d20?w=800',
+                desc: 'Designed for heavy-duty industrial motors and residential pumps. Our system provides total control and fail-safe protection mechanisms.',
+                specs: [
+                    { label: 'Protection', val: 'Phase Imbalance & Trip' },
+                    { label: 'Range', val: 'Global (Cloud-based)' },
+                    { label: 'Compatibility', val: 'Voice (Alexa/Google)' }
+                ],
+                working: 'Designed for industrial and heavy domestic use, this automation system monitors phase balance and current stability. It features multiple safety trip mechanisms to prevent motor burnouts. Users can schedule operation timers or toggle the motor remotely via the itsybts app, with built-in voice command support for Alexa and Google Home.',
+                features: ['Phase Protection', 'Manual Override', 'Timer Scheduling'],
+                visual: `<div style="text-align:center;"><i class="fas fa-fan fa-spin" style="font-size:80px;color:#0ea5e9;text-shadow:0 0 20px rgba(14,165,233,0.5);"></i><div style="margin-top:20px;color:#06d6a0;font-weight:bold;font-size:12px;">MOTOR STATUS: ACTIVE</div></div>`
+            }
+        };
+
+        function openProjectDetail(id, fromPopState = false) {
+            const data = projectData[id];
+            if (!data) return;
+
+            const specs = data.specs.map(s => `
+                <div class="spec-item">
+                    <span class="spec-label">${s.label}</span>
+                    <span class="spec-val">${s.val}</span>
+                </div>`).join('');
+
+            const featureBadges = data.features.map(f => `<span class="feature-tag">${f}</span>`).join('');
+
+            const content = `
+                <!-- HEADER (Standardized) -->
+                <header class="modal-header">
+                    <div class="container">
+                        <nav>
+                            <div class="logo logo-clickable" onclick="closeProductModal(); window.location.href='index.html'">
+                                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 45px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                                <div class="logo-info">
+                                    <span class="logo-text" style="font-size: 20px;">ITSYBTS TECHNOLOGY</span>
+                                    <span class="logo-subtext">Binary Turbo Smart</span>
+                                </div>
+                            </div>
+                            <ul class="nav-links">
+                                <li class="drawer-header">
+                                    <div class="mobile-close" onclick="closeMobileMenu(this)">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#home'; closeMobileMenu(this);">Home</a></li>
+                                <li class="nav-item mobile-dropdown">
+                                    <a href="javascript:void(0)" onclick="if(window.innerWidth < 992) { this.parentElement.classList.toggle('active-dropdown'); event.preventDefault(); event.stopPropagation(); }">ABOUT US <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#about'; closeMobileMenu(this);">About Us</a></li>
+                                        <li><a href="leadership.html">Our Leadership</a></li>
+                                        <li><a href="index.html#expertise">In News</a></li>
+                                        <li><a href="careers.html">Careers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#services'; closeMobileMenu(this);">Services</a></li>
+                                <li><a href="technologies.html">Technologies</a></li>
+                                <li><a href="test-lab.html">Test Lab</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#process'; closeMobileMenu(this);">Process</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#projects'; closeMobileMenu(this);">Projects</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#products'; closeMobileMenu(this);">Products</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#app'; closeMobileMenu(this);">App</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#contact'; closeMobileMenu(this);">Contact</a></li>
+
+                                <li class="drawer-contact-info">
+                                    <h4>Contact Info</h4>
+                                    <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                                    <p><b>For Business:</b><br>+91 7052050656</p>
+                                    <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                                    <div class="drawer-social">
+                                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+
+                <!-- HERO SECTION (pt-180 to fix overlap) -->
+                <div class="modal-hero-v2" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(10,11,21,1)), url('${data.image}') center/cover;">
+                    <div class="container pb-60 pt-180">
+                        <span class="badge-v2 mb-15">PROJECT SHOWCASE</span>
+                        <h1 class="fs-48 fw-900 text-white mb-15">${data.title}</h1>
+                        <p class="fs-16 text-white-70 max-w-700 lh-1-8">${data.desc}</p>
+                    </div>
+                </div>
+
+                <!-- CONTENT -->
+                <div class="product-dark-content pt-80 pb-120">
+                    <div class="container">
+                        <!-- Working Row -->
+                        ${data.working ? `
+                        <div class="grid-2-col gap-60 ai-center mb-100">
+                            <!-- Visual Left -->
+                            <div class="p-40 br-32 bg-light-soft shadow-inner">
+                                <div class="image-box-clean">
+                                    ${data.visual ? data.visual : (data.video ? `
+                                    <video muted autoplay loop playsinline class="w-full br-20 shadow-p">
+                                        <source src="${data.video}" type="video/mp4">
+                                    </video>
+                                    ` : `
+                                    <img src="${data.image}" alt="${data.title}" class="w-full br-20 shadow-p">
+                                    `)}
+                                </div>
+                            </div>
+                            <!-- Description Right -->
+                            <div>
+                                <h2 class="fs-32 fw-900 mb-25 text-dark-2">How does this work?</h2>
+                                <p class="fs-18 text-muted-alt lh-1-8 desc-glow-wrap">
+                                    ${data.working}
+                                </p>
+                            </div>
+                        </div>
+                        ` : ''}
+
+                        <!-- Technical Specs & Features Row -->
+                        <div class="grid-2-col gap-60 ai-start">
+                             <!-- Left: Features -->
+                             <div class="bg-light-soft p-40 br-32 shadow-subtle border-glass">
+                                <h4 class="text-dark-2 fs-22 fw-900 mb-25 d-flex ai-center gap-12">
+                                    <i class="fas fa-star text-primary"></i>
+                                    Key Features
+                                </h4>
+                                <div class="grid-2-col gap-15">
+                                    ${data.features.map(f => `
+                                        <div class="feature-bullet-card">
+                                            <i class="fas fa-check-circle text-primary fs-18"></i>
+                                            <span class="fs-15 fw-600 text-muted-alt">${f}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                             </div>
+
+                             <!-- Right: Specs -->
+                             <div>
+                                <h2 class="fs-32 fw-900 text-dark-2 mb-20">Technical Specifications</h2>
+                                <div class="specs-row-v2 mb-40">
+                                    ${data.specs.map(s => `
+                                        <div class="spec-card-v4">
+                                            <span class="spec-label-v4">${s.label}</span>
+                                            <span class="spec-val-v4 text-primary">${s.val}</span>
+                                        </div>
+                                    `).join('')}
+                                </div>
+                             </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Enquiry CTA Strip -->
+                <div style="background: #0a0f1e; padding: 60px 0; text-align: center;">
+                    <p style="color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Interested in this product?</p>
+                    <button onclick="openOrderModal('${data.title}')" class="btn-primary no-border fs-18 py-18 px-60 shadow-subtle" style="border-radius: 50px; cursor: pointer;">
+                        <i class="fas fa-paper-plane mr-12"></i> Send an Enquiry
+                    </button>
+                </div>
+
+                <!-- Standard Site Footer -->
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="footer-top">
+                            <div class="footer-logo">
+                                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                                <div class="logo-info">
+                                    <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                                    <span class="logo-subtext">Binary Turbo Smart</span>
+                                </div>
+                            </div>
+                            <div class="footer-nav">
+                                <a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#about'">About Us</a>
+                                <a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#services'">Services</a>
+                                <a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#expertise'">In News</a>
+                                <a href="faq.html">FAQ</a>
+                                <a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#contact'">Contact Us</a>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href="terms-and-conditions.html">Terms & Conditions</a>
+                            </div>
+                            <div class="footer-social">
+                                <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="container">
+                            <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>How can I help you?</span>
+                            </a>
+                            <div class="copyright-text">
+                                Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link" onclick="window.location.href='login.html'">•</span>
+                            </div>
+                            <a href="javascript:void(0)" onclick="closeProductModal(); setTimeout(()=>{ document.getElementById('contact').scrollIntoView({behavior:'smooth'}) }, 300);" class="chat-widget">
+                                <i class="fas fa-comment-dots"></i>
+                                <span>Leave a message</span>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            `;
+
+            document.getElementById('product-modal-content').innerHTML = content;
+            document.getElementById('product-detail-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('product-detail-modal').scrollTop = 0;
+
+            // Particle canvas helper
+            setTimeout(() => {
+                const c = document.getElementById('prod-hero-canvas');
+                if (!c) return;
+                c.width = c.offsetWidth; c.height = c.offsetHeight;
+                const ctx = c.getContext('2d');
+                const pts = Array.from({ length: 55 }, () => ({
+                    x: Math.random() * c.width, y: Math.random() * c.height,
+                    vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+                    r: Math.random() * 1.8 + 0.8
+                }));
+                (function draw() {
+                    ctx.clearRect(0, 0, c.width, c.height);
+                    pts.forEach(p => {
+                        p.x += p.vx; p.y += p.vy;
+                        if (p.x < 0 || p.x > c.width) p.vx *= -1;
+                        if (p.y < 0 || p.y > c.height) p.vy *= -1;
+                        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(14,165,233,0.7)'; ctx.fill();
+                    });
+                    pts.forEach((p, i) => pts.forEach((q, j) => {
+                        if (j <= i) return;
+                        const d = Math.hypot(p.x - q.x, p.y - q.y);
+                        if (d < 110) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.strokeStyle = 'rgba(14,165,233,' + ((1 - d / 110) * 0.25) + ')'; ctx.lineWidth = 0.5; ctx.stroke(); }
+                    }));
+                    requestAnimationFrame(draw);
+                })();
+            }, 80);
+        }
+
+        function closeProjectDetail(id) {
+            // Unused but kept for safety if any hardcoded inline HTML calls it
+            closeProductModal();
+        }
+
+        // Home View Switcher
+        function switchHomeView(view) {
+            const inside = document.getElementById('view-inside');
+            const outside = document.getElementById('view-outside');
+            const btnInside = document.getElementById('btn-inside');
+            const btnOutside = document.getElementById('btn-outside');
+
+            if (view === 'inside') {
+                inside.style.display = 'block';
+                outside.style.display = 'none';
+                btnInside.className = 'btn-primary';
+                btnInside.style.background = 'var(--primary)';
+                btnOutside.className = 'btn-outline';
+                btnOutside.style.background = 'transparent';
+            } else {
+                inside.style.display = 'none';
+                outside.style.display = 'block';
+                btnOutside.className = 'btn-primary';
+                btnOutside.style.background = 'var(--primary)';
+                btnInside.className = 'btn-outline';
+                btnInside.style.background = 'transparent';
+            }
+        }
+
+        function updateMain(view, src) {
+            const mainImg = document.getElementById('main-' + view);
+            mainImg.style.opacity = '0';
+            setTimeout(() => {
+                mainImg.src = src;
+                mainImg.style.opacity = '1';
+            }, 200);
+
+            // Update thumb borders
+            const thumbs = document.querySelectorAll('#view-' + view + ' .gallery-thumbs img');
+            thumbs.forEach(t => t.style.border = '1px solid var(--glass-border)');
+            event.target.style.border = '2px solid var(--primary)';
+        }
+
+        
+
+        // Header scroll
+        window.addEventListener('scroll', () => {
+            document.getElementById('header').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Scroll Reveal
+        const obs = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+        // Standardized Toast notification
+        function showToast(msg, isError = false) {
+            let toast = document.getElementById('bts-toast');
+            if (!toast) {
+                toast = document.createElement('div');
+                toast.id = 'bts-toast';
+                toast.className = 'toast';
+                document.body.appendChild(toast);
+            }
+            toast.innerHTML = `<i class="fas ${isError ? 'fa-circle-xmark' : 'fa-circle-check'}"></i> ${msg}`;
+            toast.className = isError ? 'toast toast-active toast-error' : 'toast toast-active';
+            setTimeout(() => {
+                toast.classList.remove('toast-active');
+            }, 4000);
+        }
+
+        // ============================
+        // FULL PAGE ENQUIRY FORM SUBMISSION
+        // ============================
+        document.addEventListener('submit', async function (e) {
+            if (e.target && e.target.id === 'fullEnquiryForm') {
+                e.preventDefault();
+                const form = e.target;
+                const btn = form.querySelector('button');
+                const originalHTML = btn.innerHTML;
+
+                btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PREPARING...';
+                btn.disabled = true;
+
+                const formData = new FormData(form);
+                const leadData = {
+                    type: 'Full Enquiry',
+                    name: formData.get('Name'),
+                    phone: formData.get('Phone'),
+                    service: formData.get('Category'),
+                    subject: `Website Enquiry: ${formData.get('Category')}`,
+                    message: `Quantity: ${formData.get('Quantity')}. Details: ${formData.get('Description')}`
+                };
+
+                // Save to local DB/Sheet
+                saveLeadToDB(leadData);
+
+                try {
+                    const response = await fetch('https://formsubmit.co/ajax/btstechnology007@gmail.com', {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    const result = await response.json();
+                    if (result.success === 'true' || result.success === true || response.ok) {
+                        showToast('✅ Enquiry Sent! Our Team will call you soon.', false);
+                        form.reset();
+                        setTimeout(() => closeProductModal(), 2000);
+                    } else {
+                        showToast('✅ Your Interest is Registered!', false);
+                        form.reset();
+                    }
+                } catch (err) {
+                    showToast('✅ Enquiry Saved in Dashboard!', false);
+                    form.reset();
+                } finally {
+                    btn.innerHTML = originalHTML;
+                    btn.disabled = false;
+                }
+            }
+        });
+
+        // Standard Contact Form Logic
+        async function handleHomeSubmit(e, form) {
+            if (e) e.preventDefault();
+            const btn = form.querySelector('button');
+            const originalHTML = btn.innerHTML;
+
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PREPARING...';
+            btn.disabled = true;
+
+            const formData = new FormData(form);
+            const leadData = {
+                type: 'Contact Inquiry',
+                name: formData.get('Name') || 'Guest',
+                email: formData.get('Email') || 'N/A',
+                phone: formData.get('Phone') || 'N/A',
+                message: formData.get('Project Details & Requirement') || 'No details'
+            };
+
+            saveLeadToDB(leadData);
+
+            try {
+                const response = await fetch('https://formsubmit.co/ajax/btstechnology007@gmail.com', {
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' }
+                });
+                if (response.ok) {
+                    showToast('✅ Inquiry Sent Successfully!', false);
+                    form.reset();
+                } else {
+                    showToast('⚠️ Submission Error. Please try again.', true);
+                }
+            } catch (err) {
+                showToast('✅ Inquiry Saved to Dashboard!', false);
+                form.reset();
+            } finally {
+                btn.innerHTML = originalHTML;
+                btn.disabled = false;
+            }
+            return false;
+        }
+
+        function openOrderModal(cat) {
+            window.location.href = `enquiry.html?product=${encodeURIComponent(cat)}`;
+        }
+
+
+
+
+
+
+        // ============================
+        // DATABASE & STATS LOGIC
+        // ============================
+        function saveLeadToDB(lead) {
+            const leads = JSON.parse(localStorage.getItem('bts_leads') || '[]');
+            lead.id = 'L-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+            lead.date = new Date().toISOString();
+            lead.status = 'New';
+            leads.push(lead);
+            localStorage.setItem('bts_leads', JSON.stringify(leads));
+
+            // Sync with Google Sheet
+            syncWithGoogleSheet(lead);
+
+            console.log('Lead synchronized to internal database');
+        }
+
+        async function syncWithGoogleSheet(lead) {
+            // STEP: Paste your Google Web App URL here
+            const GOOGLE_SHEET_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+
+            if (GOOGLE_SHEET_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') return;
+
+            try {
+                await fetch(GOOGLE_SHEET_URL, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: JSON.stringify(lead)
+                });
+                console.log('Sheet Sync Successful');
+            } catch (err) {
+                console.error('Sheet Sync Failed', err);
+            }
+        }
+
+        function closeProductModal() {
+            if (document.getElementById('product-detail-modal').classList.contains('active')) {
+                history.back();
+            }
+        }
+
+        // Global Back/Forward Navigation Handler
+        window.addEventListener('popstate', function (event) {
+            const state = event.state;
+            const pModal = document.getElementById('product-detail-modal');
+            const oModal = document.getElementById('orderModal');
+
+            if (state && state.modal) {
+                if (state.modal === 'product') {
+                    openProductModal(state.id, true);
+                } else if (state.modal === 'project') {
+                    openProjectDetail(state.id, true);
+                } else if (state.modal === 'enquiry') {
+                    openOrderModal(state.id, true);
+                }
+            } else {
+                // If no state, close everything
+                if (pModal && pModal.classList.contains('active')) {
+                    pModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+                if (oModal && oModal.classList.contains('active')) {
+                    oModal.classList.remove('active');
+                }
+            }
+        });
+
+        const productData = {
+            'water-pump': {
+                title: 'Smart Water Pump Controller',
+                image: 'https://images.unsplash.com/photo-1585333127302-d59912069796?w=800&q=80',
+                desc: 'A complete automation solution for managing overhead and underground water tanks. Features dry run protection and precise water level monitoring.',
+                specs: [
+                    { label: 'Connectivity', val: 'WiFi / GSM' },
+                    { label: 'Sensors', val: 'Ultrasonic / Float Switch' },
+                    { label: 'Protection', val: 'Dry Run, Overload, Phase Loss' },
+                    { label: 'Mobile App', val: 'itsybts Smart Ecosystem Compatible' }
+                ],
+                features: ['Automatic Tank Filling', 'Schedule Based Pumping', 'Real-time Level Alerts']
+            },
+            'solar-cleaner': {
+                title: 'Smart Solar Panel Cleaner',
+                image: 'https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800&q=80',
+                desc: 'An autonomous robotic solution designed to maximize solar power efficiency by keeping panels dust-free through scheduled, precision cleaning.',
+                specs: [
+                    { label: 'Operation', val: 'Fully Autonomous / Manual' },
+                    { label: 'Power Source', val: 'Rechargeable Battery / Solar' },
+                    { label: 'Range', val: 'Up to 500 Meters line' },
+                    { label: 'Brush Material', val: 'High-grade Soft Bristle' }
+                ],
+                features: ['Rain Sensing Auto-stop', 'Efficiency Loss Detection', 'Smartphone Remote Control']
+            },
+            'home-controller': {
+                title: 'itsybts Smart Home Controller',
+                image: 'https://images.unsplash.com/photo-1558002038-1055907df827?w=800&q=80',
+                desc: 'The brain of your smart home. Control up to 6 heavy-duty loads, fans, and dimmable lights with high-frequency switching technology.',
+                specs: [
+                    { label: 'Input Voltage', val: '110V - 240V AC' },
+                    { label: 'Channels', val: '6 Switches + 1 Fan Dimmer' },
+                    { label: 'Protocol', val: 'WiFi / MQTT / BLE' },
+                    { label: 'Display', val: 'Optional OLED Status Screen' }
+                ],
+                features: ['Voice Control (Alexa/Google)', 'Child Lock Mode', 'Energy Consumption Tracking']
+            },
+            'security-alarm': {
+                title: 'Security and Safety Alarm',
+                image: 'https://images.unsplash.com/photo-1557597774-9d2739f85a94?w=800&q=80',
+                desc: 'High-precision security system with motion detection and localized siren alerts. Perfect for homes and small businesses.',
+                specs: [
+                    { label: 'Detection', val: 'PIR Motion / Door Contact' },
+                    { label: 'Alert Type', val: 'Siren / Mobile Notification' },
+                    { label: 'Power', val: 'Battery Backup Included' }
+                ],
+                features: ['Instant Intrusion Alerts', 'Tamper Detection', 'Easy Smartphone Arm/Disarm']
+            },
+            'street-light': {
+                title: 'Smart Street Light Controller',
+                image: 'https://images.unsplash.com/photo-1471439243729-0ec617947761?w=800&q=80',
+                desc: 'Intelligent light management with LDR-based dusk-to-dawn switching and remote power monitoring.',
+                specs: [
+                    { label: 'Mode', val: 'Auto (LDR) / Manual (App)' },
+                    { label: 'Load Type', val: 'LED / High Power Sodium' },
+                    { label: 'Reporting', val: 'Energy Usage Logs' }
+                ],
+                features: ['Astronomical Timer Option', 'Fault Detection', 'Energy Saving Dimmable Mode']
+            },
+            'power-alert': {
+                title: 'GSM Power Failure Alert System',
+                image: 'https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=800&q=80',
+                desc: 'Never miss a power outage. This GSM system calls or texts you instantly when electricity goes out or comes back.',
+                specs: [
+                    { label: 'Connectivity', val: 'Any 4G/2G SIM Card' },
+                    { label: 'Backup', val: 'Internal Li-ion Power' },
+                    { label: 'Reach', val: 'Up to 5 Mobile Numbers' }
+                ],
+                features: ['Critical For Server Rooms', 'Cold Storage Monitoring', 'Phase Loss Detection']
+            },
+            'kinetic-mirror': {
+                title: 'Kinetic Art Mirror',
+                image: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80',
+                video: 'images/kinetic_mirror.mp4',
+                desc: 'A mesmerizing mechanical wall art using individual mirror tiles to track movements.',
+                specs: [
+                    { label: 'Technology', val: 'CV Silhouette Tracking' },
+                    { label: 'Resolution', val: '8x8 Physical Pixels' },
+                    { label: 'Latency', val: '< 50ms Response' }
+                ],
+                features: ['Interactive Sculpture', 'Modern Interior Art', 'Real-time Movement Sync']
+            },
+            'led-bulb': {
+                title: 'LED Bulb Manufacturing',
+                image: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=800&q=80',
+                desc: 'High-quality energy-efficient LED manufacturing with all types of wattages (9W to 60W) and form factors including Tubelights and Panels.',
+                specs: [
+                    { label: 'Range', val: '9W, 12W, 15W, 18W, 20W, 30W, 40W, 50W, 60W' },
+                    { label: 'Types', val: 'Bulbs, Tubelights, Panels, Street Lights' },
+                    { label: 'Efficiency', val: 'Up to 120 Lumens/Watt' },
+                    { label: 'Warranty', val: 'Up to 2 Years' }
+                ],
+                features: ['Wide Wattage Range', 'All Mode Production', 'Commercial & Domestic Types']
+            }
+        };
+
+        function openProductModal(id, fromPopState = false) {
+            const data = productData[id];
+            if (!data) return;
+
+            if (!fromPopState) {
+                history.pushState({ modal: 'product', id: id }, '');
+            }
+
+            const specs = data.specs.map(s => `
+                <div class="spec-item">
+                    <span class="spec-label">${s.label}</span>
+                    <span class="spec-val">${s.val}</span>
+                </div>`).join('');
+
+            const featureBadges = data.features.map(f => `<span class="feature-tag">${f}</span>`).join('');
+
+            const content = `
+                <!-- HEADER (Standardized) -->
+                <header class="modal-header">
+                    <div class="container">
+                        <nav>
+                            <div class="logo logo-clickable" onclick="closeProductModal(); window.location.href='index.html'">
+                                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 45px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                                <div class="logo-info">
+                                    <span class="logo-text" style="font-size: 20px;">ITSYBTS TECHNOLOGY</span>
+                                    <span class="logo-subtext">Binary Turbo Smart</span>
+                                </div>
+                            </div>
+                            <ul class="nav-links">
+                                <li class="drawer-header">
+                                    <div class="mobile-close" onclick="closeMobileMenu(this)">
+                                        <i class="fas fa-times"></i>
+                                    </div>
+                                </li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.href='index.html'; closeMobileMenu(this);">Home</a></li>
+                                <li class="nav-item mobile-dropdown">
+                                    <a href="javascript:void(0)" onclick="if(window.innerWidth < 992) { this.parentElement.classList.toggle('active-dropdown'); event.preventDefault(); event.stopPropagation(); }">ABOUT US <i class="fas fa-chevron-down"></i></a>
+                                    <ul class="dropdown">
+                                        <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#about'; closeMobileMenu(this);">About Us</a></li>
+                                        <li><a href="leadership.html">Our Leadership</a></li>
+                                        <li><a href="index.html#expertise">In News</a></li>
+                                        <li><a href="careers.html">Careers</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#services'; closeMobileMenu(this);">Services</a></li>
+                                <li><a href="technologies.html">Technologies</a></li>
+                                <li><a href="test-lab.html">Test Lab</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#process'; closeMobileMenu(this);">Process</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#projects'; closeMobileMenu(this);">Projects</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#products'; closeMobileMenu(this);">Products</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#app'; closeMobileMenu(this);">App</a></li>
+                                <li><a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#contact'; closeMobileMenu(this);">Contact</a></li>
+
+                                <li class="drawer-contact-info">
+                                    <h4>Contact Info</h4>
+                                    <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                                    <p><b>For Business:</b><br>+91 7052050656</p>
+                                    <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                                    <div class="drawer-social">
+                                        <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                        <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                        <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                                        <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                                <i class="fas fa-bars"></i>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+
+                <!-- HERO SECTION (pt-180 to fix overlap) -->
+                <div class="modal-hero-v2" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(10,11,21,1)), url('${data.image}') center/cover;">
+                    <div class="container pb-60 pt-180">
+                        <span class="badge-v2 mb-15">PRODUCT CATEGORY</span>
+                        <h1 class="fs-48 fw-900 text-white mb-15">${data.title}</h1>
+                        <p class="fs-16 text-white-70 max-w-700 lh-1-8">${data.desc}</p>
+                    </div>
+                </div>
+
+                <!-- NEW PRODUCT LOOK (Screenshot Standard) -->
+                <div class="product-dark-content pt-80 pb-120">
+                    <div class="container">
+                        <!-- Introduction Row -->
+                        <div class="grid-2-col gap-60 ai-center mb-100">
+                            <!-- Image Left -->
+                            <div class="p-40 br-32 bg-light-soft shadow-inner">
+                                <div class="image-box-clean">
+                                    ${data.visual ? data.visual : `
+                                    <img src="${data.image}" alt="${data.title}" class="w-full br-20 shadow-p">
+                                    `}
+                                </div>
+                            </div>
+                            <!-- Description Right -->
+                            <div>
+                                <h2 class="fs-32 fw-900 mb-25 text-dark-2">How does a ${data.title} work?</h2>
+                                <p class="fs-18 text-muted-alt lh-1-8 desc-glow-wrap">
+                                    ${data.desc}
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Features Boxed -->
+                        <div class="section-features">
+                            <h3 class="fs-28 fw-900 text-center mb-60 text-dark-2">Key Features</h3>
+                            <div class="grid-2-col gap-20">
+                                ${data.features.map(f => `
+                                    <div class="feature-bullet-card">
+                                        <i class="fas fa-check-circle text-primary fs-18"></i>
+                                        <span class="fs-15 fw-600 text-muted-alt">${f}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Enquiry CTA Strip -->
+                <div style="background: #0a0f1e; padding: 60px 0; text-align: center;">
+                    <p style="color: rgba(255,255,255,0.5); font-size: 14px; margin-bottom: 20px; letter-spacing: 1px; text-transform: uppercase;">Interested in this product?</p>
+                    <button onclick="openOrderModal('${data.title}')" class="btn-primary no-border fs-18 py-18 px-60 shadow-subtle" style="border-radius: 50px; cursor: pointer;">
+                        <i class="fas fa-paper-plane mr-12"></i> Send an Enquiry
+                    </button>
+                </div>
+
+                <!-- Standard Site Footer -->
+                <footer class="site-footer">
+                    <div class="container">
+                        <div class="footer-top">
+                            <div class="footer-logo">
+                                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                                <div class="logo-info">
+                                    <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                                    <span class="logo-subtext">Binary Turbo Smart</span>
+                                </div>
+                            </div>
+                            <div class="footer-nav">
+                                <a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#about'">About Us</a>
+                                <a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#services'">Services</a>
+                                <a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#expertise'">In News</a>
+                                <a href="faq.html">FAQ</a>
+                                <a href="javascript:void(0)" onclick="closeProductModal(); window.location.hash='#contact'">Contact Us</a>
+                                <a href="privacy-policy.html">Privacy Policy</a>
+                                <a href="terms-and-conditions.html">Terms & Conditions</a>
+                            </div>
+                            <div class="footer-social">
+                                <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                                <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                                <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                                <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="footer-bottom">
+                        <div class="container">
+                            <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                                <i class="fab fa-whatsapp"></i>
+                                <span>How can I help you?</span>
+                            </a>
+                            <div class="copyright-text">
+                                Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link" onclick="window.location.href='login.html'">•</span>
+                            </div>
+                            <a href="javascript:void(0)" onclick="closeProductModal(); setTimeout(()=>{ document.getElementById('contact').scrollIntoView({behavior:'smooth'}) }, 300);" class="chat-widget">
+                                <i class="fas fa-comment-dots"></i>
+                                <span>Leave a message</span>
+                            </a>
+                        </div>
+                    </div>
+                </footer>
+            `;
+
+            document.getElementById('product-modal-content').innerHTML = content;
+            document.getElementById('product-detail-modal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            document.getElementById('product-detail-modal').scrollTop = 0;
+
+            // Particle canvas for hero
+            setTimeout(() => {
+                const c = document.getElementById('prod-hero-canvas');
+                if (!c) return;
+                c.width = c.offsetWidth; c.height = c.offsetHeight;
+                const ctx = c.getContext('2d');
+                const pts = Array.from({ length: 55 }, () => ({
+                    x: Math.random() * c.width, y: Math.random() * c.height,
+                    vx: (Math.random() - 0.5) * 0.4, vy: (Math.random() - 0.5) * 0.4,
+                    r: Math.random() * 1.8 + 0.8
+                }));
+                (function draw() {
+                    ctx.clearRect(0, 0, c.width, c.height);
+                    pts.forEach(p => {
+                        p.x += p.vx; p.y += p.vy;
+                        if (p.x < 0 || p.x > c.width) p.vx *= -1;
+                        if (p.y < 0 || p.y > c.height) p.vy *= -1;
+                        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                        ctx.fillStyle = 'rgba(14,165,233,0.7)'; ctx.fill();
+                    });
+                    pts.forEach((p, i) => pts.forEach((q, j) => {
+                        if (j <= i) return;
+                        const d = Math.hypot(p.x - q.x, p.y - q.y);
+                        if (d < 110) { ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y); ctx.strokeStyle = 'rgba(14,165,233,' + ((1 - d / 110) * 0.25) + ')'; ctx.lineWidth = 0.5; ctx.stroke(); }
+                    }));
+                    requestAnimationFrame(draw);
+                })();
+            }, 80);
+        }
+
+        function trackStat(key) {
+            const k = 'bts_' + key;
+            const current = parseInt(localStorage.getItem(k) || '0');
+            localStorage.setItem(k, current + 1);
+        }
+
+        function toggleAccordion(header) {
+            const item = header.parentElement;
+            const wasActive = item.classList.contains('active');
+
+            // Optional: Close all others
+            // document.querySelectorAll('.accordion-item').forEach(i => i.classList.remove('active'));
+
+            if (wasActive) {
+                item.classList.remove('active');
+            } else {
+                item.classList.add('active');
+            }
+        }
+
+        // Track App Downloads
+        document.querySelector('a[download]')?.addEventListener('click', () => {
+            trackStat('app_downloads');
+        });
+
+        // Scroll Reveal Controller
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    // Add staggered children support
+                    const children = entry.target.querySelectorAll('.stagger-item');
+                    children.forEach((child, index) => {
+                        setTimeout(() => {
+                            child.classList.add('visible');
+                        }, index * 100);
+                    });
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+    <script>
+        function toggleMobileMenu(btn) {
+            const parent = btn ? btn.closest('nav') || btn.closest('header') : document.getElementById('header');
+            const nav = parent.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+
+            // Toggle nav-active on the main header
+            const mainHeader = document.querySelector('header');
+            if (mainHeader) mainHeader.classList.toggle('nav-active');
+
+            // Add click listener to nav for blank space closing
+            if (nav && !nav.hasAttribute('data-click-listener')) {
+                nav.setAttribute('data-click-listener', 'true');
+                nav.addEventListener('click', (e) => {
+                    // Close if clicked on the drawer itself or li, but NOT if clicked on a link or dropdown toggle
+                    if (e.target.classList.contains('nav-links') || e.target.tagName === 'LI') {
+                        closeMobileMenu(e.target);
+                    }
+                });
+            }
+        }
+
+        function closeMobileMenu(btn) {
+            const nav = btn ? btn.closest('.nav-links') : document.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+
+            // Remove nav-active from header
+            const mainHeader = document.querySelector('header');
+            if (mainHeader) mainHeader.classList.remove('nav-active');
+
+            // Reset dropdowns
+            document.querySelectorAll('.mobile-dropdown').forEach(item => {
+                item.classList.remove('active-dropdown');
+            });
+        }
+
+        // Global click listener to close menu when clicking anywhere outside
+        document.addEventListener('click', function (e) {
+            const nav = document.querySelector('.nav-links');
+            if (nav && nav.classList.contains('active')) {
+                if (!e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
+                    closeMobileMenu();
+                }
+            }
+        });
+    </script>
+    <script>
+        // Dynamic Product Loading from Inventory
+        const loadDynamicProducts = () => {
+            const inventory = JSON.parse(localStorage.getItem('bts_inventory'));
+            const container = document.getElementById('products-grid-container');
+
+            if (inventory && inventory.length > 0 && container) {
+                container.innerHTML = '';
+                inventory.forEach(p => {
+                    const card = document.createElement('div');
+                    card.className = 'product-card stagger-item';
+                    card.innerHTML = `
+                        <h4>${p.name}</h4>
+                        <div class="product-overlay">
+                            <button class="product-read-more" onclick="openProductModalDynamic('${p.id}')">Read More</button>
+                        </div>
+                    `;
+                    if (p.image) {
+                        card.style.backgroundImage = `url('${p.image}')`;
+                        card.style.backgroundSize = 'cover';
+                        card.style.backgroundPosition = 'center';
+                    }
+                    container.appendChild(card);
+                });
+            }
+        };
+
+        window.openProductModalDynamic = (id) => {
+            const inventory = JSON.parse(localStorage.getItem('bts_inventory'));
+            const p = inventory.find(item => item.id.toString() === id.toString());
+            if (p) {
+                alert(`Product: ${p.name}\nPrice: â‚¹${p.price.toLocaleString()}\nDescription: ${p.desc}`);
+            }
+        };
+
+        // window.addEventListener('DOMContentLoaded', loadDynamicProducts);
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // 3D Drone Animation
+        (function () {
+            const container = document.getElementById('drone-3d-container');
+            if (!container) return;
+
+            const scene = new THREE.Scene();
+            const camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+            const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+            container.appendChild(renderer.domElement);
+
+            const drone = new THREE.Group();
+            scene.add(drone);
+
+            // Drone Body
+            const bodyGeo = new THREE.BoxGeometry(2, 0.6, 2);
+            const bodyMat = new THREE.MeshPhongMaterial({ color: 0x111111, specular: 0x0ea5e9, shininess: 100 });
+            const body = new THREE.Mesh(bodyGeo, bodyMat);
+            drone.add(body);
+
+            // Arms and Propellers
+            const props = [];
+            const armGeo = new THREE.CylinderGeometry(0.15, 0.15, 3);
+            const armMat = new THREE.MeshPhongMaterial({ color: 0x333333 });
+            const propGeo = new THREE.TorusGeometry(0.8, 0.05, 16, 100);
+            const propMat = new THREE.MeshPhongMaterial({ color: 0x06d6a0, emissive: 0x06d6a0, emissiveIntensity: 0.6 });
+
+            const positions = [
+                { x: 1.8, z: 1.8, rotY: Math.PI / 4 },
+                { x: -1.8, z: 1.8, rotY: -Math.PI / 4 },
+                { x: 1.8, z: -1.8, rotY: -Math.PI / 4 },
+                { x: -1.8, z: -1.8, rotY: Math.PI / 4 }
+            ];
+
+            positions.forEach(pos => {
+                const arm = new THREE.Mesh(armGeo, armMat);
+                arm.position.set(pos.x / 2, 0, pos.z / 2);
+                arm.rotation.z = Math.PI / 2;
+                arm.rotation.y = pos.rotY;
+                drone.add(arm);
+
+                const propGroup = new THREE.Group();
+                propGroup.position.set(pos.x, 0.4, pos.z);
+                propGroup.rotation.x = Math.PI / 2;
+
+                const propRing = new THREE.Mesh(propGeo, propMat);
+                const propBladeGeo = new THREE.BoxGeometry(1.5, 0.15, 0.02);
+                const propBlade = new THREE.Mesh(propBladeGeo, propMat);
+                const propBlade2 = new THREE.Mesh(propBladeGeo, propMat);
+                propBlade2.rotation.z = Math.PI / 2;
+
+                propGroup.add(propRing);
+                propGroup.add(propBlade);
+                propGroup.add(propBlade2);
+                drone.add(propGroup);
+                props.push(propGroup);
+            });
+
+            // Camera/Sensor Eye
+            const eyeGeo = new THREE.SphereGeometry(0.35, 32, 32);
+            const eyeMat = new THREE.MeshPhongMaterial({ color: 0x0ea5e9, emissive: 0x0ea5e9, emissiveIntensity: 0.9 });
+            const eye = new THREE.Mesh(eyeGeo, eyeMat);
+            eye.position.set(0, -0.1, 1.05);
+            drone.add(eye);
+
+            // Payload Box (Bottom)
+            const payloadGeo = new THREE.BoxGeometry(1, 0.8, 1);
+            const payloadMat = new THREE.MeshPhongMaterial({ color: 0xffffff });
+            const payload = new THREE.Mesh(payloadGeo, payloadMat);
+            payload.position.set(0, -0.7, 0);
+            drone.add(payload);
+
+            // Lighting
+            const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+            scene.add(ambientLight);
+            const pointLight = new THREE.PointLight(0x0ea5e9, 2, 50);
+            pointLight.position.set(0, 5, 5);
+            scene.add(pointLight);
+            const pointLight2 = new THREE.PointLight(0x06d6a0, 2, 50);
+            pointLight2.position.set(0, -5, -5);
+            scene.add(pointLight2);
+
+            camera.position.set(0, 3, 8);
+            camera.lookAt(0, 0, 0);
+
+            let time = 0;
+            let targetRotX = 0;
+            let targetRotY = 0;
+
+            function animate() {
+                requestAnimationFrame(animate);
+                time += 0.02;
+
+                // Hover effect
+                drone.position.y = Math.sin(time) * 0.4;
+
+                // Smooth rotation towards target (mouse interaction)
+                drone.rotation.y += (targetRotY - drone.rotation.y) * 0.05;
+                drone.rotation.x += (targetRotX + Math.sin(time * 0.5) * 0.1 - drone.rotation.x) * 0.05;
+                drone.rotation.z = Math.cos(time * 0.5) * 0.05;
+
+                // Spin propellers
+                props.forEach((prop, i) => {
+                    prop.rotation.z += (i % 2 === 0 ? 0.4 : -0.4);
+                });
+
+                renderer.render(scene, camera);
+            }
+            animate();
+
+            // Resize handling
+            window.addEventListener('resize', () => {
+                if (!container) return;
+                camera.aspect = container.clientWidth / container.clientHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(container.clientWidth, container.clientHeight);
+            });
+
+            // Mouse interaction
+            container.addEventListener('mousemove', (e) => {
+                const rect = container.getBoundingClientRect();
+                const x = ((e.clientX - rect.left) / container.clientWidth) * 2 - 1;
+                const y = -((e.clientY - rect.top) / container.clientHeight) * 2 + 1;
+
+                targetRotY = x * 0.6;
+                targetRotX = -y * 0.6;
+            });
+
+            container.addEventListener('mouseleave', () => {
+                targetRotY = 0;
+                targetRotX = 0;
+            });
+        })();
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.0/vanilla-tilt.min.js"></script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+
+</html>

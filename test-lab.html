@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the ITSYBTS TECHNOLOGY Test Lab. See real-world testing of our projects, including hardware validation, software stability, and performance benchmarks.">
+    <title>Test Lab | ITSYBTS TECHNOLOGY</title>
+
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    
+    <style>
+        .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+
+        /* Test Lab Hero */
+        .lab-hero {
+            padding: 200px 0 120px;
+            background: linear-gradient(135deg, rgba(10, 15, 28, 0.95), rgba(17, 24, 39, 0.9)), url('https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=1600&q=80');
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .lab-hero h1 { font-size: 56px; font-weight: 900; margin-bottom: 15px; background: var(--gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .lab-hero p { color: var(--text-muted); font-size: 20px; max-width: 700px; margin: 0 auto; }
+
+        /* Lab Section */
+        .lab-section { padding: 100px 0; background: var(--dark); position: relative; }
+        .lab-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .lab-card {
+            background: var(--dark-2);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+        }
+        .lab-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+        .media-box {
+            position: relative;
+            aspect-ratio: 16/9;
+            background: #000;
+            overflow: hidden;
+        }
+        .media-box video, .media-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        .media-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--primary);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 11px;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 5;
+        }
+        .lab-card-content {
+            padding: 25px;
+        }
+        .lab-card-content h3 {
+            font-size: 20px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .lab-card-content p {
+            font-size: 14px;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+        .lab-card-footer {
+            padding: 15px 25px;
+            background: rgba(255,255,255,0.02);
+            border-top: 1px solid var(--glass-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: rgba(255,255,255,0.4);
+        }
+
+        /* Video Play Overlay */
+        .play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: 0.3s;
+            z-index: 2;
+        }
+        .play-overlay i {
+            font-size: 48px;
+            color: #fff;
+            opacity: 0.8;
+            transition: transform 0.3s;
+        }
+        .lab-card:hover .play-overlay i { transform: scale(1.1); opacity: 1; }
+
+        .lab-hero-bg {
+            position: absolute;
+            inset: 0;
+            background: url('images/footer_circuit_glow.png') center/cover;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        .admin-link {
+            opacity: 0.2;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Backdrop Overlay for Mobile Drawer -->
+    <div class="drawer-overlay" onclick="closeMobileMenu()"></div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">EXPERTISE <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">OUR WORK <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)" style="color: #06d6a0; font-weight: 800;"><i
+                                class="fas fa-helicopter"></i> Drone 2030</a></li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="lab-hero">
+        <div class="lab-hero-bg"></div>
+        <div class="container">
+            <h1>itsybts Test Lab</h1>
+            <p>Go behind the scenes and witness the rigorous testing that ensures our smart technology is reliable, safe, and ready for the real world.</p>
+        </div>
+    </section>
+
+    <section class="lab-section">
+        <div class="container">
+            <div class="lab-grid">
+                
+                <!-- Kinetic Mirror Test -->
+                <div class="lab-card">
+                    <span class="media-tag">Video</span>
+                    <div class="media-box">
+                        <video muted autoplay loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;display:block;">
+                             <source src="images/lab_vid_2.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="lab-card-content">
+                        <h3>Kinetic Mirror Silhouette Tracking</h3>
+                        <p>Real-time silhouette tracking and servo motor response test. Validating mirror panel sync and latency reduction.</p>
+                    </div>
+                    <div class="lab-card-footer">
+                        <span><i class="far fa-calendar-alt"></i> March 2026</span>
+                        <span><i class="fas fa-microchip"></i> Hardware Test</span>
+                    </div>
+                </div>
+
+                <!-- 16-Channel Controller Test -->
+                <div class="lab-card">
+                    <span class="media-tag">Video</span>
+                    <div class="media-box">
+                        <video muted autoplay loop playsinline preload="auto" style="width:100%;height:100%;object-fit:cover;display:block;">
+                             <source src="images/lab_vid_1.mp4" type="video/mp4">
+                        </video>
+                    </div>
+                    <div class="lab-card-content">
+                        <h3>16-Channel Chesser Controller Demo</h3>
+                        <p>Hardware validation of a 16-channel controller board. Stress testing signal integrity and relay switching performance.</p>
+                    </div>
+                    <div class="lab-card-footer">
+                        <span><i class="far fa-calendar-alt"></i> March 2026</span>
+                        <span><i class="fas fa-microchip"></i> Hardware Test</span>
+                    </div>
+                </div>
+
+
+                <!-- Solar Cleaner Hardware -->
+                <div class="lab-card">
+                    <span class="media-tag">Photo</span>
+                    <div class="media-box">
+                        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=800" alt="Solar Cleaner Hardware">
+                    </div>
+                    <div class="lab-card-content">
+                        <h3>Solar Panel Cleaner Chassis Test</h3>
+                        <p>Durability testing of the robotic cleaner's chassis under environmental stress. Assessing motor torque across panel joints.</p>
+                    </div>
+                    <div class="lab-card-footer">
+                        <span><i class="far fa-calendar-alt"></i> February 2026</span>
+                        <span><i class="fas fa-hammer"></i> Reliability Test</span>
+                    </div>
+                </div>
+
+                <!-- Water Pump Controller -->
+                <div class="lab-card">
+                    <span class="media-tag">Photo</span>
+                    <div class="media-box">
+                        <img src="https://images.unsplash.com/photo-1585333127302-d59912069796?w=800" alt="Water Pump Controller Board">
+                    </div>
+                    <div class="lab-card-content">
+                        <h3>Controller Board Level-Sensing Accuracy</h3>
+                        <p>Bench testing ultrasonic sensors for ±1cm accuracy in water level detection for underground tanks.</p>
+                    </div>
+                    <div class="lab-card-footer">
+                        <span><i class="far fa-calendar-alt"></i> January 2026</span>
+                        <span><i class="fas fa-vial"></i> Accuracy Test</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Standard Site Footer -->
+    <!-- Standard Site Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-logo">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="footer-nav">
+                    <a href="index.html#about">About Us</a>
+                    <a href="index.html#services">Services</a>
+                    <a href="index.html#expertise">In News</a>
+                    <a href="faq.html">FAQ</a>
+                    <a href="index.html#contact">Contact Us</a>
+                    <a href="privacy-policy.html">Privacy Policy</a>
+                    <a href="terms-and-conditions.html">Terms & Conditions</a>
+                </div>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener"
+                        title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                        target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.instagram.com/bts_technology_0007?igsh=amc5M3BydTQ2OTVh" target="_blank"
+                        rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>How can I help you?</span>
+                </a>
+                <div class="copyright-text">
+                    Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd. <span class="admin-link"
+                        onclick="window.location.href='login.html'">•</span>
+                </div>
+                <a href="index.html#contact" class="chat-widget">
+                    <i class="fas fa-comment-dots"></i>
+                    <span>Leave a message</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMobileMenu(btn) {
+            const parent = btn ? btn.closest('nav') : document.getElementById('header');
+            const nav = parent.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.toggle('active');
+            if (overlay) overlay.classList.toggle('active');
+        }
+
+        function closeMobileMenu() {
+            const nav = document.querySelector('.nav-links');
+            const overlay = document.querySelector('.drawer-overlay');
+            if (nav) nav.classList.remove('active');
+            if (overlay) overlay.classList.remove('active');
+        }
+    </script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+

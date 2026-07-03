@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>itsybts Drone - Concept Simulation</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding-top: 80px;
+            background: #050811;
+            color: #e2e8f0;
+            font-family: 'Inter', monospace;
+        }
+
+        .sim-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .sim-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .sim-panel {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sim-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary), transparent);
+        }
+
+        .panel-title {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            letter-spacing: 1px;
+        }
+
+        /* Input */
+        .input-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #333;
+            background: #0a0f1c;
+            color: #0ea5e9;
+            font-family: monospace;
+        }
+
+        /* Radar */
+        .radar-container {
+            width: 100%;
+            height: 250px;
+            background: #02040a;
+            border: 1px solid #1e293b;
+            border-radius: 50%;
+            position: relative;
+            overflow: hidden;
+            max-width: 250px;
+            margin: 0 auto;
+            box-shadow: 0 0 30px rgba(14, 165, 233, 0.1) inset;
+        }
+
+        .radar-center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 4px;
+            height: 4px;
+            background: #fff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .radar-sweep {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 50%;
+            height: 2px;
+            background: linear-gradient(90deg, rgba(14, 165, 233, 0.8), transparent);
+            transform-origin: left center;
+            animation: sweep 3s linear infinite;
+        }
+
+        @keyframes sweep {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .radar-blip {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8px;
+            height: 8px;
+            background: #06d6a0;
+            border-radius: 50%;
+            box-shadow: 0 0 10px #06d6a0;
+            transition: all 1s linear;
+            display: none;
+        }
+
+        /* Telemetry */
+        .telemetry-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .metric-box {
+            background: rgba(0, 0, 0, 0.3);
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 3px solid #334155;
+        }
+
+        .metric-box.active {
+            border-left-color: var(--primary);
+        }
+
+        .metric-label {
+            font-size: 11px;
+            color: #64748b;
+            text-transform: uppercase;
+        }
+
+        .metric-value {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            font-family: monospace;
+            margin-top: 5px;
+        }
+
+        .metric-unit {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+
+        /* Flowchart */
+        .flow-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 30px;
+        }
+
+        .flow-node {
+            text-align: center;
+            width: 22%;
+            padding: 15px 5px;
+            background: #0f172a;
+            border: 1px solid #334155;
+            border-radius: 6px;
+            font-size: 12px;
+            transition: all 0.3s;
+        }
+
+        .flow-node.active {
+            border-color: #06d6a0;
+            box-shadow: 0 0 15px rgba(6, 214, 160, 0.2);
+            color: #06d6a0;
+        }
+
+        .flow-arrow {
+            color: #334155;
+            font-size: 16px;
+        }
+
+        .flow-arrow.active {
+            color: #06d6a0;
+        }
+
+        /* Terminal Log */
+        .terminal {
+            background: #000;
+            color: #06d6a0;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+            height: 200px;
+            overflow-y: auto;
+            font-size: 12px;
+            line-height: 1.6;
+            border: 1px solid #1e293b;
+        }
+
+        .log-line {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: 3px 0;
+        }
+
+        .log-time {
+            color: #64748b;
+            margin-right: 10px;
+        }
+
+        /* Customer Interaction Panel */
+        .customer-panel {
+            display: none;
+            margin-top: 15px;
+            padding: 15px;
+            background: rgba(248, 203, 70, 0.1);
+            border: 1px solid #f8cb46;
+            border-radius: 6px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">EXPERTISE <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">OUR WORK <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)" style="color: #06d6a0; font-weight: 800;"><i
+                                class="fas fa-helicopter"></i> Drone 2030</a></li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="sim-header">
+            <div>
+                <h2 style="margin:0; font-family: 'Outfit';">Drone Telemetry Command</h2>
+                <p class="text-muted" style="margin: 5px 0 0 0; font-size: 14px;">Real-time concept simulation dashboard
+                </p>
+            </div>
+            <div class="input-group">
+                <input type="text" id="track-order-id" placeholder="Paste Order ID here">
+                <button class="btn-primary" onclick="startSimulation()">Initialize</button>
+            </div>
+        </div>
+
+        <div class="sim-grid">
+            <!-- Radar Panel -->
+            <div class="sim-panel">
+                <div class="panel-title"><i class="fas fa-satellite-dish"></i> Radar Tracking</div>
+                <div class="radar-container">
+                    <div class="radar-center"></div>
+                    <div class="radar-sweep"></div>
+                    <div class="radar-blip" id="radar-blip"></div>
+                </div>
+                <div style="text-align: center; margin-top: 15px; font-size: 12px; color: #64748b;">
+                    <span style="color:#fff;">(0,0) Base</span> &nbsp;⟶&nbsp; <span style="color:#0ea5e9;">Target
+                        Dest</span>
+                </div>
+            </div>
+
+            <!-- Telemetry Panel -->
+            <div class="sim-panel">
+                <div class="panel-title"><i class="fas fa-tachometer-alt"></i> Live Telemetry</div>
+                <div class="telemetry-grid">
+                    <div class="metric-box" id="box-alt">
+                        <div class="metric-label">Altitude</div>
+                        <div class="metric-value"><span id="val-alt">0</span><span class="metric-unit">m</span></div>
+                    </div>
+                    <div class="metric-box" id="box-spd">
+                        <div class="metric-label">Ground Speed</div>
+                        <div class="metric-value"><span id="val-spd">0</span><span class="metric-unit">km/h</span></div>
+                    </div>
+                    <div class="metric-box" id="box-bat">
+                        <div class="metric-label">Battery Level</div>
+                        <div class="metric-value"><span id="val-bat">100</span><span class="metric-unit">%</span></div>
+                    </div>
+                    <div class="metric-box" id="box-stat">
+                        <div class="metric-label">System Status</div>
+                        <div class="metric-value" id="val-stat" style="font-size: 18px;">STANDBY</div>
+                    </div>
+                </div>
+                <div class="customer-panel" id="customer-panel">
+                    <p style="color: #f8cb46; font-weight: bold; margin-bottom: 10px;">Awaiting Payload Release
+                        Authorization</p>
+                    <input type="text" id="customer-otp" placeholder="Customer OTP"
+                        style="width: 120px; text-align: center;">
+                    <button class="btn-primary" style="padding: 10px;" onclick="verifyDelivery()">Submit OTP</button>
+                </div>
+            </div>
+
+            <!-- Flowchart Panel -->
+            <div class="sim-panel" style="grid-column: 1 / -1;">
+                <div class="panel-title"><i class="fas fa-project-diagram"></i> System Data Flow Logic</div>
+                <div class="flow-container">
+                    <div class="flow-node" id="node-1"><i class="fas fa-shopping-cart"></i><br>Customer Order</div>
+                    <i class="fas fa-arrow-right flow-arrow" id="arrow-1"></i>
+                    <div class="flow-node" id="node-2"><i class="fas fa-server"></i><br>Core Logic (OTPs Gen)</div>
+                    <i class="fas fa-arrow-right flow-arrow" id="arrow-2"></i>
+                    <div class="flow-node" id="node-3"><i class="fas fa-helicopter"></i><br>Drone Execution</div>
+                    <i class="fas fa-arrow-right flow-arrow" id="arrow-3"></i>
+                    <div class="flow-node" id="node-4"><i class="fas fa-box-open"></i><br>OTP Verification API</div>
+                </div>
+            </div>
+
+            <!-- Terminal Panel -->
+            <div class="sim-panel" style="grid-column: 1 / -1;">
+                <div class="panel-title"><i class="fas fa-terminal"></i> Event Logs</div>
+                <div class="terminal" id="terminal">
+                    <div class="log-line"><span class="log-time">[SYSTEM]</span> Ready. Waiting for initialization...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const API_URL = 'http://localhost:5000/api/drones';
+        let currentOrderId = null;
+        let trackInterval = null;
+        let simState = 'STANDBY';
+        let lastStatus = '';
+
+        // Sim Variables
+        let alt = 0, spd = 0, bat = 100, radarDist = 0;
+        let simLoop;
+
+        function logEvent(msg) {
+            const terminal = document.getElementById('terminal');
+            const time = new Date().toLocaleTimeString('en-US', { hour12: false, fractionalSecondDigits: 2 });
+            const html = `<div class="log-line"><span class="log-time">[${time}]</span> ${msg}</div>`;
+            terminal.insertAdjacentHTML('beforeend', html);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        function setNodeActive(nodeNum) {
+            document.querySelectorAll('.flow-node, .flow-arrow').forEach(el => el.classList.remove('active'));
+            for (let i = 1; i <= nodeNum; i++) {
+                document.getElementById('node-' + i).classList.add('active');
+                if (i < nodeNum) document.getElementById('arrow-' + i).classList.add('active');
+            }
+        }
+
+        function startSimulation() {
+            const orderId = document.getElementById('track-order-id').value;
+            if (!orderId) return;
+            currentOrderId = orderId;
+            logEvent(`Initializing connection to telemetry server for Order: ${orderId}...`);
+            logEvent(`Connection established.`);
+
+            if (trackInterval) clearInterval(trackInterval);
+            trackInterval = setInterval(pollBackend, 2000);
+            pollBackend();
+
+            if (!simLoop) simLoop = setInterval(runTelemetryEngine, 100);
+        }
+
+        async function pollBackend() {
+            try {
+                const res = await fetch(`${API_URL}/orders`);
+                const orders = await res.json();
+                const order = orders.find(o => o._id === currentOrderId);
+
+                if (!order) {
+                    if (lastStatus !== 'NOT_FOUND') {
+                        logEvent(`ERROR: Order not found in database.`);
+                        lastStatus = 'NOT_FOUND';
+                    }
+                    return;
+                }
+
+                if (order.status !== lastStatus) {
+                    handleStatusChange(order.status, order);
+                    lastStatus = order.status;
+                }
+            } catch (e) {
+                logEvent(`API Connection Error: ${e.message}`);
+            }
+        }
+
+        function handleStatusChange(status, order) {
+            document.getElementById('val-stat').innerText = status;
+
+            if (status === 'PENDING') {
+                logEvent(`Order registered. Waiting for Admin Command Center acceptance.`);
+                setNodeActive(1);
+            }
+            else if (status === 'ACCEPTED') {
+                logEvent(`Admin Accepted Order. Core Logic activated.`);
+                logEvent(`Generating Cryptographic OTPs...`);
+                logEvent(`Allocated Drone ID: ${order.assignedDroneId}`);
+                setNodeActive(2);
+                simState = 'PRE-FLIGHT';
+            }
+            else if (status === 'DISPATCHED') {
+                logEvent(`Admin Dispatch Command received and verified.`);
+                logEvent(`Initiating Takeoff Sequence.`);
+                setNodeActive(3);
+                simState = 'TAKEOFF';
+
+                // Simulate travel
+                setTimeout(() => {
+                    logEvent(`Approaching destination coordinates.`);
+                    simState = 'LANDING';
+                }, 4000);
+            }
+            else if (status === 'DELIVERED') {
+                logEvent(`Customer OTP Verification Successful via Core API.`);
+                logEvent(`Payload locking mechanism released. Delivery complete.`);
+                setNodeActive(4);
+                simState = 'RETURNING';
+                document.getElementById('customer-panel').style.display = 'none';
+            }
+        }
+
+        function runTelemetryEngine() {
+            // Battery drains slowly
+            if (bat > 0 && Math.random() > 0.95) bat -= 0.1;
+
+            if (simState === 'TAKEOFF') {
+                alt = Math.min(120, alt + 5);
+                if (alt === 120) simState = 'FLYING';
+            }
+            else if (simState === 'FLYING') {
+                spd = Math.min(65, spd + 2);
+                radarDist = Math.min(80, radarDist + 0.5); // Move radar blip
+                if (radarDist > 0) document.getElementById('radar-blip').style.display = 'block';
+            }
+            else if (simState === 'LANDING') {
+                spd = Math.max(0, spd - 3);
+                alt = Math.max(0, alt - 4);
+                if (alt === 0 && spd === 0) {
+                    simState = 'LANDED';
+                    logEvent(`Drone successfully landed at destination. Awaiting payload release.`);
+                    document.getElementById('customer-panel').style.display = 'block';
+                }
+            }
+            else if (simState === 'RETURNING') {
+                alt = Math.min(150, alt + 8);
+                spd = Math.min(80, spd + 4);
+                radarDist = Math.max(0, radarDist - 1);
+                if (radarDist === 0) {
+                    document.getElementById('radar-blip').style.display = 'none';
+                }
+            }
+
+            // Update UI
+            document.getElementById('val-alt').innerText = Math.floor(alt);
+            document.getElementById('val-spd').innerText = Math.floor(spd);
+            document.getElementById('val-bat').innerText = bat.toFixed(1);
+
+            // Update Radar UI
+            if (radarDist > 0) {
+                const blip = document.getElementById('radar-blip');
+                blip.style.transform = `translate(${radarDist}px, ${-radarDist}px)`;
+            }
+
+            // Highlight active metrics
+            document.getElementById('box-spd').classList.toggle('active', spd > 0);
+            document.getElementById('box-alt').classList.toggle('active', alt > 0);
+        }
+
+        async function verifyDelivery() {
+            const otp = document.getElementById('customer-otp').value;
+            logEvent(`Sending Customer OTP [${otp}] to API for verification...`);
+
+            const res = await fetch(`${API_URL}/deliver`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ orderId: currentOrderId, otp })
+            });
+            const data = await res.json();
+
+            if (data.error) {
+                logEvent(`ERROR: ${data.error}`);
+            } else {
+                pollBackend(); // This will trigger DELIVERED state
+            }
+        }
+    </script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+

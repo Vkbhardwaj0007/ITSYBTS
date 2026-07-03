@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Enquiry | ITSYBTS TECHNOLOGY</title>
+    <meta name="description"
+        content="Send a business enquiry to ITSYBTS TECHNOLOGY for custom IoT solutions, embedded systems, and industrial automation.">
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<!-- Standard Mobile Menu Backdrop Overlay -->
+<div class="drawer-overlay" onclick="closeMobileMenu(this)"></div>
+
+<!-- Particles -->
+
+
+<!-- HEADER (Standard Site Header) -->
+<header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo logo-clickable" onclick="window.location.href='index.html#home'">
+                    <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                    <div class="logo-info">
+                        <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                        <span class="logo-subtext">Binary Turbo Smart</span>
+                    </div>
+                </div>
+                <div class="menu-toggle" onclick="toggleMobileMenu(this)">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul class="nav-links">
+                    <li class="drawer-header">
+                        <div class="mobile-close" onclick="closeMobileMenu(this)">
+                            <i class="fas fa-times"></i>
+                        </div>
+                    </li>
+                    <li><a href="index.html#home" onclick="closeMobileMenu(this)">Home</a></li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">ABOUT
+                            US <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#about" onclick="closeMobileMenu(this)">ABOUT US</a></li>
+                            <li><a href="leadership.html" onclick="closeMobileMenu(this)">OUR LEADERSHIP</a></li>
+                            <li><a href="index.html#expertise" onclick="closeMobileMenu(this)">IN NEWS</a></li>
+                            <li><a href="careers.html" onclick="closeMobileMenu(this)">CAREERS</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">EXPERTISE <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#services" onclick="closeMobileMenu(this)">Services</a></li>
+                            <li><a href="technologies.html" onclick="closeMobileMenu(this)">Technologies</a></li>
+                            <li><a href="test-lab.html" onclick="closeMobileMenu(this)">Test Lab</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item mobile-dropdown">
+                        <a href="javascript:void(0)"
+                            onclick="toggleDropdown(this, event);">OUR WORK <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown">
+                            <li><a href="index.html#process" onclick="closeMobileMenu(this)">Process</a></li>
+                            <li><a href="index.html#projects" onclick="closeMobileMenu(this)">Projects</a></li>
+                            <li><a href="index.html#products" onclick="closeMobileMenu(this)">Products</a></li>
+                            <li><a href="index.html#app" onclick="closeMobileMenu(this)">App</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="shop.html" style="color: var(--brand); font-weight: 800;">Store</a></li>
+                    <li><a href="#drone-2030" onclick="closeMobileMenu(this)" style="color: #06d6a0; font-weight: 800;"><i
+                                class="fas fa-helicopter"></i> Drone 2030</a></li>
+
+                    <li><a href="index.html#contact" onclick="closeMobileMenu(this)">Contact Us</a></li>
+
+                    <li class="drawer-contact-info">
+                        <h4>Contact Info</h4>
+                        <p><b>Address:</b><br>Sharmik Vihar, Sec 30, Faridabad, Haryana - 121003</p>
+                        <p><b>For Business:</b><br>+91 7052050656</p>
+                        <p><b>Email:</b><br>btstechnology007@gmail.com</p>
+                        <div class="drawer-social">
+                            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#" title="X (Formerly Twitter)"><i class="fab fa-x-twitter"></i></a>
+                            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+<!-- HERO SECTION -->
+<section class="tech-hero"
+    style="background: linear-gradient(rgba(10,15,28,0.85), rgba(10,15,28,0.95)), url('images/technology_hero.png') center/cover;">
+    <div class="container text-center pt-120 pb-100">
+        <span class="hero-tag mb-15">Contact Us</span>
+        <h1 class="fs-48 fw-900 text-white mb-20">Get in <span>Touch</span></h1>
+        <p class="fs-18 text-white-70 max-w-700 mx-auto lh-1-8">Have a project in mind? Our team of technical experts
+            is ready to help you deploy the future of automation.</p>
+    </div>
+</section>
+
+<!-- ENQUIRY SECTION (Dark Theme) -->
+<section class="enquiry-dark-section"
+    style="background: linear-gradient(to bottom, #050a14, rgba(5,10,20,0.8)), url('images/footer_circuit_bg.png') center/cover;">
+    <div class="container">
+        <div class="grid-enquiry ai-start">
+
+            <!-- Left: Contact Details -->
+            <div class="contact-info-side">
+                <div class="contact-card-dark reveal" style="transition-delay: 0.1s;">
+                    <div class="contact-icon-box">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <div class="form-group"><label>Email</label></div>
+                        <div style="font-size: 16px; font-weight: 600; color: #cbd5e1;">btstechnology007@gmail.com</div>
+                    </div>
+                </div>
+                <div class="contact-card-dark reveal" style="transition-delay: 0.2s;">
+                    <div class="contact-icon-box">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <div class="form-group"><label>Phone</label></div>
+                        <div style="font-size: 16px; font-weight: 600; color: #cbd5e1;">+91 7052050656</div>
+                    </div>
+                </div>
+                <div class="contact-card-dark reveal" style="transition-delay: 0.3s;">
+                    <div class="contact-icon-box">
+                        <i class="fas fa-location-dot"></i>
+                    </div>
+                    <div>
+                        <div class="form-group"><label>Address</label></div>
+                        <div style="font-size: 16px; font-weight: 600; color: #cbd5e1;">Sharmik Vihar, Sec 30,
+                            Faridabad, Haryana</div>
+                    </div>
+                </div>
+                <div class="contact-card-dark reveal" style="transition-delay: 0.4s;">
+                    <div class="contact-icon-box">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div>
+                        <div class="form-group"><label>Working Hours</label></div>
+                        <div style="font-size: 16px; font-weight: 600; color: #cbd5e1;">Mon - Sat: 9:00 AM - 7:00 PM
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Enquiry Form -->
+            <div class="contact-form-wrap reveal" style="transition-delay: 0.2s;">
+                <h3 id="enquiry-title">Enquire for General Inquiry</h3>
+                <form id="enquiry-form" onsubmit="handleEnquirySubmit(event, this); return false;">
+                    <input type="hidden" name="_subject" id="emailSubject" value="New Website Enquiry - ITSYBTS TECHNOLOGY">
+                    <input type="hidden" name="Product" id="productField" value="General Inquiry">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="Name" required placeholder="Your Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="Email" required placeholder="Your Email">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="tel" name="Phone" required placeholder="Your Phone Number">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="Company Name" placeholder="Company Name">
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <select name="Category" id="categorySelect" required
+                                style="width: 100%; padding: 14px 16px; border-radius: 10px; background: var(--dark-3); border: 1px solid var(--glass-border); color: var(--text); outline: none;">
+                                <option value="" disabled selected>Select Category</option>
+                                <option value="Home Automation">Home Automation</option>
+                                <option value="Water Management">Water Management</option>
+                                <option value="Solar Solutions">Solar Solutions</option>
+                                <option value="Security Systems">Security Systems</option>
+                                <option value="LED Lighting">LED Lighting</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="Quantity" placeholder="Number Of Units Required">
+                        </div>
+                    </div>
+
+                    <!-- Dynamic LED Options Row -->
+                    <div class="form-row" id="led-options" style="display: none;">
+                        <div class="form-group">
+                            <select name="LED_Type" id="led-type-select" style="width: 100%; padding: 14px 16px; border-radius: 10px; background: var(--dark-3); border: 1px solid var(--glass-border); color: var(--text); outline: none;">
+                                <option value="" disabled selected>Select Light Type</option>
+                                <option value="LED Bulb">LED Bulb</option>
+                                <option value="Ceiling Panel">Ceiling Panel</option>
+                                <option value="Tubelight">Tubelight</option>
+                                <option value="Street Light">Street Light</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <select name="Wattage" id="led-wattage-select" style="width: 100%; padding: 14px 16px; border-radius: 10px; background: var(--dark-3); border: 1px solid var(--glass-border); color: var(--text); outline: none;">
+                                <option value="" disabled selected>Select Wattage</option>
+                                <option value="9W">9W</option>
+                                <option value="12W">12W</option>
+                                <option value="15W">15W</option>
+                                <option value="18W">18W</option>
+                                <option value="20W">20W</option>
+                                <option value="30W">30W</option>
+                                <option value="40W">40W</option>
+                                <option value="50W">50W</option>
+                                <option value="60W">60W</option>
+                                <option value="100W">100W</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea name="Description" placeholder="Project Details & Requirement *" rows="5"
+                            required></textarea>
+                    </div>
+
+                    <div class="btn-row">
+                        <button type="submit" class="btn-email">
+                            <i class="fas fa-paper-plane mr-10"></i> Submit Inquiry
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div> <!-- end grid-enquiry -->
+
+        <!-- MAP SECTION -->
+        <div class="map-container-v2 reveal">
+            <iframe
+                src="https://maps.google.com/maps?q=Sharmik+Vihar+Sec+30+Faridabad+Haryana&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                width="100%" height="300" style="border:0; border-radius: 20px;" allowfullscreen=""
+                loading="lazy"></iframe>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER (Standard Site Footer) -->
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="images/new_logo_nobg.png" alt="ITSYBTS TECHNOLOGY" style="height: 65px; width: auto; object-fit: contain; margin-left: -10px;" class="logo-animated">
+                <div class="logo-info">
+                    <span class="logo-text">ITSYBTS TECHNOLOGY</span>
+                    <span class="logo-subtext">Binary Turbo Smart</span>
+                </div>
+            </div>
+            <div class="footer-nav">
+                <a href="index.html#about">About Us</a>
+                <a href="index.html#services">Services</a>
+                <a href="index.html#expertise">In News</a>
+                <a href="faq.html">FAQ</a>
+                <a href="index.html#contact">Contact Us</a>
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms-and-conditions.html">Terms & Conditions</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.facebook.com/share/1DvawbFmJZ/" target="_blank" rel="noopener"><i
+                        class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/vivek-kumar-bhardwaj-0a79ab2a2" target="_blank" rel="noopener"><i
+                        class="fab fa-linkedin-in"></i></a>
+                <a href="https://www.instagram.com/bts_technology_0007" target="_blank" rel="noopener"><i
+                        class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <a href="https://wa.me/917052050656" class="whatsapp-widget" target="_blank" rel="noopener">
+                <i class="fab fa-whatsapp"></i>
+                <span>How can I help you?</span>
+            </a>
+            <div class="copyright-text">
+                Copyright © 2026 - Reserved to ITSYBTS TECHNOLOGY Pvt. Ltd.
+            </div>
+            <a href="index.html#contact" class="chat-widget">
+                <i class="fas fa-comment-dots"></i>
+                <span>Leave a message</span>
+            </a>
+        </div>
+    </div>
+</footer>
+
+<script>
+
+    // Particles Logic (Crucrite Particle Background)
+    (function () {
+        const canvas = document.getElementById('circuit-bg');
+        if (canvas) {
+            const ctx = canvas.getContext('2d');
+            let particles = [];
+            function resize() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
+            window.addEventListener('resize', resize);
+            resize();
+            class Particle {
+                constructor() {
+                    this.x = Math.random() * canvas.width; this.y = Math.random() * canvas.height;
+                    this.vx = (Math.random() - 0.5) * 0.4; this.vy = (Math.random() - 0.5) * 0.4;
+                    this.size = Math.random() * 2 + 1;
+                    this.isLogo = Math.random() > 0.92;
+                }
+                update() {
+                    this.x += this.vx; this.y += this.vy;
+                    if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                    if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+                }
+                draw() {
+                    ctx.fillStyle = this.isLogo ? 'rgba(14, 165, 233, 0.8)' : 'rgba(14, 165, 233, 0.5)';
+                    ctx.beginPath(); ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2); ctx.fill();
+                    if (this.isLogo) {
+                        ctx.font = 'bold 10px Outfit, sans-serif';
+                        ctx.fillText('BTS', this.x + 8, this.y + 4);
+                    }
+                }
+            }
+            for (let i = 0; i < 80; i++) particles.push(new Particle());
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                ctx.beginPath(); ctx.strokeStyle = 'rgba(14, 165, 233, 0.08)'; ctx.lineWidth = 0.5;
+                for (let i = 0; i < particles.length; i++) {
+                    for (let j = i + 1; j < particles.length; j++) {
+                        const dist = Math.sqrt(Math.pow(particles[i].x - particles[j].x, 2) + Math.pow(particles[i].y - particles[j].y, 2));
+                        if (dist < 150) { ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); }
+                    }
+                }
+                ctx.stroke();
+                particles.forEach(p => { p.update(); p.draw(); });
+                requestAnimationFrame(animate);
+            }
+            animate();
+        }
+    })();
+
+    // Parse URL Parameters for Auto-Fill Logic
+    window.addEventListener('load', () => {
+        const params = new URLSearchParams(window.location.search);
+        const product = params.get('product');
+        if (product) {
+            const productField = document.getElementById('productField');
+            const subjectField = document.getElementById('emailSubject');
+            const titleElement = document.getElementById('enquiry-title');
+
+            const decodedProduct = decodeURIComponent(product);
+
+            if (productField) productField.value = decodedProduct;
+            if (subjectField) subjectField.value = `URGENT: ${decodedProduct} Enquiry - itsybts Website`;
+            if (titleElement && decodedProduct !== 'General Inquiry') {
+                titleElement.innerText = `Enquire for ${decodedProduct}`;
+            }
+
+            // Logic to show LED options if product is LED Lighting
+            if (decodedProduct.toLowerCase().includes('led')) {
+                const ledOptions = document.getElementById('led-options');
+                if (ledOptions) ledOptions.style.display = 'flex';
+                const categorySelect = document.getElementById('categorySelect');
+                if (categorySelect) categorySelect.value = 'LED Lighting';
+            }
+        }
+
+        // Add event listener to category select to toggle LED options
+        const categorySelect = document.getElementById('categorySelect');
+        const ledOptions = document.getElementById('led-options');
+        if (categorySelect && ledOptions) {
+            categorySelect.addEventListener('change', (e) => {
+                if (e.target.value === 'LED Lighting') {
+                    ledOptions.style.display = 'flex';
+                } else {
+                    ledOptions.style.display = 'none';
+                    document.getElementById('led-type-select').value = '';
+                    document.getElementById('led-wattage-select').value = '';
+                }
+            });
+        }
+
+        // Simple Reveal Animation Logic
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+
+    function toggleMobileMenu(btn) {
+        const parent = btn ? btn.closest('nav') || btn.closest('header') : document.getElementById('header');
+        const nav = parent.querySelector('.nav-links');
+        const overlay = document.querySelector('.drawer-overlay');
+        if (nav) nav.classList.toggle('active');
+        if (overlay) overlay.classList.toggle('active');
+        
+        // Toggle nav-active on the main header
+        const mainHeader = document.querySelector('header');
+        if (mainHeader) mainHeader.classList.toggle('nav-active');
+
+        // Add click listener to nav for blank space closing
+        if (nav && !nav.hasAttribute('data-click-listener')) {
+            nav.setAttribute('data-click-listener', 'true');
+            nav.addEventListener('click', (e) => {
+                // Close if clicked on the drawer itself or li, but NOT if clicked on a link or dropdown toggle
+                if (e.target.classList.contains('nav-links') || e.target.tagName === 'LI') {
+                    closeMobileMenu(e.target);
+                }
+            });
+        }
+    }
+
+    function closeMobileMenu(btn) {
+        const nav = btn ? btn.closest('.nav-links') : document.querySelector('.nav-links');
+        const overlay = document.querySelector('.drawer-overlay');
+        if (nav) nav.classList.remove('active');
+        if (overlay) overlay.classList.remove('active');
+        
+        // Remove nav-active from header
+        const mainHeader = document.querySelector('header');
+        if (mainHeader) mainHeader.classList.remove('nav-active');
+
+        // Reset dropdowns
+        document.querySelectorAll('.mobile-dropdown').forEach(item => {
+            item.classList.remove('active-dropdown');
+        });
+    }
+
+    // Global click listener to close menu when clicking anywhere outside
+    document.addEventListener('click', function(e) {
+        const nav = document.querySelector('.nav-links');
+        if (nav && nav.classList.contains('active')) {
+            if (!e.target.closest('.nav-links') && !e.target.closest('.menu-toggle')) {
+                closeMobileMenu();
+            }
+        }
+    });
+
+    // Standardized Toast notification
+    function showToast(msg, isError = false) {
+        let toast = document.getElementById('bts-toast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'bts-toast';
+            toast.className = 'toast';
+            document.body.appendChild(toast);
+        }
+        toast.innerHTML = `<i class="fas ${isError ? 'fa-circle-xmark' : 'fa-circle-check'}"></i> ${msg}`;
+        toast.className = isError ? 'toast toast-active toast-error' : 'toast toast-active';
+        setTimeout(() => {
+            toast.classList.remove('toast-active');
+        }, 4000);
+    }
+
+    // ============================
+    // ENQUIRY FORM SUBMISSION (AJAX)
+    // ============================
+    async function handleEnquirySubmit(e, form) {
+        if (e) e.preventDefault();
+        const btn = form.querySelector('button');
+        const originalHTML = btn.innerHTML;
+
+        btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> PREPARING...';
+        btn.disabled = true;
+
+        const formData = new FormData(form);
+        const leadData = {
+            type: 'Product Enquiry',
+            name: formData.get('Name') || 'Guest',
+            email: formData.get('Email') || 'N/A',
+            phone: formData.get('Phone') || 'N/A',
+            service: formData.get('Category') || 'N/A',
+            subject: formData.get('_subject') || 'Product Enquiry',
+            message: `Product: ${formData.get('Product') || 'N/A'}. Quantity: ${formData.get('Quantity') || '0'}. Details: ${formData.get('Description') || 'No details'}`
+        };
+
+        // Save to internal lead database (for Admin Panel)
+        saveLeadToDB(leadData);
+
+        try {
+            const response = await fetch('https://formsubmit.co/ajax/btstechnology007@gmail.com', {
+                method: 'POST',
+                body: formData,
+                headers: { 'Accept': 'application/json' }
+            });
+            const result = await response.json();
+            if (result.success === 'true' || result.success === true || response.ok) {
+                showToast('✅ Enquiry Sent! Our Team will call you soon.', false);
+                form.reset();
+            } else {
+                showToast('✅ Your Interest is Registered!', false);
+                form.reset();
+            }
+        } catch (err) {
+            showToast('✅ Enquiry Saved in Dashboard!', false);
+            form.reset();
+        } finally {
+            btn.innerHTML = originalHTML;
+            btn.disabled = false;
+        }
+        return false;
+    }
+
+    // ============================
+    // DATABASE & STATS LOGIC
+    // ============================
+    function saveLeadToDB(lead) {
+        const leads = JSON.parse(localStorage.getItem('bts_leads') || '[]');
+        lead.id = 'L-' + Math.random().toString(36).substr(2, 9).toUpperCase();
+        lead.date = new Date().toISOString();
+        lead.status = 'New';
+        leads.push(lead);
+        localStorage.setItem('bts_leads', JSON.stringify(leads));
+
+        // Sync with Google Sheet
+        syncWithGoogleSheet(lead);
+        console.log('Lead synchronized to internal database');
+    }
+
+    async function syncWithGoogleSheet(lead) {
+        const GOOGLE_SHEET_URL = 'YOUR_GOOGLE_SCRIPT_URL_HERE';
+        if (GOOGLE_SHEET_URL === 'YOUR_GOOGLE_SCRIPT_URL_HERE') return;
+
+        try {
+            await fetch(GOOGLE_SHEET_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                body: JSON.stringify(lead)
+            });
+            console.log('Sheet Sync Successful');
+        } catch (err) {
+            console.error('Sheet Sync Failed', err);
+        }
+    }
+</script>
+
+    <!-- Dropdown Toggle Script -->
+    <script>
+        function toggleDropdown(element, event) {
+            event.stopPropagation();
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                if (el !== element.parentElement) {
+                    el.classList.remove('active-dropdown');
+                }
+            });
+            element.parentElement.classList.toggle('active-dropdown');
+        }
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', () => {
+            document.querySelectorAll('.mobile-dropdown').forEach(el => {
+                el.classList.remove('active-dropdown');
+            });
+        });
+    </script>
+</body>
+
+</html>
+
+
+
