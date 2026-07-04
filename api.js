@@ -1,5 +1,5 @@
 // Set VITE_API_URL in your frontend .env, e.g. VITE_API_URL=http://localhost:5000
-const BASE = import.meta.env.VITE_API_URL || "http://localhost:5000";
+const BASE = import.meta.env.VITE_API_URL || "https://itsybts.onrender.com";
 
 function authHeader() {
   const token = localStorage.getItem("token");
